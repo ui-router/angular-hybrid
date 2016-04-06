@@ -2,6 +2,8 @@
   "name": "ui-router-ng1-to-ng2",
   "version": "1.0.0",
   "scripts": {
+    "build": "npm run clean && npm run tsc",
+    "clean": "rm *.d.ts *.js *.js.map",
     "tsc": "tsc",
     "tsc:w": "tsc -w"
   },
