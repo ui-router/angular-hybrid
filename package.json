@@ -1,0 +1,34 @@
+{
+  "name": "ui-router-ng1-to-ng2",
+  "version": "1.0.0",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "angular": "^1.5.0",
+    "angular2": "^2.0.0-beta.13",
+    "angular-ui-router": "^1.0.0-alpha.3",
+    "ui-router-ng2": "^1.0.0-alpha.3"
+  },
+  "devDependencies": {
+    "angular": "1.5.3",
+    "angular2": "2.0.0-beta.13",
+    "angular-ui-router": "^1.0.0-alpha.3",
+    "es6-shim": "^0.35.0",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "systemjs": "0.19.25",
+    "ui-router-ng2": ">=1.0.0-alpha.3",
+    "zone.js": "0.6.6",
+    "concurrently": "^2.0.0",
+    "lite-server": "^2.1.0",
+    "typescript": "^1.8.9",
+    "typings": "^0.7.11"
+  },
+  "repository" : { 
+    "type" : "git", 
+    "url" : "https://github.com/ui-router/ng1-to-ng2.git"
+  }
+}
