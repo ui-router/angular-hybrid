@@ -2,11 +2,10 @@ import * as angular from "angular";
 import {provide, ElementRef, Component, Inject, ComponentMetadata} from "angular2/core";
 import {
     UiView, UIRouter, TransitionService, StateService, UIRouterGlobals, UIROUTER_DIRECTIVES, forEach,
-    UrlRouter, ViewService, StateRegistry
+    UrlRouter, ViewService, StateRegistry, UrlMatcherFactory
 } from "ui-router-ng2";
 import {CORE_DIRECTIVES} from "angular2/common";
 import {UpgradeAdapter} from "angular2/upgrade";
-import {UrlMatcherFactory} from "angular-ui-router/commonjs/ng1";
 
 export let upgradeModule = angular.module('ui.router.upgrade', ['ui.router']);
 
