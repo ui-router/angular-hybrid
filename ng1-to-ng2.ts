@@ -1,8 +1,12 @@
 import * as angular from "angular";
 import {provide, ElementRef, Component, Inject, ComponentMetadata} from "angular2/core";
-import {UiView, UIROUTER_DIRECTIVES, forEach} from "ui-router-ng2";
+import {
+    UiView, UIRouter, TransitionService, StateService, UIRouterGlobals, UIROUTER_DIRECTIVES, forEach,
+    UrlRouter, ViewService, StateRegistry
+} from "ui-router-ng2";
 import {CORE_DIRECTIVES} from "angular2/common";
-import {UIRouter} from "ui-router-ng2";
+import {UpgradeAdapter} from "angular2/upgrade";
+import {UrlMatcherFactory} from "angular-ui-router/commonjs/ng1";
 
 export let upgradeModule = angular.module('ui.router.upgrade', ['ui.router']);
 
@@ -42,14 +46,22 @@ class UiViewNgUpgrade {
 }
 
 export let uiRouterNgUpgrade = {
-  setUpgradeAdapter(upgradeAdapter) {
+  setUpgradeAdapter(upgradeAdapter: UpgradeAdapter) {
     // Downgrade the ng2 Component to an ng1 directive, to be used in a (generated) view
     // template by ui-router, whenever it finds a view with a `component: Ng2ComponentClass`
     upgradeModule.directive("uiViewNgUpgrade", <any> upgradeAdapter.downgradeNg2Component(UiViewNgUpgrade));
 
     // Register the ng1 DI UIRouter instance as an ng2 Provider
     upgradeAdapter.upgradeNg1Provider('ng1UIRouter', {asToken: UIRouter});
-
+    
+    upgradeAdapter.addProvider(provide(TransitionService, { useFactory: (uiRouter: UIRouter) => uiRouter.transitionService, deps: [UIRouter]}));
+    upgradeAdapter.addProvider(provide(StateService,      { useFactory: (uiRouter: UIRouter) => uiRouter.stateService, deps: [UIRouter]}));
+    upgradeAdapter.addProvider(provide(UrlMatcherFactory, { useFactory: (r: UIRouter) => { return r.urlMatcherFactory; }, deps: [UIRouter]}));
+    upgradeAdapter.addProvider(provide(UrlRouter,         { useFactory: (r: UIRouter) => { return r.urlRouter; }, deps: [UIRouter]}));
+    upgradeAdapter.addProvider(provide(ViewService,       { useFactory: (r: UIRouter) => { return r.viewService; }, deps: [UIRouter]}));
+    upgradeAdapter.addProvider(provide(StateRegistry,     { useFactory: (r: UIRouter) => { return r.stateRegistry; }, deps: [UIRouter]}));
+    upgradeAdapter.addProvider(provide(UIRouterGlobals,   { useFactory: (r: UIRouter) => { return r.globals; }, deps: [UIRouter]}));
+    
   }
 };
 
