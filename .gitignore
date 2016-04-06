@@ -1,3 +1,8 @@
+# artifacts
+*.d.ts
+*.js
+*.js.map
+
 # IDE
 *.ipr
 *.iml

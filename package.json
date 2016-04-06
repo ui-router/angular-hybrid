@@ -27,6 +27,8 @@
     "typescript": "^1.8.9",
     "typings": "^0.7.11"
   },
+  "main": "ui-router-ng1-to-ng2.js",
+  "typings": "ui-router-ng1-to-ng2.d.ts",
   "repository" : { 
     "type" : "git", 
     "url" : "https://github.com/ui-router/ng1-to-ng2.git"

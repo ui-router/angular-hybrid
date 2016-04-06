@@ -56,7 +56,7 @@ export let uiRouterNgUpgrade = {
 /**
  * Predicate that returns true if an object is a NG2 Component Class
  */
-function isNg2ComponentClass(def) {
+export function isNg2ComponentClass(def) {
   if (typeof def !== 'function') return false;
 
   if (!Reflect || typeof Reflect['metadata'] !== 'function')

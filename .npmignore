@@ -1,0 +1,8 @@
+*.ipr
+*.iml
+*.iws
+node_modules
+tsconfig.json
+uiRouterNgUpgrade.js
+uiRouterNgUpgrade.js.map
+uiRouterNgUpgrade.ts
