@@ -10,5 +10,5 @@
     "removeComments": false,
     "noImplicitAny": false
   },
-  "include": [ "uiRouterNgUpgrade.ts" ]
+  "include": [ "ng1-to-ng2.ts" ]
 }
