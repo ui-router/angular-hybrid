@@ -1,11 +1,12 @@
 import * as angular from "angular";
 import {provide, ElementRef, Component, Inject, ComponentMetadata} from "angular2/core";
 import {
-    UiView, UIRouter, TransitionService, StateService, UIRouterGlobals, UIROUTER_DIRECTIVES, forEach,
-    UrlRouter, ViewService, StateRegistry, UrlMatcherFactory
+    UiView, UIRouter, TransitionService, StateService, UIRouterGlobals, UIROUTER_DIRECTIVES, forEach, extend,
+    UrlRouter, ViewService, StateRegistry, UrlMatcherFactory, Ng2ViewDeclaration, Ng2ViewConfig, Node
 } from "ui-router-ng2";
 import {CORE_DIRECTIVES} from "angular2/common";
 import {UpgradeAdapter} from "angular2/upgrade";
+import {Ng1ViewConfig} from "angular-ui-router";
 
 export let upgradeModule = angular.module('ui.router.upgrade', ['ui.router']);
 
@@ -93,6 +94,7 @@ upgradeModule.config([ '$stateProvider', $stateProvider => {
         // Update the view config.
         // Override default ng1 `component:` behavior (of defining a templateProvider)
         // with a <ui-view-ng-upgrade> adapter directive template
+        viewDecl.$type = "ng1-to-ng2";
         viewDecl.templateProvider = null;
         viewDecl.template = "<ui-view-ng-upgrade></ui-view-ng-upgrade>";
       }
@@ -101,3 +103,13 @@ upgradeModule.config([ '$stateProvider', $stateProvider => {
   })
 }]);
 
+upgradeModule.run([ '$view', $view => {
+  $view.viewConfigFactory('ng2', (node: Node, config: Ng2ViewDeclaration) => new Ng2ViewConfig(node, config));
+
+  $view.viewConfigFactory('ng1-to-ng2', (node: Node, config: Ng2ViewDeclaration) => {
+    var ng1ViewConfig = new Ng1ViewConfig(<any> node, <any> Object.assign({}, config, { $type: 'ng1'}));
+    var ng2ViewConfig = new Ng2ViewConfig(<any> node, <any> Object.assign({}, config, { $type: 'ng2'}));
+
+    return [ ng2ViewConfig, ng1ViewConfig ];
+  });
+}]);

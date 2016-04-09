@@ -1,6 +1,6 @@
 {
   "name": "ui-router-ng1-to-ng2",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {
     "build": "npm run clean && npm run tsc",
     "clean": "rm -f *.d.ts *.js *.js.map",
@@ -11,13 +11,13 @@
   "peerDependencies": {
     "angular": "^1.5.0",
     "angular2": "^2.0.0-beta.13",
-    "angular-ui-router": "^1.0.0-alpha.4",
+    "angular-ui-router": "^1.0.0-alpha.5",
     "ui-router-ng2": "^1.0.0-alpha.4"
   },
   "devDependencies": {
     "angular": "1.5.3",
     "angular2": "2.0.0-beta.13",
-    "angular-ui-router": "^1.0.0-alpha.4",
+    "angular-ui-router": "1.0.0-alpha.5",
     "es6-shim": "^0.35.0",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
