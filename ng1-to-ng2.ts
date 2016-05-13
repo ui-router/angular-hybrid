@@ -1,11 +1,10 @@
 import * as angular from "angular";
-import {provide, ElementRef, Component, Inject, ComponentMetadata} from "angular2/core";
+import {provide, ElementRef, Component, Inject, ComponentMetadata} from "@angular/core";
+import {UpgradeAdapter} from "@angular/upgrade";
 import {
     UiView, UIRouter, TransitionService, StateService, UIRouterGlobals, UIROUTER_DIRECTIVES, forEach, extend,
     UrlRouter, ViewService, StateRegistry, UrlMatcherFactory, Ng2ViewDeclaration, Ng2ViewConfig, Node
 } from "ui-router-ng2";
-import {CORE_DIRECTIVES} from "angular2/common";
-import {UpgradeAdapter} from "angular2/upgrade";
 import {Ng1ViewConfig} from "angular-ui-router";
 
 export let upgradeModule = angular.module('ui.router.upgrade', ['ui.router']);
@@ -13,7 +12,7 @@ export let upgradeModule = angular.module('ui.router.upgrade', ['ui.router']);
 @Component({
   selector: 'ui-view-ng-upgrade',
   template: `<ui-view></ui-view>`,
-  directives: [CORE_DIRECTIVES, UIROUTER_DIRECTIVES],
+  directives: [UIROUTER_DIRECTIVES],
   viewProviders: [ provide(UiView.PARENT_INJECT, {useValue: { } }) ],
 })
 /**
