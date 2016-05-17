@@ -8,6 +8,8 @@ Your app will be hosted on Angular 1 while you incrementally upgrade it to Angul
 
 Once you route to a ng2 component, you can continue to use the ng2 directives (ui-view and uiSref) from ui-router-ng2.  We do not yet support nesting an angular 1 directive inside an angular 2 ui-view.  Because of this, apps should be migrated starting from leaf views up to the root state. 
 
+See [example here](https://github.com/ui-router/sample-app/tree/hybrid-angular1-angular2).
+
 ### Getting started
 
 Add "ui-router-ng1-to-ng2" to your package.json
@@ -15,7 +17,7 @@ Add "ui-router-ng1-to-ng2" to your package.json
 ```
 dependencies: {
   ...
-  "ui-router-ng1-to-ng2": "^1.0.0"
+  "ui-router-ng1-to-ng2": "^1.0.6"
 }
 ```
 
@@ -31,7 +33,8 @@ import {uiRouterNgUpgrade} from "ui-router-ng1-to-ng2";
 uiRouterNgUpgrade.setUpgradeAdapter(upgradeAdapter);
 
 // Manually bootstrap the app with the Upgrade Adapter (instead of ng-app)
-upgradeAdapter.bootstrap(document.body, ['myApp']);
+// Add 'ui.router.upgrade' to your apps module depedencies
+upgradeAdapter.bootstrap(document.body, ['myApp', 'ui.router.upgrade']);
 ```
 
 
@@ -46,5 +49,14 @@ var leaf = {
    component: MyNg2CommponentClass 
 };
 $stateProvider.state(leaf);
+```
+
+#### Declare ui-view at the top level of your application
+```
+<html>
+  <body>
+    <ui-view></ui-view>
+  </body>
+</html>
 ```
 
