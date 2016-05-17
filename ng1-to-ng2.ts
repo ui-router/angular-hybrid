@@ -22,7 +22,7 @@ export let upgradeModule = angular.module('ui.router.upgrade', ['ui.router']);
  * up the DOM and grabbing the .data('$uiView') that the ng1 ui-view directive provided.
  */
 class UiViewNgUpgrade {
-  constructor(ref: ElementRef, @Inject(UiView.PARENT_INJECT) parent) {
+  constructor(ref: ElementRef, @Inject(UiView.PARENT_INJECT) parent, registry: StateRegistry) {
     // From the ui-view-ng-upgrade component's element ref, walk up the DOM two elements...
     // There will first be one ng1 ui-view which hosts this element, and then that ui-view's
     // parent element.  This element has access to the proper "parent viewcontext"
@@ -33,12 +33,18 @@ class UiViewNgUpgrade {
 
     // Expose getters for contex and fqn
     Object.defineProperty(parent, "context", {
-      get: function() { return ng1elem['inheritedData']('$uiView').$cfg.viewDecl.$context ; },
+      get: function() {
+        var data = ng1elem['inheritedData']('$uiView');
+        return (data && data.$cfg) ? data.$cfg.viewDecl.$context : registry.root();
+      },
       enumerable: true
     });
 
     Object.defineProperty(parent, "fqn", {
-      get: function() { return ng1elem['inheritedData']('$uiView').$uiView.fqn; },
+      get: function() {
+        var data = ng1elem['inheritedData']('$uiView');
+        return (data && data.$uiView) ? data.$uiView.fqn : null;
+      },
       enumerable: true
     });
   }
