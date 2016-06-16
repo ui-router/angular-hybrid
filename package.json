@@ -34,7 +34,7 @@
     "ui-router-ng2": ">=1.0.0-alpha.5",
     "zone.js": "0.6.6"
   },
-  "main": "ng1-to-ng2",
+  "main": "ng1-to-ng2.js",
   "typings": "ng1-to-ng2.d.ts",
   "repository": {
     "type": "git",
