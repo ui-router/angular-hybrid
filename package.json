@@ -1,6 +1,6 @@
 {
   "name": "ui-router-ng1-to-ng2",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "scripts": {
     "build": "npm run clean && npm run tsc",
     "clean": "rm -f *.d.ts *.js *.js.map",
@@ -10,19 +10,19 @@
   "license": "MIT",
   "peerDependencies": {
     "angular": "^1.5.0",
-    "@angular/core": "^2.0.0-rc.1",
-    "@angular/upgrade": "^2.0.0-rc.1",
-    "angular-ui-router": "^1.0.0-alpha.5",
-    "ui-router-ng2": "^1.0.0-alpha.5"
+    "@angular/core": "^2.0.0-rc.3",
+    "@angular/upgrade": "^2.0.0-rc.3",
+    "angular-ui-router": "^1.0.0-beta.1",
+    "ui-router-ng2": "^1.0.0-beta.1"
   },
   "devDependencies": {
-    "@angular/common": "^2.0.0-rc.1",
-    "@angular/compiler": ">=2.0.0-rc.1",
-    "@angular/core": ">=2.0.0-rc.1",
-    "@angular/platform-browser": ">=2.0.0-rc.1",
-    "@angular/upgrade": ">=2.0.0-rc.1",
+    "@angular/common": "^2.0.0-rc.3",
+    "@angular/compiler": ">=2.0.0-rc.3",
+    "@angular/core": ">=2.0.0-rc.3",
+    "@angular/platform-browser": ">=2.0.0-rc.3",
+    "@angular/upgrade": ">=2.0.0-rc.3",
     "angular": "1.5.3",
-    "angular-ui-router": ">=1.0.0-alpha.5",
+    "angular-ui-router": ">=1.0.0-beta.1",
     "concurrently": "^2.0.0",
     "es6-shim": "^0.35.0",
     "lite-server": "^2.1.0",
@@ -31,7 +31,7 @@
     "systemjs": "0.19.25",
     "typescript": "^1.8.9",
     "typings": "^0.7.11",
-    "ui-router-ng2": ">=1.0.0-alpha.5",
+    "ui-router-ng2": ">=1.0.0-beta.1",
     "zone.js": "0.6.6"
   },
   "main": "ng1-to-ng2",
