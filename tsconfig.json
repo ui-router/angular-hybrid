@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "system",
+    "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
     "declaration": true,
@@ -10,5 +10,8 @@
     "removeComments": false,
     "noImplicitAny": false
   },
-  "include": [ "ng1-to-ng2.ts" ]
+  "files" : [
+    "ng1-to-ng2.ts",
+    "typings/index.d.ts"
+  ]
 }

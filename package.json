@@ -1,6 +1,6 @@
 {
-  "name": "ui-router-ng1-to-ng2",
-  "version": "1.0.6",
+  "name": "ui-router-ng1-to-ng2-dstellini",
+  "version": "1.0.7",
   "scripts": {
     "build": "npm run clean && npm run tsc",
     "clean": "rm -f *.d.ts *.js *.js.map",
