@@ -1,13 +1,18 @@
 import * as angular from "angular";
 import {provide, ElementRef, Component, Inject, ComponentMetadata} from "@angular/core";
 import {UpgradeAdapter} from "@angular/upgrade";
+
+import { Ng1ViewConfig, StateProvider, State } from "angular-ui-router";
+
 import {
-    UIView, UIRouter, TransitionService, StateService, Globals, UIROUTER_DIRECTIVES, forEach, extend,
-    UrlRouter, ViewService, StateRegistry, UrlMatcherFactory, Ng2ViewDeclaration, Ng2ViewConfig, PathNode
+    UIView, UIRouter, TransitionService, StateService, Globals, UIROUTER_DIRECTIVES, forEach,
+    UrlRouter, ViewService, StateRegistry, UrlMatcherFactory, Ng2ViewDeclaration, Ng2ViewConfig, PathNode,
+    ParentUIViewInject, ViewConfig
 } from "ui-router-ng2";
-import {Ng1ViewConfig} from "angular-ui-router";
 
 export let upgradeModule = angular.module('ui.router.upgrade', ['ui.router']);
+
+declare var Reflect: any;
 
 @Component({
   selector: 'ui-view-ng-upgrade',
@@ -22,7 +27,7 @@ export let upgradeModule = angular.module('ui.router.upgrade', ['ui.router']);
  * up the DOM and grabbing the .data('$uiView') that the ng1 ui-view directive provided.
  */
 class UIViewNgUpgrade {
-  constructor(ref: ElementRef, @Inject(UIView.PARENT_INJECT) parent, registry: StateRegistry) {
+  constructor(ref: ElementRef, @Inject(UIView.PARENT_INJECT) parent: ParentUIViewInject, registry: StateRegistry) {
     // From the ui-view-ng-upgrade component's element ref, walk up the DOM two elements...
     // There will first be one ng1 ui-view which hosts this element, and then that ui-view's
     // parent element.  This element has access to the proper "parent viewcontext"
@@ -73,14 +78,14 @@ export let uiRouterNgUpgrade = {
 /**
  * Predicate that returns true if an object is a NG2 Component Class
  */
-export function isNg2ComponentClass(def) {
+export function isNg2ComponentClass(def: any) {
   if (typeof def !== 'function') return false;
 
   if (!Reflect || typeof Reflect['metadata'] !== 'function')
     throw new Error("Missing runtime dependency: 'reflect-metadata'");
 
   return Reflect['getMetadata']('annotations', def)
-      .find(x => x instanceof ComponentMetadata);
+      .find((x: any) => x instanceof ComponentMetadata);
 }
 
 /**
@@ -90,11 +95,11 @@ export function isNg2ComponentClass(def) {
  * In place of the template provider, it simply puts a <ui-view-ng-upgrade/> component, which is the
  * downgraded Ng2 Component that provides a ng1-to-ng2 boundary in the DOM.
  */
-upgradeModule.config([ '$stateProvider', $stateProvider => {
-  $stateProvider.decorator('views', function(state /*: Ng1StateDeclaration */, parentFn: Function) {
+upgradeModule.config([ '$stateProvider', ($stateProvider: StateProvider) => {
+  $stateProvider.decorator('views', function(state: State, parentFn: Function) {
     let views = parentFn(state);
 
-    forEach(views, (viewDecl /*: Ng1ViewDeclaration */, viewName: string) => {
+    forEach(views, (viewDecl: any, viewName: string) => {
       if (isNg2ComponentClass(viewDecl.component)) {
         // Update the view config.
         // Override default ng1 `component:` behavior (of defining a templateProvider)
@@ -108,12 +113,12 @@ upgradeModule.config([ '$stateProvider', $stateProvider => {
   })
 }]);
 
-upgradeModule.run([ '$view', $view => {
+upgradeModule.run([ '$view', ($view: ViewService) => {
   $view.viewConfigFactory('ng2', (path: PathNode[], config: Ng2ViewDeclaration) => new Ng2ViewConfig(path, config));
 
-  $view.viewConfigFactory('ng1-to-ng2', (node: PathNode, config: Ng2ViewDeclaration) => {
-    var ng1ViewConfig = new Ng1ViewConfig(<any> node, <any> Object.assign({}, config, { $type: 'ng1'}));
-    var ng2ViewConfig = new Ng2ViewConfig(<any> node, <any> Object.assign({}, config, { $type: 'ng2'}));
+  $view.viewConfigFactory('ng1-to-ng2', (path: PathNode[], config: Ng2ViewDeclaration) => {
+    var ng1ViewConfig: ViewConfig = <any> new Ng1ViewConfig(<any> path, <any> Object.assign({}, config, { $type: 'ng1'}));
+    var ng2ViewConfig: ViewConfig = <any> new Ng2ViewConfig(<any> path, <any> Object.assign({}, config, { $type: 'ng2'}));
 
     return [ ng2ViewConfig, ng1ViewConfig ];
   });

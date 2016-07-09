@@ -1,7 +1,7 @@
 <a name="1.0.7"></a>
-# 1.0.7 (2016-06-30)
+# 1.0.7 (2016-07-09)
 
-update for ng2 rc.3 and ui-router 1.0.0-beta.1
+update for ng2 rc.4 and ui-router 1.0.0-beta.1
 
 <a name="1.0.6"></a>
 # 1.0.6 (2016-05-12)
