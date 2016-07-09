@@ -17,7 +17,7 @@ Add "ui-router-ng1-to-ng2" to your package.json
 ```
 dependencies: {
   ...
-  "ui-router-ng1-to-ng2": "^1.0.6"
+  "ui-router-ng1-to-ng2": "^1.0.7"
 }
 ```
 
@@ -25,7 +25,7 @@ dependencies: {
 
 ```
 // Create an upgrade adapter instance
-import {UpgradeAdapter} from 'angular2/upgrade';
+import {UpgradeAdapter} from '@angular/upgrade';
 export const upgradeAdapter = new UpgradeAdapter();
 
 // Supply ui-router-ng1-to-ng2 with the upgrade adapter
