@@ -1,5 +1,5 @@
 import * as angular from "angular";
-import {provide, ElementRef, Component, Inject, ComponentMetadata} from "@angular/core";
+import {provide, ElementRef, Component, Input, Inject, ComponentMetadata} from "@angular/core";
 import {UpgradeAdapter} from "@angular/upgrade";
 
 import { Ng1ViewConfig, StateProvider, State } from "angular-ui-router";
@@ -16,7 +16,7 @@ declare var Reflect: any;
 
 @Component({
   selector: 'ui-view-ng-upgrade',
-  template: `<ui-view></ui-view>`,
+  template: `<ui-view [name]="name"></ui-view>`,
   directives: [UIROUTER_DIRECTIVES],
   viewProviders: [ provide(UIView.PARENT_INJECT, {useValue: { } }) ],
 })
@@ -27,6 +27,8 @@ declare var Reflect: any;
  * up the DOM and grabbing the .data('$uiView') that the ng1 ui-view directive provided.
  */
 class UIViewNgUpgrade {
+  @Input() private name: string;
+
   constructor(ref: ElementRef, @Inject(UIView.PARENT_INJECT) parent: ParentUIViewInject, registry: StateRegistry) {
     // From the ui-view-ng-upgrade component's element ref, walk up the DOM two elements...
     // There will first be one ng1 ui-view which hosts this element, and then that ui-view's
@@ -106,7 +108,7 @@ upgradeModule.config([ '$stateProvider', ($stateProvider: StateProvider) => {
         // with a <ui-view-ng-upgrade> adapter directive template
         viewDecl.$type = "ng1-to-ng2";
         viewDecl.templateProvider = null;
-        viewDecl.template = "<ui-view-ng-upgrade></ui-view-ng-upgrade>";
+        viewDecl.template = "<ui-view-ng-upgrade name='" + viewDecl.$uiViewName + "'></ui-view-ng-upgrade>";
       }
     });
     return views;
