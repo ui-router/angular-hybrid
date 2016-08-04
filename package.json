@@ -3,8 +3,8 @@
   "version": "1.0.10",
   "scripts": {
     "all": "npm run clean && npm run build && npm run bundle",
-    "build": "npm run clean && npm run tsc",
     "clean": "rm -rf ng1-to-ng2.d.ts ng1-to-ng2*.js ng1-to-ng2*.js.map build",
+    "build": "npm run clean && npm run tsc",
     "bundle": "webpack",
     "tsc": "tsc",
     "tsc:w": "tsc -w"

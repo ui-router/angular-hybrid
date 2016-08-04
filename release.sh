@@ -15,7 +15,6 @@ fi
 
 git checkout -b release && \
 npm run all && \
-git commit -m "release($VER)" && \
 git tag $VER && \
 echo "tag $VER created. Run the following commands:" && echo && echo && \
 echo "git push origin $VER && npm publish" && \
