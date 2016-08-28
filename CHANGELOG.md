@@ -1,3 +1,12 @@
+<a name="1.0.11"></a>
+# 1.0.11 (2016-09-09)
+
+Support Angular 2 NgModule (Angular 2.0.0-rc.5/UI-Router 1.0.0-beta.2+)
+
+NOTE: ng1-to-ng2 doesn't support ng2 rc.6 because of:
+https://github.com/ui-router/ng1-to-ng2/issues/13
+https://github.com/angular/angular/issues/11280
+
 <a name="1.0.8"></a>
 # 1.0.8 (2016-07-11)
 
