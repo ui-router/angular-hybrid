@@ -1,17 +1,15 @@
 import * as angular from "angular";
 import {Ng1ViewConfig, $InjectorLike} from "angular-ui-router";
 
-import {ElementRef, Component, Input, Inject, ComponentMetadata, NgModule} from "@angular/core";
+import {ElementRef, Component, Input, Inject, NgModule} from "@angular/core";
 import {UpgradeAdapter} from "@angular/upgrade";
 
 import {
-    UIRouter, ViewService, StateRegistry, StateProvider,
-    UIView, Ng2ViewDeclaration, Ng2ViewConfig, State, PathNode, Resolvable,
-    ParentUIViewInject, ViewConfig, forEach, UIRouterRx,
-    NG2_INJECTOR_TOKEN, ngModuleResolvablesBuilder, UIRouterLibraryModule
+  UIRouter, ViewService, StateRegistry, StateProvider,
+  UIView, Ng2ViewDeclaration, Ng2ViewConfig, State, PathNode, Resolvable,
+  ParentUIViewInject, ViewConfig, forEach, UIRouterRx,
+  NG2_INJECTOR_TOKEN, ngModuleResolvablesBuilder, UIRouterLibraryModule
 } from "ui-router-ng2";
-
-declare var Reflect: any;
 
 /**
  * Create a ng1 module for the ng1 half of the hybrid application to depend on.
@@ -24,8 +22,8 @@ export let upgradeModule = angular.module('ui.router.upgrade', ['ui.router']);
 /**
  * UIViewNgUpgrade is a component bridge from ng1 ui-view to ng2 ui-view
  *
- * When a ui-router for ng1 is registering a state it checks if a view's 
- * `component:` is an ng2 Component class. If so, it creates a special ng1 template 
+ * When a ui-router for ng1 is registering a state it checks if a view's
+ * `component:` is an ng2 Component class. If so, it creates a special ng1 template
  * which references this component, i.e., <ui-view-ng-upgrade></ui-view-ng-upgrade>
  *
  * See that code by searching ng1-to-ng2 source for: "$stateProvider.decorator"
@@ -33,19 +31,19 @@ export let upgradeModule = angular.module('ui.router.upgrade', ['ui.router']);
  * ---
  *
  * ng1-to-ng2 component bridge process:
- * 
+ *
  * 1)
  * When an ng1 template creates a ui-view which is targeted by a ng2 Component,
- * 
+ *
  * ```
  * <a ui-sref="foo">Go to foo</a>
  * <div ui-view> <!-- ui-view created in ng1 template -->
  * </div> <!-- targeted with { component: Ng2RoutedComponent } -->
  * ```
- * 
- * the state decorator spits out a custom template.  That template loads this 
+ *
+ * the state decorator spits out a custom template.  That template loads this
  * ng2 Component adapter as a downgraded-to-ng1 directive.
- * 
+ *
  * ```
  * <a ui-sref="foo">Go to foo</a>
  * <div ui-view> <!-- decorated template references the downgraded component -->
@@ -55,7 +53,7 @@ export let upgradeModule = angular.module('ui.router.upgrade', ['ui.router']);
  * ```
  *
  * This downgraded ng2 Component then creates a child UIView (ng2 component)
- * 
+ *
  * ```
  * <a ui-sref="foo">Go to foo</a>
  * <div ui-view> <!-- custom template references the downgraded component -->
@@ -65,9 +63,9 @@ export let upgradeModule = angular.module('ui.router.upgrade', ['ui.router']);
  *   </ui-view-ng-upgrade>
  * </div>
  * ```
- * 
+ *
  * which in turn is filled with the routed ng2 component.
- * 
+ *
  * ```
  * <a ui-sref="foo">Go to foo</a>
  * <div ui-view> <!-- ng1 ui-view -->
@@ -237,11 +235,8 @@ function applyHybridAdapter(upgradeAdapter: UpgradeAdapter) {
 export function isNg2ComponentClass(def: any) {
   if (typeof def !== 'function') return false;
 
-  if (!Reflect || typeof Reflect['metadata'] !== 'function')
-    throw new Error("Missing runtime dependency: 'reflect-metadata'");
-
   return Reflect['getMetadata']('annotations', def)
-      .find((x: any) => x instanceof ComponentMetadata);
+      .find((x: any) => x instanceof Component);
 }
 
 
