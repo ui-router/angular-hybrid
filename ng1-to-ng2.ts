@@ -1,14 +1,14 @@
 import * as angular from "angular";
-import {Ng1ViewConfig, $InjectorLike} from "angular-ui-router";
+import {Ng1ViewConfig, $InjectorLike, StateProvider, State} from "angular-ui-router";
 
 import {ElementRef, Component, Input, Inject, NgModule} from "@angular/core";
 import {UpgradeAdapter} from "@angular/upgrade";
 
 import {
-  UIRouter, ViewService, StateRegistry, StateProvider,
-  UIView, Ng2ViewDeclaration, Ng2ViewConfig, State, PathNode, Resolvable,
-  ParentUIViewInject, ViewConfig, forEach, UIRouterRx,
-  NG2_INJECTOR_TOKEN, ngModuleResolvablesBuilder, UIRouterLibraryModule
+    UIRouter, ViewService, StateRegistry,
+    UIView, Ng2ViewDeclaration, Ng2ViewConfig, PathNode, Resolvable,
+    ParentUIViewInject, ViewConfig, forEach, UIRouterRx,
+    NATIVE_INJECTOR_TOKEN, _UIROUTER_SERVICE_PROVIDERS, UIRouterModule, UIROUTER_ROOT_MODULE
 } from "ui-router-ng2";
 
 /**
@@ -137,8 +137,12 @@ export class UIViewNgUpgrade {
  * This NgModule should be added to the root module of the hybrid app.
  */
 @NgModule({
-  imports: [UIRouterLibraryModule],
+  imports: [UIRouterModule],
   declarations: [UIViewNgUpgrade],
+  providers: [
+      ..._UIROUTER_SERVICE_PROVIDERS,
+    { provide: UIROUTER_ROOT_MODULE, useValue: {}, multi: true }
+  ],
   exports: [UIViewNgUpgrade]
 }) export class Ng1ToNg2Module {}
 
@@ -171,11 +175,17 @@ function applyHybridAdapter(upgradeAdapter: UpgradeAdapter) {
     let $uiRouter: UIRouter = ng1Injector.get('$uiRouter');
     new UIRouterRx($uiRouter);
 
-    // Expose the root ng2 Injector as a Resolvable (on the root state).
-    // This mirrors what ui-router-ng2 does in its initialization code
-    const getNg2Injector = () =>
-        ng1Injector.get('ng2.Injector');
-    let ng2InjectorResolvable = new Resolvable(NG2_INJECTOR_TOKEN, getNg2Injector, [], { when: "EAGER" });
+    // Expose a merged ng1/ng2 injector as a Resolvable (on the root state).
+    // This mimics how ui-router-ng2 exposes the root ng2 Injector, but
+    // it retrieves from ng1 injector first, then ng2 injector if the token isn't found.
+    const mergedInjector = {
+      get: function(token: any, ng2NotFoundValue?: any) {
+        let ng2Injector = ng1Injector.get('ng2.Injector');
+        return (ng1Injector.has(token) && ng1Injector.get(token)) || ng2Injector.get(token, ng2NotFoundValue)
+      }
+    };
+
+    let ng2InjectorResolvable = Resolvable.fromData(NATIVE_INJECTOR_TOKEN, mergedInjector);
     $uiRouter.stateRegistry.root().resolvables.push(ng2InjectorResolvable);
   }]);
 
@@ -209,8 +219,6 @@ function applyHybridAdapter(upgradeAdapter: UpgradeAdapter) {
       });
       return views;
     });
-
-    $stateProvider.decorator('resolvables', ngModuleResolvablesBuilder);
   }]);
 
 

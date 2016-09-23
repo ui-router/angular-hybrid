@@ -3,6 +3,7 @@
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
+    "lib": ["es6", "dom"],
     "sourceMap": true,
     "pretty": true,
     "declaration": true,
@@ -12,17 +13,7 @@
     "removeComments": false,
     "noImplicitAny": false,
     "suppressExcessPropertyErrors": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "types": [
-      "core-js",
-      "node",
-      "jquery",
-      "angular"
-    ]
+    "suppressImplicitAnyIndexErrors": true
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "compileOnSave": false,
-  "buildOnSave": false
+  "exclude": [ "node_modules" ]
 }
