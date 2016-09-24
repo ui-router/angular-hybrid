@@ -3,7 +3,7 @@
 ### Hybrid Angular 1/Angular 2 UI-Router apps
 
 This module provides [ngUpgrade](https://angular.io/docs/ts/latest/guide/upgrade.html) integration
-with UI-Router, enabling routing to both Angular 1 and Angular 1 Components (and/or templates).
+with UI-Router, enabling routing to both Angular 1 and Angular 2 Components (and/or templates).
 
 Your app will be hosted on Angular 1 while you incrementally upgrade it to Angular 2.
 With `ui-router-ng1-to-ng2`, you can use either an Angular 1 or Angular 2 component as a view in your state definitions.
