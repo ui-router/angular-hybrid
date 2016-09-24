@@ -9,7 +9,7 @@ Your app will be hosted on Angular 1 while you incrementally upgrade it to Angul
 With `ui-router-ng1-to-ng2`, you can use either an Angular 1 or Angular 2 component as a view in your state definitions.
 
 ```js
-import { Ng2AboutComponent } from "./about.ng2.component";
+import { Ng2AboutComponentClass } from "./about.ng2.component";
 
 /// ...
 
