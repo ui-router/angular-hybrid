@@ -42,6 +42,7 @@ See the [hybrid sample app](https://github.com/ui-router/sample-app-ng1-to-ng2) 
 ### Getting started
 
 Add `@angular`, `ui-router-ng2`, and `ui-router-ng1-to-ng2` to your package.json
+in addition to the existing `angular-ui-router`.
 
 ```
 dependencies: {
@@ -53,6 +54,7 @@ dependencies: {
   "@angular/platform-browser-dynamic": "~2.0.1",
   "@angular/upgrade": "~2.0.1",
    ...
+  "angular-ui-router": "^1.0.0-beta.3",
   "ui-router-ng2": "^1.0.0-beta.3",
   "ui-router-ng1-to-ng2": "^1.0.12",
 }
