@@ -140,10 +140,10 @@ export class UIViewNgUpgrade {
   imports: [UIRouterModule],
   declarations: [UIViewNgUpgrade],
   providers: [
-      ..._UIROUTER_SERVICE_PROVIDERS,
+    ..._UIROUTER_SERVICE_PROVIDERS,
     { provide: UIROUTER_ROOT_MODULE, useValue: {}, multi: true }
   ],
-  exports: [UIViewNgUpgrade]
+  exports: [UIViewNgUpgrade, UIRouterModule]
 }) export class Ng1ToNg2Module {}
 
 /**
