@@ -140,8 +140,17 @@ export class UIViewNgUpgrade {
   imports: [UIRouterModule],
   declarations: [UIViewNgUpgrade],
   providers: [
+    {
+      provide: UIView.PARENT_INJECT,
+      deps: [StateRegistry],
+      useFactory: (r: StateRegistry) => {
+        return { fqn: null, context: r.root() } as ParentUIViewInject
+      },
+    },
+
+    { provide: UIROUTER_ROOT_MODULE, useValue: {}, multi: true },
+
     ..._UIROUTER_SERVICE_PROVIDERS,
-    { provide: UIROUTER_ROOT_MODULE, useValue: {}, multi: true }
   ],
   exports: [UIViewNgUpgrade, UIRouterModule]
 }) export class Ng1ToNg2Module {}
