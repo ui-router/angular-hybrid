@@ -1,14 +1,15 @@
 import * as angular from "angular";
 import {Ng1ViewConfig, $InjectorLike, StateProvider, State} from "angular-ui-router";
 
-import {ElementRef, Component, Input, Inject, NgModule} from "@angular/core";
+import {ElementRef, Component, Input, Inject, NgModule, Injector} from "@angular/core";
 import {UpgradeAdapter} from "@angular/upgrade";
 
 import {
     UIRouter, ViewService, StateRegistry,
     UIView, Ng2ViewDeclaration, Ng2ViewConfig, PathNode, Resolvable,
     ParentUIViewInject, ViewConfig, forEach, UIRouterRx,
-    NATIVE_INJECTOR_TOKEN, _UIROUTER_SERVICE_PROVIDERS, UIRouterModule, UIROUTER_ROOT_MODULE
+    NATIVE_INJECTOR_TOKEN, _UIROUTER_SERVICE_PROVIDERS, UIRouterModule, UIROUTER_ROOT_MODULE, UIROUTER_MODULE_TOKEN,
+    applyModuleConfig, StatesModule
 } from "ui-router-ng2";
 
 /**
@@ -133,6 +134,13 @@ export class UIViewNgUpgrade {
  * Ng2 @NgModule and bootstrap code
  **********************************/
 
+// Register the ng1 DI '$uiRouter' object as an ng2 Provider.
+function uiRouterUpgradeFactory(router: UIRouter, injector: Injector) {
+  let modules: StatesModule[] = injector.get(UIROUTER_MODULE_TOKEN, []);
+  modules.forEach(module => applyModuleConfig(router, injector, module));
+  return router;
+}
+
 /**
  * This NgModule should be added to the root module of the hybrid app.
  */
@@ -140,6 +148,13 @@ export class UIViewNgUpgrade {
   imports: [UIRouterModule],
   declarations: [UIViewNgUpgrade],
   providers: [
+    // ui-router-ng2 code will use the ng1 $uiRouter instance instead of creating its own.
+    { provide: UIRouter, useFactory: uiRouterUpgradeFactory, deps: ['$uiRouter', Injector] },
+
+    { provide: UIROUTER_ROOT_MODULE, useValue: {}, multi: true },
+
+    ..._UIROUTER_SERVICE_PROVIDERS,
+
     {
       provide: UIView.PARENT_INJECT,
       deps: [StateRegistry],
@@ -147,10 +162,6 @@ export class UIViewNgUpgrade {
         return { fqn: null, context: r.root() } as ParentUIViewInject
       },
     },
-
-    { provide: UIROUTER_ROOT_MODULE, useValue: {}, multi: true },
-
-    ..._UIROUTER_SERVICE_PROVIDERS,
   ],
   exports: [UIViewNgUpgrade, UIRouterModule]
 }) export class Ng1ToNg2Module {}
@@ -170,9 +181,8 @@ export class UIViewNgUpgrade {
  *   allows both ng1 and ng2 ui-views to activate
  */
 function applyHybridAdapter(upgradeAdapter: UpgradeAdapter) {
-  // Register the ng1 DI '$uiRouter' instance as an ng2 Provider.
-  // ui-router-ng2 code will use the ng1 UIRouter instance instead of creating its own instance.
-  upgradeAdapter.upgradeNg1Provider('$uiRouter', { asToken: UIRouter });
+  // Expose the ng1 DI '$uiRouter' instance as an ng2 Provider.
+  upgradeAdapter.upgradeNg1Provider('$uiRouter');
 
   // Downgrade the UIViewNgUpgrade ng2 Component to an ng1 directive.
   // The directive is used in a (generated) view template by the (host) ng1 ui-router,
