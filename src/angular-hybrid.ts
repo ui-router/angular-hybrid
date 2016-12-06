@@ -189,7 +189,10 @@ function applyHybridAdapter(ng2Injector: Injector) {
   // Downgrade the UIViewNgUpgrade ng2 Component to an ng1 directive.
   // The directive is used in a (generated) view template by the (host) ng1 ui-router,
   // whenever it finds a view configured with a `component: <Ng2ComponentClass>`
-  upgradeModule.directive("uiViewNgUpgrade", <any> downgradeComponent({ component: UIViewNgUpgrade }));
+  upgradeModule.directive("uiViewNgUpgrade", <any> downgradeComponent({ 
+    component: UIViewNgUpgrade,
+    inputs: ['name']
+   }));
 
   upgradeModule.run(['$injector', (ng1Injector: $InjectorLike) => {
     let $uiRouter: UIRouter = ng1Injector.get('$uiRouter');
