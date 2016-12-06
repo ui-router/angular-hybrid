@@ -16,9 +16,7 @@
   "peerDependencies": {
     "@angular/core": "^4.0.0",
     "@angular/upgrade": "^4.0.0",
-    "angular": "^1.5.0",
-    "rxjs": "^5.0.0",
-    "zone.js": "^0.8.0"
+    "angular": "^1.5.0"
   },
   "devDependencies": {
     "@angular/common": "^4.0.0",
