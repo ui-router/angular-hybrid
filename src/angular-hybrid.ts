@@ -4,6 +4,8 @@ import { $InjectorLike, Ng1ViewConfig, StateObject, StateProvider } from '@uirou
 import { Component, ElementRef, Inject, Injector, Input, NgModule } from '@angular/core';
 import { downgradeComponent, UpgradeModule } from '@angular/upgrade/static';
 
+import {} from '@angular/upgrade';
+
 import {
   _UIROUTER_SERVICE_PROVIDERS, applyModuleConfig, forEach, NATIVE_INJECTOR_TOKEN, ng2LazyLoadBuilder, Ng2ViewConfig,
   Ng2ViewDeclaration, ParentUIViewInject, PathNode, Resolvable, StateRegistry, StatesModule, UIRouter,
@@ -171,8 +173,34 @@ function uiRouterUpgradeFactory(router: UIRouter, injector: Injector) {
   exports: [UIViewNgUpgrade, UIRouterModule]
 }) export class Ng1ToNg2Module {}
 
+// Downgrade the UIViewNgUpgrade ng2 Component to an ng1 directive.
+// The directive is used in a (generated) view template by the (host) ng1 ui-router,
+// whenever it finds a view configured with a `component: <Ng2ComponentClass>`
+upgradeModule.directive("uiViewNgUpgrade", <any> downgradeComponent({ 
+  component: UIViewNgUpgrade,
+  inputs: ['name']
+  }));
+
+upgradeModule.run(['$injector', (ng1Injector: $InjectorLike) => {
+  let $uiRouter: UIRouter = ng1Injector.get('$uiRouter');
+  new UIRouterRx($uiRouter);
+
+  // Expose a merged ng1/ng2 injector as a Resolvable (on the root state).
+  // This mimics how ui-router-ng2 exposes the root ng2 Injector, but
+  // it retrieves from ng1 injector first, then ng2 injector if the token isn't found.
+  const mergedInjector = {
+    get: function(token: any, ng2NotFoundValue?: any) {
+      let ng2Injector = ng1Injector.get('$$angularInjector');
+      return (ng1Injector.has(token) && ng1Injector.get(token)) || ng2Injector.get(token, ng2NotFoundValue)
+    }
+  };
+
+  let ng2InjectorResolvable = Resolvable.fromData(NATIVE_INJECTOR_TOKEN, mergedInjector);
+  $uiRouter.stateRegistry.root().resolvables.push(ng2InjectorResolvable);
+}]);
+
 /**
- * This function applies the ng1-to-ng2 hybrid adapter
+ * Adds a state decorator which modifies a state's view configuration as it's being registered.
  *
  * ---
  *
@@ -270,6 +298,49 @@ function applyHybridAdapter(ng2Injector: Injector) {
   }])
 }
 
+/**
+ * Define a stateProvider `views` builder decorator.
+ * The decorator first applies the standard views builder function.
+ * Then it finds any view components which are **actually** a Ng2 Component Class.
+ * It overwrites that view's config with a ng1-to-ng2 hybrid config.
+ *
+ * In place of the template provider, it simply puts a <ui-view-ng-upgrade/> component
+ * which that provides a ng1 -> ng2 boundary in the component tree.
+ */
+upgradeModule.config(['$stateProvider', ($stateProvider: StateProvider) => {
+  $stateProvider.decorator('views', function(state: State, parentFn: Function) {
+    let views = parentFn(state);
+
+    forEach(views, (viewDecl: any, viewName: string) => {
+      if (viewDecl.$type === 'ng1-to-ng2' || isNg2ComponentClass(viewDecl.component)) {
+        // Update the view config.
+        // Override default ng1 `component:` behavior (of defining a templateProvider)
+        // with a <ui-view-ng-upgrade> adapter directive template
+        viewDecl.$type = "ng1-to-ng2";
+        viewDecl.templateProvider = null;
+        viewDecl.template = `<ui-view-ng-upgrade name='${viewDecl.$uiViewName}'></ui-view-ng-upgrade>`;
+      }
+    });
+    return views;
+  });
+}]);
+
+// UI-Router ViewConfig factories take a view declaration object from a state.views: { foo: <ViewDeclaration> }
+// and return a runtime config object (a ViewConfig)
+upgradeModule.run(['$view', ($view: ViewService) => {
+  // Register a ViewConfig factory for views of type `ng2`
+  $view.viewConfigFactory('ng2', (path: PathNode[], config: Ng2ViewDeclaration) => new Ng2ViewConfig(path, config));
+
+  // Register a ViewConfig factory for views of type `ng1-to-ng2`.
+  // Returns both an ng1 config and an ng2 config allowing either ng1 or ng2 ui-view components to be targeted.
+  $view.viewConfigFactory('ng1-to-ng2', (path: PathNode[], config: Ng2ViewDeclaration) => {
+    var ng1ViewConfig: ViewConfig = <any> new Ng1ViewConfig(<any> path, <any> Object.assign({}, config, { $type: 'ng1'}));
+    var ng2ViewConfig: ViewConfig = <any> new Ng2ViewConfig(<any> path, <any> Object.assign({}, config, { $type: 'ng2'}));
+
+    return [ ng2ViewConfig, ng1ViewConfig ];
+  });
+}])
+
 /** Predicate fn that returns true if an object is a NG2 Component Class */
 export function isNg2ComponentClass(def: any) {
   if (typeof def !== 'function') return false;
@@ -277,13 +348,3 @@ export function isNg2ComponentClass(def: any) {
   return Reflect['getMetadata']('annotations', def)
       .find((x: any) => x instanceof Component);
 }
-
-/**
- * Hybrid apps should import this and call `uiRouterNgUpgrade.setUpgradeAdapter(adapter)`.
- * This will register the ui-router hybrid adapter code.
- */
-export let uiRouterNgUpgrade = {
-  setNg2Injector: function(injector: Injector) {
-    applyHybridAdapter(injector);
-  }
-};
