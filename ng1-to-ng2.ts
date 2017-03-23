@@ -1,5 +1,5 @@
 import * as angular from "angular";
-import {Ng1ViewConfig, $InjectorLike, StateProvider, State} from "angular-ui-router";
+import {Ng1ViewConfig, $InjectorLike, StateProvider, StateObject} from "angular-ui-router";
 
 import {ElementRef, Component, Input, Inject, NgModule, Injector} from "@angular/core";
 import {UpgradeAdapter} from "@angular/upgrade";
@@ -223,7 +223,7 @@ function applyHybridAdapter(upgradeAdapter: UpgradeAdapter) {
    * which that provides a ng1 -> ng2 boundary in the component tree.
    */
   upgradeModule.config(['$stateProvider', ($stateProvider: StateProvider) => {
-    $stateProvider.decorator('views', function(state: State, parentFn: Function) {
+    $stateProvider.decorator('views', function(state: StateObject, parentFn: Function) {
       let views = parentFn(state);
 
       forEach(views, (viewDecl: any, viewName: string) => {
