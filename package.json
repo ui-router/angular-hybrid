@@ -29,7 +29,7 @@
     "@types/jquery": "^1.10.31",
     "angular": "~1.6.1",
     "angular-ui-router": "angular-ui/ui-router#1.0.0-rc.1-artifacts",
-    "awesome-typescript-loader": "^2.2.4",
+    "awesome-typescript-loader": "^3.0.0",
     "rxjs": "^5.0.0",
     "systemjs": "0.19.25",
     "typescript": "^2.1.5",

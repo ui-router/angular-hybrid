@@ -1,16 +1,15 @@
-import * as angular from "angular";
-import {Ng1ViewConfig, $InjectorLike, StateProvider, StateObject} from "angular-ui-router";
+import * as angular from 'angular';
 
-import {ElementRef, Component, Input, Inject, NgModule, Injector} from "@angular/core";
-import {UpgradeAdapter} from "@angular/upgrade";
+import { $InjectorLike, Ng1ViewConfig, StateObject, StateProvider } from 'angular-ui-router';
 
 import {
-    UIRouter, ViewService, StateRegistry,
-    UIView, Ng2ViewDeclaration, Ng2ViewConfig, PathNode, Resolvable,
-    ParentUIViewInject, ViewConfig, forEach,
-    NATIVE_INJECTOR_TOKEN, _UIROUTER_SERVICE_PROVIDERS, UIRouterModule, UIROUTER_ROOT_MODULE, UIROUTER_MODULE_TOKEN,
-    applyModuleConfig, StatesModule
-} from "ui-router-ng2";
+  _UIROUTER_SERVICE_PROVIDERS, applyModuleConfig, forEach, NATIVE_INJECTOR_TOKEN, Ng2ViewConfig, Ng2ViewDeclaration,
+  ParentUIViewInject, PathNode, Resolvable, StateRegistry, StatesModule, UIRouter, UIROUTER_MODULE_TOKEN,
+  UIROUTER_ROOT_MODULE, UIRouterModule, UIView, ViewConfig, ViewService
+} from 'ui-router-ng2';
+
+import { Component, ElementRef, Inject, Injector, Input, NgModule } from '@angular/core';
+import { UpgradeAdapter } from '@angular/upgrade';
 
 /**
  * Create a ng1 module for the ng1 half of the hybrid application to depend on.
