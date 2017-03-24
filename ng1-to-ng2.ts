@@ -5,8 +5,10 @@ import { $InjectorLike, Ng1ViewConfig, StateObject, StateProvider } from 'angula
 import {
   _UIROUTER_SERVICE_PROVIDERS, applyModuleConfig, forEach, NATIVE_INJECTOR_TOKEN, Ng2ViewConfig, Ng2ViewDeclaration,
   ParentUIViewInject, PathNode, Resolvable, StateRegistry, StatesModule, UIRouter, UIROUTER_MODULE_TOKEN,
-  UIROUTER_ROOT_MODULE, UIRouterModule, UIView, ViewConfig, ViewService
+  UIROUTER_ROOT_MODULE, UIRouterModule, UIView, ViewConfig, ViewService, ng2LazyLoadBuilder
 } from 'ui-router-ng2';
+
+import { UIRouterRx } from "ui-router-rx";
 
 import { Component, ElementRef, Inject, Injector, Input, NgModule } from '@angular/core';
 import { UpgradeAdapter } from '@angular/upgrade';
@@ -189,7 +191,6 @@ function applyHybridAdapter(upgradeAdapter: UpgradeAdapter) {
   // whenever it finds a view configured with a `component: <Ng2ComponentClass>`
   upgradeModule.directive("uiViewNgUpgrade", <any> upgradeAdapter.downgradeNg2Component(UIViewNgUpgrade));
 
-
   upgradeModule.run(['$injector', (ng1Injector: $InjectorLike) => {
     let $uiRouter: UIRouter = ng1Injector.get('$uiRouter');
 
@@ -208,21 +209,32 @@ function applyHybridAdapter(upgradeAdapter: UpgradeAdapter) {
   }]);
 
 
-  /**
-   * Adds a state decorator which modifies a state's view configuration as it's being registered.
-   *
-   * ---
-   *
-   * Define a stateProvider `views` builder decorator.
-   * The decorator first applies the standard views builder function.
-   * Then it finds any view components which are **actually** a Ng2 Component Class.
-   * It overwrites that view's config with a ng1-to-ng2 hybrid config.
-   *
-   * In place of the template provider, it simply puts a <ui-view-ng-upgrade/> component
-   * which that provides a ng1 -> ng2 boundary in the component tree.
-   */
   upgradeModule.config(['$stateProvider', ($stateProvider: StateProvider) => {
-    $stateProvider.decorator('views', function(state: StateObject, parentFn: Function) {
+  }]);
+
+  upgradeModule.config(['$uiRouterProvider', ($uiRouterProvider: UIRouter) => {
+    let registry = $uiRouterProvider.stateRegistry;
+
+    /** Applies the `UIRouterRx` plugin for observable states/params */
+    $uiRouterProvider.plugin(UIRouterRx);
+
+    /** Adds the ng2 `loadChildren` lazy loading decorator */
+    registry.decorator('lazyLoad', ng2LazyLoadBuilder);
+
+    /**
+     * Adds a state decorator which modifies a state's view configuration as it's being registered.
+     *
+     * ---
+     *
+     * Define a stateProvider `views` builder decorator.
+     * The decorator first applies the standard views builder function.
+     * Then it finds any view components which are **actually** a Ng2 Component Class.
+     * It overwrites that view's config with a ng1-to-ng2 hybrid config.
+     *
+     * In place of the template provider, it simply puts a <ui-view-ng-upgrade/> component
+     * which that provides a ng1 -> ng2 boundary in the component tree.
+     */
+    registry.decorator('views', function(state: StateObject, parentFn: Function) {
       let views = parentFn(state);
 
       forEach(views, (viewDecl: any, viewName: string) => {
@@ -238,7 +250,6 @@ function applyHybridAdapter(upgradeAdapter: UpgradeAdapter) {
       return views;
     });
   }]);
-
 
   // UI-Router ViewConfig factories take a view declaration object from a state.views: { foo: <ViewDeclaration> }
   // and return a runtime config object (a ViewConfig)

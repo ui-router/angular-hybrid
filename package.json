@@ -8,7 +8,7 @@
     "bundle": "webpack",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "prepublish": "npm run build"
+    "prepublish": "npm run all"
   },
   "license": "MIT",
   "peerDependencies": {
