@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib",
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
@@ -15,5 +17,5 @@
     "suppressExcessPropertyErrors": true,
     "suppressImplicitAnyIndexErrors": true
   },
-  "exclude": [ "node_modules" ]
+  "files": [ "src/index.ts" ]
 }

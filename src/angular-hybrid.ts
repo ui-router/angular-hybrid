@@ -1,14 +1,14 @@
 import * as angular from 'angular';
 
-import { $InjectorLike, Ng1ViewConfig, StateObject, StateProvider } from 'angular-ui-router';
+import { $InjectorLike, Ng1ViewConfig, StateObject, StateProvider } from '@uirouter/angularjs';
 
 import {
   _UIROUTER_SERVICE_PROVIDERS, applyModuleConfig, forEach, NATIVE_INJECTOR_TOKEN, Ng2ViewConfig, Ng2ViewDeclaration,
   ParentUIViewInject, PathNode, Resolvable, StateRegistry, StatesModule, UIRouter, UIROUTER_MODULE_TOKEN,
   UIROUTER_ROOT_MODULE, UIRouterModule, UIView, ViewConfig, ViewService, ng2LazyLoadBuilder
-} from 'ui-router-ng2';
+} from '@uirouter/angular';
 
-import { UIRouterRx } from "ui-router-rx";
+import { UIRouterRx } from "@uirouter/rx";
 
 import { Component, ElementRef, Inject, Injector, Input, NgModule } from '@angular/core';
 import { UpgradeAdapter } from '@angular/upgrade';
@@ -62,7 +62,7 @@ export let ng1InitModule = angular.module('ui.router.init');
  * <div ui-view> <!-- custom template references the downgraded component -->
  *   <ui-view-ng-upgrade> <!-- ng2 component adapter downgraded to ng1-->
  *     <ui-view> <!-- pure ng2 ui-view -->
-*      </ui-view>
+ *      </ui-view>
  *   </ui-view-ng-upgrade>
  * </div>
  * ```

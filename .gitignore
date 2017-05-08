@@ -9,6 +9,8 @@
 *.ipr
 *.iml
 *.iws
+.*
+stats.html
 
 # Logs
 logs
