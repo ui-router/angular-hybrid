@@ -199,7 +199,7 @@ function applyHybridAdapter(upgradeAdapter: UpgradeAdapter) {
     // it retrieves from ng1 injector first, then ng2 injector if the token isn't found.
     const mergedInjector = {
       get: function(token: any, ng2NotFoundValue?: any) {
-        let ng2Injector = ng1Injector.get('ng2.Injector');
+        let ng2Injector = ng1Injector.get('$$angularInjector');
         return (ng1Injector.has(token) && ng1Injector.get(token)) || ng2Injector.get(token, ng2NotFoundValue)
       }
     };
