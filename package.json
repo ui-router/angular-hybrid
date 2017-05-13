@@ -9,8 +9,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@uirouter/angular": "git://github.com/ui-router/angular#1.0.0-beta.6+hybrid-2.0.0-2",
-    "@uirouter/angularjs": "git://github.com/angular-ui/ui-router#1.0.3+hybrid-2.0.0-2",
+    "@uirouter/angular": "git://github.com/ui-router/angular#1.0.0-beta.6-hybrid-2.0.0-4",
+    "@uirouter/angularjs": "git://github.com/angular-ui/ui-router#1.0.3-hybrid-2.0.0-5",
     "@uirouter/core": "=5.0.3"
   },
   "peerDependencies": {
