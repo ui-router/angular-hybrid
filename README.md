@@ -1,12 +1,12 @@
-# UI-Router ng1-to-ng2
+# UI-Router angular-hybrid
 
-### Hybrid Angular 1/Angular 2 UI-Router apps
+### UI-Router support for Hybrid Angular/AngularJS apps
 
-This module provides [ngUpgrade](https://angular.io/docs/ts/latest/guide/upgrade.html) integration
-with UI-Router, enabling routing to both Angular 1 and Angular 2 Components (and/or templates).
+This module provides [ngUpgrade](https://angular.io/docs/ts/latest/guide/upgrade.html) integration with UI-Router.
+It enables UI-Router to route to both AngularJS and Angular components (and/or templates).
 
-Your app will be hosted on Angular 1 while you incrementally upgrade it to Angular 2.
-With `ui-router-ng1-to-ng2`, you can use either an Angular 1 or Angular 2 component as a view in your state definitions.
+Your app will be hosted by AngularJS while you incrementally upgrade it to Angular.
+With `@uirouter/angular-hybrid` you can use either an Angular component or an AngularJS component/template as the view in a state definition.
 
 ```js
 import { Ng2AboutComponentClass } from "./about.ng2.component";
@@ -16,47 +16,49 @@ import { Ng2AboutComponentClass } from "./about.ng2.component";
 $stateProvider.state({
   name: 'home', 
   url: '/home',
-  component: 'ng1HomeComponent' // ng1 component or directive name
+  component: 'ng1HomeComponent' // AngularJS component or directive name
 })
 
 .state({
   name: 'about', 
   url: '/about',
-  component: Ng2AboutComponentClass // ng2 component class reference
+  component: Ng2AboutComponentClass // Angular component class reference
 });
 
 .state({
   name: 'other',
   url: '/other',
-  template: '<h1>Other</h1>', // ng1 template/controller
+  template: '<h1>Other</h1>', // AngularJS template/controller
   controller: function($scope) { /* do stuff */ }
 })
 
 ```
 
-When routing to an ng2 component, that ng2 component uses the standard
-[ng2 directives (ui-view and uiSref) from `ui-router-ng2`](https://ui-router.github.io/docs/latest/modules/ng2_directives.html).
+When routing to an Angular component, that component uses the standard
+[Angular directives (ui-view and uiSref) from `@uirouter/angular`](https://ui-router.github.io/ng2/docs/latest/modules/directives.html).
+
+When routing to an AngularJS component or template, that component uses the standard
+[AngularJS directives (ui-view and ui-sref) from `@uirouter/angularjs`](https://ui-router.github.io/ng1/docs/latest/modules/directives.html).
 
 See the [hybrid sample app](https://github.com/ui-router/sample-app-ng1-to-ng2) for a full example.
 
 ### Getting started
 
-Add `@angular`, `ui-router-ng2`, and `ui-router-ng1-to-ng2` to your package.json
-in addition to the existing `angular-ui-router`.
+Remove `angular-ui-router` (or `@uirouter/angularjs`) from your package.json and replace it with `@uirouter/angular-hybrid`.
+Add the `@angular/*` dependencies.
 
 ```
 dependencies: {
   ...
-  "@angular/common": "~2.0.1",
-  "@angular/compiler": "~2.0.1",
-  "@angular/core": "~2.0.1",
-  "@angular/platform-browser": "~2.0.1",
-  "@angular/platform-browser-dynamic": "~2.0.1",
-  "@angular/upgrade": "~2.0.1",
+  "@angular/common": "^4.0.0",
+  "@angular/compiler": "^4.0.0",
+  "@angular/core": "^4.0.0",
+  "@angular/platform-browser": "^4.0.0",
+  "@angular/platform-browser-dynamic": "^4.0.0",
+  "@angular/upgrade": "^4.0.0",
    ...
-  "angular-ui-router": "^1.0.0-beta.3",
-  "ui-router-ng2": "^1.0.0-beta.3",
-  "ui-router-ng1-to-ng2": "^1.0.12",
+  "@uirouter/angular-upgrade": "^2.0.0",
+  ...
 }
 ```
 
@@ -66,7 +68,7 @@ Switch your app from bootstrapping using `ng-app` to using the `ngUpgrade` manua
 
 ```js
 // Add 'ui.router.upgrade' to your ng1 app module's depedencies
-let ng1module = angular.module("myApp", [uiRouter, 'ui.router.upgrade']);
+let ng1module = angular.module("myApp", ['ui.router', 'ui.router.upgrade']);
 ```
 
 ```js
@@ -81,28 +83,28 @@ import {UpgradeAdapter} from '@angular/upgrade';
 let upgradeAdapter = new UpgradeAdapter(SampleAppModule);
 
 // Supply ui-router-ng1-to-ng2 with the upgrade adapter
-import {uiRouterNgUpgrade} from "ui-router-ng1-to-ng2";
+import {uiRouterNgUpgrade} from "@uirouter/angular-hybrid";
 uiRouterNgUpgrade.setUpgradeAdapter(upgradeAdapter);
 
 // Manually bootstrap the app with the Upgrade Adapter (instead of ng-app)
 upgradeAdapter.bootstrap(document.body, ['myApp']);
 ```
 
-#### Route to ng2 components
+#### Route to Angular components
 
-Register states using either Angular 1 or Angular 2 code.
+Register states using either Angular or AngularJS code.
 Use `component:` in your state declaration.
 
 ```
 var leaf = { 
   name: 'foo.bar.leaf',
-   url: '/leaf',
-   component: MyNg2CommponentClass 
+  url: '/leaf',
+  component: MyNg2CommponentClass 
 };
 $stateProvider.state(leaf);
 ```
 
-#### Create ng2 Feature Modules (optional)
+#### Create Angular Feature Modules (optional)
 
 ```js
 @NgModule({
@@ -139,12 +141,9 @@ Note: You can also add states directly to the root NgModule using `UIRouterModul
 
 ### Limitations:
 
-We currently support creating a `<ui-view>` in an Angular 1 view,
-then routing to Angular 1 or Angular 2 components inside that angular 1 `ui-view`.
+We currently support routing either Angular (2+) or AngularJS (1.x) components into an AngularJS (1.x) `ui-view`.
+However, we do not support routing AngularJS (1.x) components into an Angular (2+) `ui-view`.
 
-We do not (yet) support creating a nested `ui-view` in Angular 2, then routing to an angular 1 component.
-Once an Angular 2 component has been routed to, any `<ui-view>` inside the Angular 2 component can only be
-targeted by other Angular 2 components.
+If you create an Angular (2+) `ui-view`, then any nested `ui-view` must also be Angular (2+).
 
 Because of this, apps should be migrated starting from leaf states/views and work up towards the root state/view.
-
