@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "7.9"
+
+script:
+  - npm run package
+
+sudo: false
+
+git:
+  depth: 2
+
+notifications:
+  slack: angularbuddies:b6leQM9gkBCW0S7MNDsELpqU
+
