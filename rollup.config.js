@@ -65,10 +65,13 @@ const CONFIG = {
   external: isExternal,
 
   globals: {
+    '@uirouter/angular': '@uirouter/angular',
+    '@uirouter/angularjs': '@uirouter/angularjs',
     '@uirouter/core': '@uirouter/core',
     '@uirouter/rx': '@uirouter/rx',
     '@angular/core': 'ng.core',
     '@angular/common': 'ng.common',
+    'angular': 'angular',
   }
 };
 
