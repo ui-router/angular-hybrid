@@ -3,7 +3,7 @@
 ### UI-Router support for Hybrid Angular/AngularJS apps
 
 This module provides [ngUpgrade](https://angular.io/docs/ts/latest/guide/upgrade.html) integration with UI-Router.
-It enables UI-Router to route to both AngularJS and Angular components (and/or templates).
+It enables UI-Router to route to both AngularJS components (and/or templates) and Angular components.
 
 Your app will be hosted by AngularJS while you incrementally upgrade it to Angular.
 With `@uirouter/angular-hybrid` you can use either an Angular component or an AngularJS component/template as the view in a state definition.
