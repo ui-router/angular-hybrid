@@ -42,6 +42,12 @@ When routing to an AngularJS component or template, that component uses the stan
 
 See the [hybrid sample app](https://github.com/ui-router/sample-app-ng1-to-ng2) for a full example.
 
+### UpgradeAdapter vs UpgradeModule
+
+Version 2.0.0 of `@uirouter/angular-hybrid` only supports `UpgradeAdapter`, which works fine but is no longer in development.
+Version 3.0.0 of `@uirouter/angular-hybrid` will support only `UpgradeModule` from `@angular/upgrade/static`, which is what the Angular team actively supports for hybrid mode.
+Because we  are dropping support for `UpgradeAdapter`, current users will have to switch to `UpgradeModule`.
+
 ### Getting started
 
 Remove `angular-ui-router` (or `@uirouter/angularjs`) from your package.json and replace it with `@uirouter/angular-hybrid`.
@@ -82,7 +88,7 @@ let ng1module = angular.module("myApp", ['ui.router', 'ui.router.upgrade']);
 import {UpgradeAdapter} from '@angular/upgrade';
 let upgradeAdapter = new UpgradeAdapter(SampleAppModule);
 
-// Supply ui-router-ng1-to-ng2 with the upgrade adapter
+// Supply @uirouter/angular-upgrade with the upgrade adapter
 import {uiRouterNgUpgrade} from "@uirouter/angular-hybrid";
 uiRouterNgUpgrade.setUpgradeAdapter(upgradeAdapter);
 
