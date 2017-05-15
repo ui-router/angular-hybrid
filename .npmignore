@@ -1,4 +1,4 @@
-*.ts
+src
 
 *.ipr
 *.iml
