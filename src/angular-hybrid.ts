@@ -150,7 +150,7 @@ function uiRouterUpgradeFactory(router: UIRouter, injector: Injector) {
   imports: [UIRouterModule],
   declarations: [UIViewNgUpgrade],
   providers: [
-    // ui-router-ng2 code will use the ng1 $uiRouter instance instead of creating its own.
+    // @uirouter/angular code will use the ng1 $uiRouter instance instead of creating its own.
     { provide: UIRouter, useFactory: uiRouterUpgradeFactory, deps: ['$uiRouter', Injector] },
 
     { provide: UIROUTER_ROOT_MODULE, useValue: {}, multi: true },
@@ -173,7 +173,7 @@ function uiRouterUpgradeFactory(router: UIRouter, injector: Injector) {
  *
  * ---
  *
- * - expose the ng1 $uiRouter instance to ng2 DI
+ * - expose the ng1 "$uiRouter" instance to ng2 DI (as `UIRouter`)
  * - downgrade the ng2 UIViewNgUpgrade for use in ng1 templates
  * - expose the root ng2 Injector as a resolve on the root state
  * - decorate state `views:` with ng1/ng2 component detection
@@ -195,7 +195,7 @@ function applyHybridAdapter(upgradeAdapter: UpgradeAdapter) {
     let $uiRouter: UIRouter = ng1Injector.get('$uiRouter');
 
     // Expose a merged ng1/ng2 injector as a Resolvable (on the root state).
-    // This mimics how ui-router-ng2 exposes the root ng2 Injector, but
+    // This mimics how @uirouter/angular exposes the root ng2 Injector, but
     // it retrieves from ng1 injector first, then ng2 injector if the token isn't found.
     const mergedInjector = {
       get: function(token: any, ng2NotFoundValue?: any) {
