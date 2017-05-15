@@ -166,7 +166,7 @@ function uiRouterUpgradeFactory(router: UIRouter, injector: Injector) {
     },
   ],
   exports: [UIViewNgUpgrade, UIRouterModule]
-}) export class UIRouterHybridModule {}
+}) export class Ng1ToNg2Module {}
 
 /**
  * This function applies the ng1-to-ng2 hybrid adapter
