@@ -1,3 +1,35 @@
+<a name="3.0.0"></a>
+# 3.0.0 (2017-05-16)
+
+* chore(*): Fix botched merge and re-add ng2LazyLoadBuilder ([8596e2a](https://github.com/ui-router/angular-hybrid/commit/8596e2a))
+* chore(*): fix some code comments ([83bc525](https://github.com/ui-router/angular-hybrid/commit/83bc525))
+* chore(build): remove old release script ([7128857](https://github.com/ui-router/angular-hybrid/commit/7128857))
+* chore(build): tweak npm ignore ([788b5ed](https://github.com/ui-router/angular-hybrid/commit/788b5ed))
+* chore(build): update .npmignore ([5a18fe2](https://github.com/ui-router/angular-hybrid/commit/5a18fe2))
+* chore(README): Update README ([76aa21a](https://github.com/ui-router/angular-hybrid/commit/76aa21a))
+* chore(README): Update README with info about migration to @angular/upgrade/static ([215160a](https://github.com/ui-router/angular-hybrid/commit/215160a))
+* feat(ngUpgrade): Add support for @angular/upgrade/static ([4b7fce0](https://github.com/ui-router/angular-hybrid/commit/4b7fce0))
+* feat(upgrade): Version 3.x uses @angular/upgrade/static ([1d60e5b](https://github.com/ui-router/angular-hybrid/commit/1d60e5b))
+* refactor(static): Clean up imports and switch let to const ([4a0dcaf](https://github.com/ui-router/angular-hybrid/commit/4a0dcaf))
+* fix(ngModule): Revert breaking change of module name ([7a37c4a](https://github.com/ui-router/angular-hybrid/commit/7a37c4a))
+* fix(static): Remove setup call and get the ng2 injector from ng1 ([27fa6dc](https://github.com/ui-router/angular-hybrid/commit/27fa6dc))
+* Specify inputs for downgraded uiViewNgUpgrade ([a47445d](https://github.com/ui-router/angular-hybrid/commit/a47445d))
+* Update README.md ([48bad58](https://github.com/ui-router/angular-hybrid/commit/48bad58))
+
+
+### BREAKING CHANGE
+
+* use `@angular/upgrade/static`
+Version 3.0.0 and higher no longer supports `@angular/upgrade`.
+We now support only `@angular/upgrade/static`
+
+Your bootstrap process will change.
+For details, please see [the sample app](https://github.com/ui-router/sample-app-ng1-to-ng2/commit/2e5accf7799ff48cae048d18383e8dedadd99b41) to see how to migrate your bootstrap to the new style.
+
+Angular no longer actively supports the old `UpgradeAdapter`.
+The [currently supported mechanism](https://angular.io/docs/ts/latest/guide/upgrade.html) is `UpgradeModule` from `@angular/upgrade/static`
+
+
 <a name="2.0.0"></a>
 # 2.0.0 (2017-05-13)
 
