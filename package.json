@@ -1,6 +1,6 @@
 {
   "name": "@uirouter/angular-hybrid",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "scripts": {
     "clean": "shx rm -rf lib lib-esm _bundles",
     "build": "npm run clean && tsc && tsc -m es6 --outDir lib-esm",

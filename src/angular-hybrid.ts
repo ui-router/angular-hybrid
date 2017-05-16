@@ -169,7 +169,7 @@ function uiRouterUpgradeFactory(router: UIRouter, injector: Injector) {
     UIViewNgUpgrade
   ],
   exports: [UIViewNgUpgrade, UIRouterModule]
-}) export class Ng1ToNg2Module {}
+}) export class UIRouterUpgradeModule {}
 
 // Downgrade the UIViewNgUpgrade ng2 Component to an ng1 directive.
 // The directive is used in a (generated) view template by the (host) ng1 ui-router,
