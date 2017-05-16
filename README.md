@@ -117,7 +117,7 @@ Tell UI-Router that it should wait until all bootstrapping is complete before do
 ngmodule.config([ '$urlServiceProvider', ($urlService: UrlService) => $urlService.deferIntercept() ]);
 ```
 
-[_example](https://github.com/ui-router/sample-app-angular-hybrid/blob/e4b1144d5e3e3451f0f0cc640175bb7055294fdd/app/bootstrap/bootstrap.ts#L75-L76)
+[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/e4b1144d5e3e3451f0f0cc640175bb7055294fdd/app/bootstrap/bootstrap.ts#L75-L76)
 
 
 #### Bootstrap the app
@@ -149,6 +149,8 @@ angular.element(document).ready(function () {
 });
 ```
 
+[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/e4b1144d5e3e3451f0f0cc640175bb7055294fdd/app/bootstrap/bootstrap.ts#L78-L95)
+
 #### Route to Angular components
 
 Register states using either Angular or AngularJS code.
@@ -177,6 +179,8 @@ $stateProvider.state(leaf);
 export class MyFeatureModule {}
 ```
 
+[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/e4b1144d5e3e3451f0f0cc640175bb7055294fdd/app/prefs/index.ts#L11-L22)
+
 Add the feature module to the root NgModule imports
 ```js
 @NgModule({
@@ -185,7 +189,10 @@ Add the feature module to the root NgModule imports
 }) class SampleAppModule {}
 ```
 
+[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/e4b1144d5e3e3451f0f0cc640175bb7055294fdd/app/bootstrap/bootstrap.ts#L64)
+
 Note: You can also add states directly to the root NgModule using `UIRouterModule.forChild`
+
 ```js
 @NgModule({
   // import the Ng1ToNg2Module and create a UIRouter "child module"
