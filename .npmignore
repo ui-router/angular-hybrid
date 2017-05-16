@@ -1,7 +1,11 @@
 src
+scripts
+.*
 
 *.ipr
 *.iml
 *.iws
 node_modules
 tsconfig.json
+rollup.config.js
+stats.html
