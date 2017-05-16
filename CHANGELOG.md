@@ -1,3 +1,15 @@
+<a name="3.0.1"></a>
+## 3.0.1 (2017-05-16)
+
+* feat(Ng1ToNg2Module): Rename Ng1ToNg2Module to UIRouterUpgradeModule ([fcac2f9](https://github.com/ui-router/angular-hybrid/commit/fcac2f9))
+
+
+### BREAKING CHANGE
+
+* Rename Ng1ToNg2Module to UIRouterUpgradeModule
+(This was supposed to land in version 3.0.0)
+
+
 <a name="3.0.0"></a>
 # 3.0.0 (2017-05-16)
 
