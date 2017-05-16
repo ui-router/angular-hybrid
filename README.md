@@ -151,6 +151,27 @@ angular.element(document).ready(function () {
 
 [_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/e4b1144d5e3e3451f0f0cc640175bb7055294fdd/app/bootstrap/bootstrap.ts#L78-L95)
 
+#### Route to AngularJS components/templates
+
+Your existing AngularJS routes work the same as before.
+
+```
+var foo = { 
+  name: 'foo',
+  url: '/foo',
+  component: 'fooComponent'
+};
+$stateProvider.state(foo);
+
+var bar = { 
+  name: 'foo.bar',
+  url: '/bar',
+  templateUrl: '/bar.html',
+  controller: 'BarController'
+};
+$stateProvider.state(bar);
+```
+
 #### Route to Angular components
 
 Register states using either Angular or AngularJS code.
