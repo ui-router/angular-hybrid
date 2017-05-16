@@ -68,32 +68,85 @@ dependencies: {
 }
 ```
 
-#### Bootstrapping a hybrid app
+Remove any `ng-app` attributes from your main HTML file.
+We need to use manual AngularJS bootstrapping mode.
 
-Switch your app from bootstrapping using `ng-app` to using the `ngUpgrade` manual bootstrap
+#### Add AngularJS module `ui.router.upgrade`
+
+- Add 'ui.router.upgrade' to your AngularJS app module's depedencies
 
 ```js
-// Add 'ui.router.upgrade' to your ng1 app module's depedencies
 let ng1module = angular.module("myApp", ['ui.router', 'ui.router.upgrade']);
 ```
 
+[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/e4b1144d5e3e3451f0f0cc640175bb7055294fdd/app/bootstrap/ngmodule.ts#L21-L25)
+
+#### Create a root Angular NgModule
+
+- Import the `BrowserModule`, `UpgradeModule`, and the `UIRouterUpgradeModule`.
+
+- Any AngularJS services you want to expose to Angular should have a `providers` entry.
+
+- The module should have a no-op `ngDoBootstrap` method.
+
 ```js
-// Create an Angular 2 root NgModule
+export function getDialogService($injector) {
+  return $injector.get('DialogService');
+}
+
 @NgModule({
-  // import the Ng1ToNg2Module
-  imports: [ BrowserModule, Ng1ToNg2Module ]
-}) class SampleAppModule {}
+  imports: [ BrowserModule, UpgradeModule, UIRouterUpgradeModule ],
+  providers: [
+    { provide: NgModuleFactoryLoader, useClass: SystemJsNgModuleLoader },
+    // Register some AngularJS services as Angular providers
+    { provide: 'DialogService', deps: ['$injector'], useFactory: getDialogService },
+  ]
+}) export class SampleAppModule {
+  ngDoBootstrap() { /* no body */ }
+}
+```
 
-// Create an upgrade adapter instance
-import {UpgradeAdapter} from '@angular/upgrade';
-let upgradeAdapter = new UpgradeAdapter(SampleAppModule);
+[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/e4b1144d5e3e3451f0f0cc640175bb7055294fdd/app/bootstrap/bootstrap.ts#L63-L73)
 
-// Supply @uirouter/angular-upgrade with the upgrade adapter
-import {uiRouterNgUpgrade} from "@uirouter/angular-hybrid";
-uiRouterNgUpgrade.setUpgradeAdapter(upgradeAdapter);
 
-// Manually bootstrap the app with the Upgrade Adapter (instead of ng-app)
-upgradeAdapter.bootstrap(document.body, ['myApp']);
+#### Defer intercept
+
+Tell UI-Router that it should wait until all bootstrapping is complete before doing the initial URL synchronization.
+
+```js
+ngmodule.config([ '$urlServiceProvider', ($urlService: UrlService) => $urlService.deferIntercept() ]);
+```
+
+[_example](https://github.com/ui-router/sample-app-angular-hybrid/blob/e4b1144d5e3e3451f0f0cc640175bb7055294fdd/app/bootstrap/bootstrap.ts#L75-L76)
+
+
+#### Bootstrap the app
+
+- Bootstrap Angular
+
+- Then, bootstrap AngularJS
+
+- Tell UIRouter to synchronize the URL and listen for further URL changes
+
+```js
+// Wait until the DOM is ready
+angular.element(document).ready(function () {
+  // Manually bootstrap the Angular app
+  platformBrowserDynamic().bootstrapModule(SampleAppModule).then(platformRef => {
+    const injector: Injector = platformRef.injector;
+    const upgrade = injector.get(UpgradeModule) as UpgradeModule;
+
+    // Manually bootstrap the AngularJS app
+    upgrade.bootstrap(document.body, ['demo']);
+
+    // Intialize the Angular Module (get() any UIRouter service from DI to initialize it)
+    const url: UrlService = injector.get(UrlService);
+
+    // Instruct UIRouter to listen to URL changes
+    url.listen();
+    url.sync();
+  });
+});
 ```
 
 #### Route to Angular components
