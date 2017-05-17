@@ -63,7 +63,7 @@ dependencies: {
   "@angular/platform-browser-dynamic": "^4.0.0",
   "@angular/upgrade": "^4.0.0",
    ...
-  "@uirouter/angular-upgrade": "^3.0.1",
+  "@uirouter/angular-hybrid": "^3.0.1",
   ...
 }
 ```
