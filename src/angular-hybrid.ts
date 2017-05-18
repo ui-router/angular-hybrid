@@ -135,10 +135,18 @@ export class UIViewNgUpgrade {
  **********************************/
 
 // Register the ng1 DI '$uiRouter' object as an ng2 Provider.
-function uiRouterUpgradeFactory(router: UIRouter, injector: Injector) {
+export function uiRouterUpgradeFactory(router: UIRouter, injector: Injector) {
   const modules: StatesModule[] = injector.get(UIROUTER_MODULE_TOKEN, []);
   modules.forEach(module => applyModuleConfig(router, injector, module));
   return router;
+}
+
+export function getUIRouter($injector: any) {
+  return $injector.get('$uiRouter');
+}
+
+export function getParentUIViewInject(r: StateRegistry) {
+  return { fqn: null, context: r.root() } as ParentUIViewInject
 }
 
 /**
@@ -149,20 +157,16 @@ function uiRouterUpgradeFactory(router: UIRouter, injector: Injector) {
   declarations: [UIViewNgUpgrade],
   providers: [
     // @uirouter/angular code will use the ng1 $uiRouter instance instead of creating its own.
-    { provide: '$uiRouter', useFactory: (i: any) => i.get('$uiRouter'), deps: ['$injector']},
+    { provide: '$uiRouter', useFactory: getUIRouter, deps: ['$injector']},
 
     { provide: UIRouter, useFactory: uiRouterUpgradeFactory, deps: ['$uiRouter', Injector] },
 
     { provide: UIROUTER_ROOT_MODULE, useValue: {}, multi: true },
 
+    { provide: UIView.PARENT_INJECT, useFactory: getParentUIViewInject, deps: [StateRegistry],
+
     ..._UIROUTER_SERVICE_PROVIDERS,
 
-    {
-      provide: UIView.PARENT_INJECT,
-      deps: [StateRegistry],
-      useFactory: (r: StateRegistry) => {
-        return { fqn: null, context: r.root() } as ParentUIViewInject
-      },
     },
   ],
   entryComponents: [
