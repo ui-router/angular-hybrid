@@ -1,3 +1,12 @@
+<a name="3.1.1"></a>
+## 3.1.1 (2017-05-22)
+
+Fix missing dev dependency from 3.1.0 release
+
+* chore(deps): Add @angular/compiler-cli ([7a893ba](https://github.com/ui-router/angular-hybrid/commit/7a893ba))
+
+
+
 <a name="3.1.0"></a>
 # 3.1.0 (2017-05-22)
 
