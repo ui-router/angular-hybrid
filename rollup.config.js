@@ -52,7 +52,7 @@ function isExternal(id) {
 
 const CONFIG = {
   moduleName: '@uirouter/angular-hybrid',
-  entry: 'lib-esm/index.js',
+  entry: 'lib/index.js',
   dest: '_bundles/ui-router-angular-hybrid' + extension,
 
   sourceMap: true,
@@ -71,6 +71,7 @@ const CONFIG = {
     '@uirouter/rx': '@uirouter/rx',
     '@angular/core': 'ng.core',
     '@angular/common': 'ng.common',
+    '@angular/upgrade/static': 'ng.upgrade.static',
     'angular': 'angular',
   }
 };

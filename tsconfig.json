@@ -3,7 +3,7 @@
     "rootDir": "src",
     "outDir": "lib",
     "target": "es5",
-    "module": "commonjs",
+    "module": "es6",
     "moduleResolution": "node",
     "lib": ["es6", "dom"],
     "sourceMap": true,
@@ -16,6 +16,10 @@
     "noImplicitAny": false,
     "suppressExcessPropertyErrors": true,
     "suppressImplicitAnyIndexErrors": true
+  },
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true
   },
   "files": [ "src/index.ts" ]
 }

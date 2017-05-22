@@ -2,8 +2,8 @@
   "name": "@uirouter/angular-hybrid",
   "version": "3.0.1",
   "scripts": {
-    "clean": "shx rm -rf lib lib-esm _bundles",
-    "build": "npm run clean && tsc && tsc -m es6 --outDir lib-esm",
+    "clean": "shx rm -rf lib _bundles",
+    "build": "npm run clean && ngc",
     "package": "npm run build && rollup -c && rollup -c --environment MINIFY",
     "prepare": "npm run package"
   },
@@ -45,7 +45,7 @@
     "webpack": "^1.13.1",
     "zone.js": "~0.6.21"
   },
-  "main": "lib/index.js",
+  "main": "_bundles/ui-router-angular-hybrid.js",
   "module": "lib-esm/index.js",
   "typings": "lib/index.d.ts",
   "repository": {
