@@ -1,3 +1,17 @@
+<a name="3.1.0"></a>
+# 3.1.0 (2017-05-22)
+
+This version of @uirouter/angular-upgrade supports ahead of time compilation, and lazy loading
+of Angular future states via @ngtools/webpack
+
+* fix(AoT): Make angular-hybrid.ts compatible with ngc ([dcf10a2](https://github.com/ui-router/angular-hybrid/commit/dcf10a2))
+* fix(AoT): Make hybrid adapter AoT compatible ([e79866a](https://github.com/ui-router/angular-hybrid/commit/e79866a))
+* Correct package name in example ([877953f](https://github.com/ui-router/angular-hybrid/commit/877953f))
+* Update README.md ([6c75e4b](https://github.com/ui-router/angular-hybrid/commit/6c75e4b))
+* doc(*): update README ([18ec03f](https://github.com/ui-router/angular-hybrid/commit/18ec03f))
+
+
+
 <a name="3.0.1"></a>
 ## 3.0.1 (2017-05-16)
 
