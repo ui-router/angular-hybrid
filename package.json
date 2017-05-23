@@ -7,6 +7,12 @@
     "package": "npm run build && rollup -c && rollup -c --environment MINIFY",
     "prepare": "npm run package"
   },
+  "files": [
+    "ng1-to-ng2.js",
+    "ng1-to-ng2.ts",
+    "ng1-to-ng2.js.map",
+    "ng1-to-ng2.d.ts"
+  ],
   "license": "MIT",
   "dependencies": {
     "@uirouter/angular": "git://github.com/ui-router/angular#1.0.0-beta.6-hybrid-2.0.0-4",
