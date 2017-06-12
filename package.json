@@ -1,7 +1,8 @@
 {
   "name": "@uirouter/angular-hybrid",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "scripts": {
+    "example": "cd example && npm i && npm start",
     "clean": "shx rm -rf lib _bundles",
     "build": "npm run clean && ngc",
     "package": "npm run build && rollup -c && rollup -c --environment MINIFY",
@@ -9,9 +10,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@uirouter/angular": "git://github.com/ui-router/angular#1.0.0-beta.6-hybrid-2.0.0-4",
-    "@uirouter/angularjs": "git://github.com/angular-ui/ui-router#1.0.3-hybrid-2.0.0-5",
-    "@uirouter/core": "=5.0.3"
+    "@uirouter/angular": "git://github.com/ui-router/angular#SNAPSHOT-20170612",
+    "@uirouter/angularjs": "git://github.com/angular-ui/ui-router#SNAPSHOT-20170612",
+    "@uirouter/core": "=5.0.4"
   },
   "peerDependencies": {
     "@angular/core": "^4.0.0",
