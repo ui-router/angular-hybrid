@@ -1,3 +1,11 @@
+<a name="3.1.2"></a>
+## 3.1.2 (2017-06-12)
+
+Rebuilt with newer snapshots of @uirouter/angular and @uirouter/angularjs
+
+* chore(example): Added minimal example ([425815d](https://github.com/ui-router/angular-hybrid/commit/425815d))
+
+
 <a name="3.1.1"></a>
 ## 3.1.1 (2017-05-22)
 
