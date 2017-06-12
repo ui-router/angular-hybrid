@@ -234,3 +234,10 @@ However, we do not support routing AngularJS (1.x) components into an Angular (2
 If you create an Angular (2+) `ui-view`, then any nested `ui-view` must also be Angular (2+).
 
 Because of this, apps should be migrated starting from leaf states/views and work up towards the root state/view.
+
+
+# Examples
+
+The minimal example of `@uirouter/angular-hybrid` can be found here: https://github.com/ui-router/angular-hybrid/tree/master/example
+
+A full fledged sample application example can be found here: https://github.com/ui-router/sample-app-angular-hybrid
