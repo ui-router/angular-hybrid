@@ -10,8 +10,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@uirouter/angular": "git://github.com/ui-router/angular#SNAPSHOT-20170612",
-    "@uirouter/angularjs": "git://github.com/angular-ui/ui-router#SNAPSHOT-20170612",
+    "@uirouter/angular": "1.0.0-beta.7",
+    "@uirouter/angularjs": "^1.0.5",
     "@uirouter/core": "=5.0.4"
   },
   "peerDependencies": {
@@ -43,7 +43,7 @@
     "rxjs": "^5.0.0",
     "shx": "^0.2.2",
     "systemjs": "0.19.25",
-    "typescript": "^2.1.5",
+    "typescript": "~2.3.4",
     "webpack": "^1.13.1",
     "zone.js": "~0.6.21"
   },
