@@ -10,8 +10,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@uirouter/angular": "git://github.com/ui-router/angular#SNAPSHOT-20170612",
-    "@uirouter/angularjs": "git://github.com/angular-ui/ui-router#SNAPSHOT-20170612",
+    "@uirouter/angular": "https://github.com/ui-router/angular#SNAPSHOT-20170612",
+    "@uirouter/angularjs": "https://github.com/angular-ui/ui-router#SNAPSHOT-20170612",
     "@uirouter/core": "=5.0.4"
   },
   "peerDependencies": {
@@ -49,9 +49,5 @@
   },
   "main": "_bundles/ui-router-angular-hybrid.js",
   "module": "lib-esm/index.js",
-  "typings": "lib/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ui-router/angular-hybrid.git"
-  }
+  "typings": "lib/index.d.ts"
 }
