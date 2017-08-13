@@ -1,3 +1,13 @@
+<a name="3.1.3"></a>
+## 3.1.3 (2017-08-13)
+
+* fix(build): Depend on NPM packages instead of git tags ([b9261af](https://github.com/ui-router/angular-hybrid/commit/b9261af))
+* Create README.md ([d59d2f9](https://github.com/ui-router/angular-hybrid/commit/d59d2f9))
+* chore(): update changelog ([e4d29d4](https://github.com/ui-router/angular-hybrid/commit/e4d29d4))
+* chore(example): Added minimal example ([a8ee08f](https://github.com/ui-router/angular-hybrid/commit/a8ee08f))
+
+
+
 <a name="3.1.2"></a>
 ## 3.1.2 (2017-06-12)
 
