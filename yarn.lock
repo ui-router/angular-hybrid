@@ -50,22 +50,23 @@
   version "1.10.31"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-1.10.31.tgz#cebc68d369ded05344000a9b7bc62fcca7131de5"
 
-"@uirouter/angular@git://github.com/ui-router/angular#1.0.0-beta.6-hybrid-2.0.0-4":
-  version "1.0.0-beta.6-hybrid-2.0.0-4"
-  resolved "git://github.com/ui-router/angular#90590ddde94fe0c3c8908bccd525bc1b2751106e"
+"@uirouter/angular@1.0.0-beta.7-SNAPSHOT.20170812":
+  version "1.0.0-beta.7-SNAPSHOT.20170812"
+  resolved "https://registry.yarnpkg.com/@uirouter/angular/-/angular-1.0.0-beta.7-SNAPSHOT.20170812.tgz#8d338813641a1f6086a9119b486b9d817a8ebe45"
   dependencies:
-    "@uirouter/core" "^5.0.1"
+    "@uirouter/core" "^5.0.5"
     "@uirouter/rx" "=0.4.1"
+    tslib "^1.7.1"
 
-"@uirouter/angularjs@git://github.com/angular-ui/ui-router#1.0.3-hybrid-2.0.0-5":
-  version "1.0.3-hybrid-2.0.0-5"
-  resolved "git://github.com/angular-ui/ui-router#f429ea3b40fdc85dfdd9e2808ef14c73c071184a"
+"@uirouter/angularjs@1.0.6-SNAPSHOT.20170812":
+  version "1.0.6-SNAPSHOT.20170812"
+  resolved "https://registry.yarnpkg.com/@uirouter/angularjs/-/angularjs-1.0.6-SNAPSHOT.20170812.tgz#cf401565ba753d71082f85b42b8e1e19c140e300"
   dependencies:
-    "@uirouter/core" "^5.0.3"
+    "@uirouter/core" "^5.0.6"
 
-"@uirouter/core@=5.0.3", "@uirouter/core@^5.0.1", "@uirouter/core@^5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-5.0.3.tgz#e2b5b1e45190e20c67ba4e15c013de5d4e0ccab3"
+"@uirouter/core@=5.0.6", "@uirouter/core@^5.0.5", "@uirouter/core@^5.0.6":
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-5.0.6.tgz#251e1fc4d6ce8fe47e374bb86971e68a2ef1b323"
 
 "@uirouter/rx@=0.4.1":
   version "0.4.1"
@@ -2055,6 +2056,10 @@ tsickle@^0.21.0:
     mkdirp "^0.5.1"
     source-map "^0.5.6"
     source-map-support "^0.4.2"
+
+tslib@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.7.1.tgz#bc8004164691923a79fe8378bbeb3da2017538ec"
 
 tty-browserify@0.0.0:
   version "0.0.0"

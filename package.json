@@ -10,9 +10,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@uirouter/angular": "git://github.com/ui-router/angular#SNAPSHOT-20170612",
-    "@uirouter/angularjs": "git://github.com/angular-ui/ui-router#SNAPSHOT-20170612",
-    "@uirouter/core": "=5.0.4"
+    "@uirouter/angular": "1.0.0-beta.7-SNAPSHOT.20170812",
+    "@uirouter/angularjs": "1.0.6-SNAPSHOT.20170812",
+    "@uirouter/core": "=5.0.6"
   },
   "peerDependencies": {
     "@angular/core": "^4.0.0",
