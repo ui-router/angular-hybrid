@@ -48,7 +48,7 @@
     "zone.js": "~0.6.21"
   },
   "main": "_bundles/ui-router-angular-hybrid.js",
-  "module": "lib-esm/index.js",
+  "module": "lib/index.js",
   "typings": "lib/index.d.ts",
   "repository": {
     "type": "git",

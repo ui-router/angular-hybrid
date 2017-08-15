@@ -1,8 +1,8 @@
 import * as angular from 'angular';
 
-import { Component, ElementRef, Inject, Injector, Input, NgModule, Provider } from '@angular/core';
+import { Component, ElementRef, Inject, Injector, Input, NgModule } from '@angular/core';
 import { downgradeComponent, UpgradeModule } from '@angular/upgrade/static';
-import {} from '@angular/upgrade';
+import '@angular/upgrade';
 
 import {
   StateObject, forEach, PathNode, Resolvable, StateRegistry, UIRouter, ViewConfig, ViewService
@@ -13,7 +13,7 @@ import {
   Ng2ViewDeclaration, ParentUIViewInject, StatesModule, UIROUTER_MODULE_TOKEN, UIROUTER_ROOT_MODULE, UIRouterModule,
 } from '@uirouter/angular';
 
-import { $InjectorLike, Ng1ViewConfig, StateProvider } from '@uirouter/angularjs';
+import { $InjectorLike, Ng1ViewConfig } from '@uirouter/angularjs';
 
 import { UIRouterRx } from '@uirouter/rx';
 
