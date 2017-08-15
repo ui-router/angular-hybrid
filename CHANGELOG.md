@@ -1,3 +1,10 @@
+<a name="3.1.4"></a>
+## 3.1.4 (2017-08-15)
+
+* fix(package): Fix manifest -- location of es6 modules is lib/index not lib-esm/index ([040722c](https://github.com/ui-router/angular-hybrid/commit/040722c))
+
+
+
 <a name="3.1.3"></a>
 ## 3.1.3 (2017-08-13)
 
