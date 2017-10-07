@@ -1,0 +1,7 @@
+{
+  "ARTIFACTS": [
+    "lib",
+    "_bundles",
+    "package.json"
+  ]
+}
