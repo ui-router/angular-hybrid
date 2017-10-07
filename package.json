@@ -6,7 +6,9 @@
     "clean": "shx rm -rf lib _bundles",
     "build": "npm run clean && ngc",
     "package": "npm run build && rollup -c && rollup -c --environment MINIFY",
-    "prepare": "npm run package"
+    "changelog": "update_changelog",
+    "release": "release",
+    "prepublishOnly": "npm run package"
   },
   "license": "MIT",
   "dependencies": {
