@@ -141,7 +141,7 @@ export class UIViewNgUpgrade {
 
 // Register the ng1 DI '$uiRouter' object as an ng2 Provider.
 export function uiRouterUpgradeFactory(router: UIRouter, injector: Injector) {
-  const modules: StatesModule[] = injector.get(UIROUTER_MODULE_TOKEN, []);
+  const modules: StatesModule[] = injector.get<StatesModule[]>(UIROUTER_MODULE_TOKEN, []);
   modules.forEach(module => applyModuleConfig(router, injector, module));
   return router;
 }
