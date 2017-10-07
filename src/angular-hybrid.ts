@@ -2,7 +2,6 @@ import * as angular from 'angular';
 
 import { Component, ElementRef, Inject, Injector, Input, NgModule } from '@angular/core';
 import { downgradeComponent, UpgradeModule } from '@angular/upgrade/static';
-import '@angular/upgrade';
 
 import {
   StateObject, forEach, PathNode, Resolvable, StateRegistry, UIRouter, ViewConfig, ViewService
