@@ -1,6 +1,6 @@
 {
   "name": "@uirouter/angular-hybrid",
-  "version": "3.1.5",
+  "version": "3.1.6",
   "scripts": {
     "example": "cd example && npm i && npm start",
     "clean": "shx rm -rf lib _bundles",
@@ -33,7 +33,7 @@
     "@angular/upgrade": "^4.0.0",
     "@types/angular": "~1.6.1",
     "@types/jquery": "^1.10.31",
-    "@uirouter/publish-scripts": "2.0.3",
+    "@uirouter/publish-scripts": "2.0.4",
     "angular": "~1.6.1",
     "awesome-typescript-loader": "^3.0.0",
     "conventional-changelog": "^1.1.3",
