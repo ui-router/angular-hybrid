@@ -1,3 +1,26 @@
+## 3.1.7 (2017-10-17)
+[Compare `@uirouter/angular-hybrid` versions 3.1.5 and 3.1.7](https://github.com/ui-router/angular-hybrid/compare/3.1.5...3.1.7)
+
+
+### Updated `@uirouter/core` from 5.0.10 to 5.0.11
+[Compare `@uirouter/core` versions 5.0.10 and 5.0.11](https://github.com/ui-router/core/compare/5.0.10...5.0.11)
+
+### Bug Fixes
+
+* **ie9:** make console.bind work in ie9 ([#85](https://github.com/ui-router/core/issues/85)) ([318214b](https://github.com/ui-router/core/commit/318214b))
+
+
+### Updated `@uirouter/angular` from 1.0.0-beta.8 to 1.0.0-beta.9
+[Compare `@uirouter/angular` versions 1.0.0-beta.8 and 1.0.0-beta.9](https://github.com/ui-router/ng2/compare/1.0.0-beta.8...1.0.0-beta.9)
+
+### Features
+
+* **UIRouterModule:** Add `initial` property to `forRoot` to specify the initial route. ([b7b5e4f](https://github.com/ui-router/ng2/commit/b7b5e4f))
+
+
+### Updated `@uirouter/angularjs` from 1.0.8 to 1.0.9
+[Compare `@uirouter/angularjs` versions 1.0.8 and 1.0.9](https://github.com/angular-ui/ui-router/compare/1.0.8...1.0.9)
+
 ## 3.1.5 (2017-10-07)
 [Compare `@uirouter/angular-hybrid` versions 3.1.4 and 3.1.5](https://github.com/ui-router/angular-hybrid/compare/3.1.4...3.1.5)
 
