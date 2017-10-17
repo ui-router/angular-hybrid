@@ -4,11 +4,13 @@
   "scripts": {
     "example": "cd example && npm i && npm start",
     "clean": "shx rm -rf lib _bundles",
-    "build": "npm run clean && ngc",
-    "package": "npm run build && rollup -c && rollup -c --environment MINIFY",
-    "changelog": "update_changelog",
-    "release": "release",
-    "prepublishOnly": "npm run package"
+    "compile": "npm run clean && ngc",
+    "build": "run-s clean compile bundle fixmaps:*",
+    "bundle": "rollup -c && rollup -c --environment MINIFY",
+    "fixmaps:lib": "tweak_sourcemap_paths -a --include 'lib/**/*.js.map' 'lib-esm/**/*.js.map'",
+    "fixmaps:bundle": "tweak_sourcemap_paths -p ../src --include '_bundles/**/*.js.map'",
+    "release": "release --deps @uirouter/core @uirouter/angular @uirouter/angularjs",
+    "prepublishOnly": "npm run build"
   },
   "license": "MIT",
   "dependencies": {
