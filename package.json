@@ -31,7 +31,7 @@
     "@angular/upgrade": "^4.0.0",
     "@types/angular": "~1.6.1",
     "@types/jquery": "^1.10.31",
-    "@uirouter/publish-scripts": "^1.0.7",
+    "@uirouter/publish-scripts": "2.0.3",
     "angular": "~1.6.1",
     "awesome-typescript-loader": "^3.0.0",
     "conventional-changelog": "^1.1.3",
