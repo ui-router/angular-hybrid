@@ -50,23 +50,23 @@
   version "1.10.31"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-1.10.31.tgz#cebc68d369ded05344000a9b7bc62fcca7131de5"
 
-"@uirouter/angular@1.0.0-beta.8":
-  version "1.0.0-beta.8"
-  resolved "https://registry.yarnpkg.com/@uirouter/angular/-/angular-1.0.0-beta.8.tgz#c0395e43f15203f8c5096b85bc5b8186d3b58ce7"
+"@uirouter/angular@1.0.0-beta.9":
+  version "1.0.0-beta.9"
+  resolved "https://registry.yarnpkg.com/@uirouter/angular/-/angular-1.0.0-beta.9.tgz#6bdac652941a4a83f7f1118a07320f359dcc5b43"
   dependencies:
-    "@uirouter/core" "5.0.10"
+    "@uirouter/core" "5.0.11"
     "@uirouter/rx" "=0.4.1"
     tslib "^1.7.1"
 
-"@uirouter/angularjs@1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@uirouter/angularjs/-/angularjs-1.0.8.tgz#09e7528884752fa4071ab1cf74325f10c6d6d8c9"
+"@uirouter/angularjs@1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@uirouter/angularjs/-/angularjs-1.0.9.tgz#9aa4259eb52e8006ba0e63e55ea5cbd6c03e63de"
   dependencies:
-    "@uirouter/core" "5.0.10"
+    "@uirouter/core" "5.0.11"
 
-"@uirouter/core@5.0.10":
-  version "5.0.10"
-  resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-5.0.10.tgz#1a39eacbe33f3b44ab2c8fa4520cb1da92026cc3"
+"@uirouter/core@5.0.11":
+  version "5.0.11"
+  resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-5.0.11.tgz#bec461fcda767d79c98f6647cc9313ef9e5de03a"
 
 "@uirouter/publish-scripts@^1.0.7":
   version "1.0.7"
