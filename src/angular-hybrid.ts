@@ -116,21 +116,26 @@ export class UIViewNgUpgrade {
 
     // Expose getters on PARENT_INJECT for context (creation state) and fqn (view address)
     // These will be used by further nested UIView
-    Object.defineProperty(parent, "context", {
-      get: function() {
-        const data = ng1elem['inheritedData']('$uiView');
-        return (data && data.$cfg) ? data.$cfg.viewDecl.$context : registry.root();
-      },
-      enumerable: true
-    });
+    if (typeof parent.context === 'undefined') {
+      Object.defineProperty(parent, "context", {
+        get: function() {
+          const data = ng1elem['inheritedData']('$uiView');
+          return (data && data.$cfg) ? data.$cfg.viewDecl.$context : registry.root();
+        },
+        enumerable: true
+      });
+    }
+    
+    if (typeof parent.fqn === 'undefined') {
+      Object.defineProperty(parent, "fqn", {
+        get: function() {
+          const data = ng1elem['inheritedData']('$uiView');
+          return (data && data.$uiView) ? data.$uiView.fqn : null;
+        },
+        enumerable: true
+      });
+    }
 
-    Object.defineProperty(parent, "fqn", {
-      get: function() {
-        const data = ng1elem['inheritedData']('$uiView');
-        return (data && data.$uiView) ? data.$uiView.fqn : null;
-      },
-      enumerable: true
-    });
   }
 }
 
