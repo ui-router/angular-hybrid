@@ -62,7 +62,12 @@ app.component('ng1Component', {
       <h1>ng1 component</h1>
       <a ui-sref="app">Back to app</a>
       <ui-view></ui-view>
-    `
+    `,
+    controller: function() {
+      this.$onInit = function() {
+        console.log('ng1Component.$onInit()');
+      }
+    }
 })
 
 // An Angular component
@@ -73,7 +78,12 @@ app.component('ng1Component', {
       <a uiSref="app">Back to app</a>
       <ui-view></ui-view>
     `
-}) export class Ng2Component { }
+})
+export class Ng2Component {
+  ngOnInit() {
+    console.log('Ng2Component.ngOnInit()');
+  }
+}
 
 // The root Angular module
 @NgModule({
@@ -107,7 +117,7 @@ platformBrowserDynamic().bootstrapModule(RootModule).then(platformRef => {
   upgrade.bootstrap(document.body, [app.name]);
 
   // Intialize the Angular Module (get() any UIRouter service from DI to initialize it)
-  const url = injector.get(UrlService);
+  const url: UrlService = injector.get(UrlService);
 
   // Instruct UIRouter to listen to URL changes
   url.listen();
