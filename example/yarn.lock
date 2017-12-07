@@ -2,73 +2,81 @@
 # yarn lockfile v1
 
 
-"@angular/common@^4.0.0":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/common/-/common-4.2.1.tgz#cb334e3b71f4d3e9f34b7ad942c548d3f936dfc8"
+"@angular/common@^5.0.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-5.1.0.tgz#88b586e0aff6a93b8de08cce1e14c0e65fde5a56"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/compiler@^4.0.0":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-4.2.1.tgz#8d77b458e04b887947d85adccd7546e4a987d4b0"
+"@angular/compiler@^5.0.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-5.1.0.tgz#23fe2914061487fcc909616b4dc5c24c5a8d47a1"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/core@^4.0.0":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-4.2.1.tgz#0865304b3df43046919b646f02fdeda85a0c4685"
+"@angular/core@^5.0.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-5.1.0.tgz#6f7596ad780418cecac527ae0508cfc1a36383a0"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-browser-dynamic@^4.0.0":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.2.1.tgz#0832d21ba3481d91f4056c6a95429f9fcf76524c"
+"@angular/platform-browser-dynamic@^5.0.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.1.0.tgz#60566728dd949c442e064bf8247aa51672411f2b"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-browser@^4.0.0":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-4.2.1.tgz#1f01d4d31fa390211826266cf6e3a3f629860f1d"
+"@angular/platform-browser@^5.0.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-5.1.0.tgz#b5373232403d73c355b971cfae8b03191c4f58a2"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/router@^4.1.3":
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/@angular/router/-/router-4.1.3.tgz#ddafd46ae7ccc8b1f74904ffb45f394e44625216"
-
-"@angular/upgrade@^4.0.0":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@angular/upgrade/-/upgrade-4.2.1.tgz#779a54737f70090d3602bb2a2935005766b83d71"
+"@angular/router@^5.0.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/router/-/router-5.1.0.tgz#4e7283e34cd3d244899b289d835b830640c7bad9"
   dependencies:
     tslib "^1.7.1"
 
-"@types/angular@^1.6.39":
+"@angular/upgrade@^5.0.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/upgrade/-/upgrade-5.1.0.tgz#711f3720f6defd6743ee7ecad18fa64da5125bb5"
+  dependencies:
+    tslib "^1.7.1"
+
+"@types/angular@^1.6.39", "@types/angular@~1.6.1":
   version "1.6.39"
   resolved "https://registry.yarnpkg.com/@types/angular/-/angular-1.6.39.tgz#0c34938fc546f360c14817686f2e453ebf22312f"
+
+"@types/jquery@^1.10.31":
+  version "1.10.33"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-1.10.33.tgz#6c4c279f8d06839b184950432e880e0a469a64a1"
 
 "@types/jquery@^3.2.16":
   version "3.2.16"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.2.16.tgz#04419c404a3194350e7d3f339a90e72c88db3111"
 
-"@uirouter/angular-hybrid@^3.1.1":
-  version "3.1.7"
-  resolved "https://registry.yarnpkg.com/@uirouter/angular-hybrid/-/angular-hybrid-3.1.7.tgz#f11ec8536883d32da44fa483b0295013992dc810"
+"@uirouter/angular-hybrid@3.1.8":
+  version "3.1.8"
+  resolved "https://registry.yarnpkg.com/@uirouter/angular-hybrid/-/angular-hybrid-3.1.8.tgz#552745220b354f278082402b8b49a1c000a9a84e"
   dependencies:
-    "@uirouter/angular" "1.0.0-beta.9"
-    "@uirouter/angularjs" "1.0.9"
+    "@types/angular" "~1.6.1"
+    "@types/jquery" "^1.10.31"
+    "@uirouter/angular" "1.0.0-rc.1"
+    "@uirouter/angularjs" "1.0.11"
     "@uirouter/core" "5.0.11"
 
-"@uirouter/angular@1.0.0-beta.9":
-  version "1.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@uirouter/angular/-/angular-1.0.0-beta.9.tgz#6bdac652941a4a83f7f1118a07320f359dcc5b43"
+"@uirouter/angular@1.0.0-rc.1":
+  version "1.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@uirouter/angular/-/angular-1.0.0-rc.1.tgz#9d420e4046d0490eb4324573336c4099bb8b9cc6"
   dependencies:
     "@uirouter/core" "5.0.11"
     "@uirouter/rx" "=0.4.1"
     tslib "^1.7.1"
 
-"@uirouter/angularjs@1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@uirouter/angularjs/-/angularjs-1.0.9.tgz#9aa4259eb52e8006ba0e63e55ea5cbd6c03e63de"
+"@uirouter/angularjs@1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@uirouter/angularjs/-/angularjs-1.0.11.tgz#ced1ec8bea68a5db7dcfd77a43b7b8b9a2953540"
   dependencies:
     "@uirouter/core" "5.0.11"
 
