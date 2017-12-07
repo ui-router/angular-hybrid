@@ -1,3 +1,42 @@
+## 3.1.8 (2017-12-07)
+[Compare `@uirouter/angular-hybrid` versions 3.1.7 and 3.1.8](https://github.com/ui-router/angular-hybrid/compare/3.1.7...3.1.8)
+
+### Bug Fixes
+
+* **types:** Add types/angular and types/jquery as top level dependency. ([f00d5cf](https://github.com/ui-router/angular-hybrid/commit/f00d5cf)), closes [#58](https://github.com/ui-router/angular-hybrid/issues/58)
+* **uiView:** Use useFactory instead of useValue when to prevent object re-use within PARENT_INJECT for different UIViews ([3087be9](https://github.com/ui-router/angular-hybrid/commit/3087be9))
+
+
+### Features
+
+* **angular-hybrid:** Fix peer dependencies. Update package deps. ([d09949d](https://github.com/ui-router/angular-hybrid/commit/d09949d))
+
+
+### Updated `@uirouter/angular` from 1.0.0-beta.9 to 1.0.0-rc.1
+[Compare `@uirouter/angular` versions 1.0.0-beta.9 and 1.0.0-rc.1](https://github.com/ui-router/ng2/compare/1.0.0-beta.9...1.0.0-rc.1)
+
+### Bug Fixes
+
+* **package:** Rebuild uirouter/angular using angular 4.4.6 ([a39aed8](https://github.com/ui-router/ng2/commit/a39aed8))
+* **package.json:** npm shrinkwarp with angular 5 ([477d0f7](https://github.com/ui-router/ng2/commit/477d0f7))
+* **uiView:** Fix animations :enter trigger by using markForCheck ([3d7ce44](https://github.com/ui-router/ng2/commit/3d7ce44))
+
+
+### Features
+
+* **directives:** Export directives using `exportAs:` for use as template variables ([3d532b6](https://github.com/ui-router/ng2/commit/3d532b6))
+* **lazyLoad:** Allow loadChildren for non-future states. ([ac3cdef](https://github.com/ui-router/ng2/commit/ac3cdef))
+* **uiView:** add getter for state which is filling the uiview ([e7cb5f1](https://github.com/ui-router/ng2/commit/e7cb5f1))
+
+
+### Updated `@uirouter/angularjs` from 1.0.9 to 1.0.11
+[Compare `@uirouter/angularjs` versions 1.0.9 and 1.0.11](https://github.com/angular-ui/ui-router/compare/1.0.9...1.0.11)
+
+### Bug Fixes
+
+* **artifactory:** Add trailing newline to package.json to work around artifactory issue  ([#3551](https://github.com/angular-ui/ui-router/issues/3551)) ([d09a345](https://github.com/angular-ui/ui-router/commit/d09a345)), closes [#3550](https://github.com/angular-ui/ui-router/issues/3550)
+* **uiView:** Fix cfg.getTemplate is undefined ([f4d99b0](https://github.com/angular-ui/ui-router/commit/f4d99b0))
+
 ## 3.1.7 (2017-10-17)
 [Compare `@uirouter/angular-hybrid` versions 3.1.5 and 3.1.7](https://github.com/ui-router/angular-hybrid/compare/3.1.5...3.1.7)
 
