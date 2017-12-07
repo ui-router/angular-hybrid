@@ -24,6 +24,8 @@ import { UIRouterRx } from '@uirouter/rx';
  */
 export const upgradeModule = angular.module('ui.router.upgrade', ['ui.router']);
 
+export function objectFactory() { return {}; }
+
 /**
  * UIViewNgUpgrade is a component bridge from ng1 ui-view to ng2 ui-view
  *
@@ -95,7 +97,7 @@ export const upgradeModule = angular.module('ui.router.upgrade', ['ui.router']);
   template: `<ui-view [name]="name"></ui-view>`,
   // provide a blank object as PARENT_INJECT.
   // The component will add property getters when it is constructed.
-  viewProviders: [ { provide: UIView.PARENT_INJECT, useValue: { } } ],
+  viewProviders: [ { provide: UIView.PARENT_INJECT, useFactory: objectFactory } ],
 })
 export class UIViewNgUpgrade {
   // The ui-view's name (or '$default')
