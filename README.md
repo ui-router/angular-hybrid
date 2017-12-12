@@ -235,6 +235,20 @@ If you create an Angular (2+) `ui-view`, then any nested `ui-view` must also be 
 
 Because of this, apps should be migrated starting from leaf states/views and work up towards the root state/view.
 
+---
+
+When a state has an `onEnter`, `onExit`, or `onRetain`, they are always injected (AngularJS style), even if the state uses Angular 2+ components or is added to an `UIRouterModule.forChild` `NgModule`.  
+
+```js
+export function ng2StateOnEnter(transition: Transition, svc: MyService) {
+  console.log(transition.to().name + svc.getThing());
+}
+ng2StateOnEnter.$inject = [Transition, 'MyService'];
+export const NG2_STATE = {
+  name: 'ng2state', url: '/ng2state',
+  onEnter: ng2StateOnEnter
+}
+```
 
 # Examples
 
