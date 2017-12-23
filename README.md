@@ -1,5 +1,7 @@
 # UI-Router angular-hybrid
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ui-router/angular-hybrid.svg)](https://greenkeeper.io/)
+
 ### UI-Router support for Hybrid Angular/AngularJS apps
 
 This module provides [ngUpgrade](https://angular.io/docs/ts/latest/guide/upgrade.html) integration with UI-Router.

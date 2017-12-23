@@ -51,12 +51,14 @@ function isExternal(id) {
 }
 
 const CONFIG = {
-  moduleName: '@uirouter/angular-hybrid',
-  entry: 'lib/index.js',
-  dest: '_bundles/ui-router-angular-hybrid' + extension,
+  input: 'lib/index.js',
+  output: {
+    name: '@uirouter/angular-hybrid',
+    file: '_bundles/ui-router-angular-hybrid' + extension,
+    format: 'umd',
+    sourcemap: true,
+  },
 
-  sourceMap: true,
-  format: 'umd',
   exports: 'named',
   plugins: plugins,
   banner: banner,
