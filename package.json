@@ -16,9 +16,9 @@
   "dependencies": {
     "@types/angular": "~1.6.1",
     "@types/jquery": "^3.2.17",
-    "@uirouter/angular": "1.0.0-rc.1",
-    "@uirouter/angularjs": "1.0.11",
-    "@uirouter/core": "5.0.12"
+    "@uirouter/angular": "1.0.0-rc.2",
+    "@uirouter/angularjs": "1.0.12",
+    "@uirouter/core": "5.0.13"
   },
   "peerDependencies": {
     "@angular/core": "^4.0.0 || ^5.0.0",
@@ -26,13 +26,13 @@
     "angular": "^1.5.0"
   },
   "devDependencies": {
-    "@angular/common": "^5.1.2",
-    "@angular/compiler": "^5.1.2",
-    "@angular/compiler-cli": "^5.1.2",
-    "@angular/core": "^5.1.2",
-    "@angular/platform-browser": "^5.1.2",
-    "@angular/platform-browser-dynamic": "^5.1.2",
-    "@angular/upgrade": "^5.1.2",
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/compiler-cli": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/upgrade": "^4.0.0",
     "@uirouter/publish-scripts": "2.0.8",
     "angular": "~1.6.1",
     "awesome-typescript-loader": "^3.0.0",
@@ -58,5 +58,16 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ui-router/angular-hybrid.git"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "@angular/common",
+      "@angular/compiler",
+      "@angular/compiler-cli",
+      "@angular/core",
+      "@angular/platform-browser",
+      "@angular/platform-browser-dynamic",
+      "@angular/upgrade"
+    ]
   }
 }
