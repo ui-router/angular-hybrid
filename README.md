@@ -1,5 +1,6 @@
 # UI-Router angular-hybrid
 
+[![Build Status](https://travis-ci.org/ui-router/angular-hybrid.svg?branch=master)](https://travis-ci.org/ui-router/angular-hybrid)
 [![Greenkeeper badge](https://badges.greenkeeper.io/ui-router/angular-hybrid.svg)](https://greenkeeper.io/)
 
 ### UI-Router support for Hybrid Angular/AngularJS apps
