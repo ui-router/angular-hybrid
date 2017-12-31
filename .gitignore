@@ -12,7 +12,7 @@ _bundles
 *.ipr
 *.iml
 *.iws
-.*
+**/.*
 stats.html
 
 # Logs

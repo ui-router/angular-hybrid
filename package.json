@@ -10,6 +10,8 @@
     "fixmaps:lib": "tweak_sourcemap_paths -a --include 'lib/**/*.js.map' 'lib-esm/**/*.js.map'",
     "fixmaps:bundle": "tweak_sourcemap_paths -p ../src --include '_bundles/**/*.js.map'",
     "release": "release --deps @uirouter/core @uirouter/angular @uirouter/angularjs",
+    "test": "npm run build",
+    "test:downstream": "npm run build && test_downstream_projects",
     "prepublishOnly": "npm run build"
   },
   "license": "MIT",

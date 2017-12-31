@@ -1,6 +1,6 @@
 src
 scripts
-.*
+**/.*
 
 *.ipr
 *.iml
