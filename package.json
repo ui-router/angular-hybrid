@@ -45,7 +45,7 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-progress": "^0.4.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
-    "rollup-plugin-uglify": "^2.0.1",
+    "rollup-plugin-uglify": "^3.0.0",
     "rollup-plugin-visualizer": "^0.3.1",
     "rxjs": "5.5.6",
     "shx": "^0.2.2",
