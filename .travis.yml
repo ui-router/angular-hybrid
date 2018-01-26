@@ -4,8 +4,7 @@ before_install: yarn global add greenkeeper-lockfile@1 yalc
 install: yarn --check-files
 before_script: greenkeeper-lockfile-update && greenkeeper-lockfile-upload
 script:
-- if [ "x${DOWNSTREAM_PKGS}${DOWNSTREAM}x" != "xx" ] ; then npm run test:downstream
-  ; else tsc && npm run travis ; fi
+- if [ "x${DOWNSTREAM_PKGS}${DOWNSTREAM}x" != "xx" ] ; then npm run test:downstream ; else tsc && npm run build ; fi
 env:
   global:
     secure: P9LR6+rvwLH6zWx1nS12pwHxBf1nnVMRMclXrKdJQJ6ZqM8ndT8kl5gzDavvgEWdZ6988HOgkgS17yzVU7tBUz+id0l0D2Ugw7YYl3e1IET8++3RDn0jQamVixIaEStTR4Sy0rWd5hIhEzf2hJsAlW1DKr3G1aDp+kuZN2Ugdfnuk3NCt5H5awswoYHg460ClSeA9iEhmiA5HipgGEXlRG3S6DZgOS8z7GSp/G7siApoRAO4pqkUEsYJJ6LKeLquupAgCl6ONMB6YM7M/InpYjjgXArJnOh2CcMy9RQ1gOZk7NMuPEq1s8bwVWoDMkN+3dolF4x1rTaiGng7MAF7RQvCMdjBfqCQmqCW1mV68T2iimCEq1IrCr9oRkAE2mwlYWyqpB5dZPumWBnhNMrcGL40CVlT/EFt7fVSCi9RtPiep0D17agtO+Cp+VaViVAFvZINL5RCDYqyYDEYWuPTQo7CcMCjimWPBkYi0qO0RpvVhFavmIQEdBweffyfS6ZAboEbNcBVEjY5axt7frXx3rvf0itIXx6XVZN58npEPn62a1ZUamrWc+shxUWD1pY2V0z+fDPpv/+OATIJx3Diu7igKAsYChZPZcT9SCuODhuigqn8A8p0gDAjCKVOKOEHRcY6JCkCemc99x7bW6n6zpUbmOMjx2RP8bZTWKnQq/s=
