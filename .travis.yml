@@ -1,30 +1,25 @@
 language: node_js
-node_js: '8.9.1'
-
+node_js: 8.9.1
 before_install: yarn global add greenkeeper-lockfile@1 yalc
 install: yarn --check-files
-
 before_script: greenkeeper-lockfile-update && greenkeeper-lockfile-upload
 script:
-# If DOWNSTREAM or DOWNSTREAM_PKGS is set, run downstream packages' tests instead
-- if [ "x${DOWNSTREAM_PKGS}${DOWNSTREAM}x" != "xx" ] ; then npm run test:downstream ; else tsc && npm run travis ; fi
-
+- if [ "x${DOWNSTREAM_PKGS}${DOWNSTREAM}x" != "xx" ] ; then npm run test:downstream
+  ; else tsc && npm run travis ; fi
 env:
   global:
-    secure: P9LR6+rvwLH6zWx1nS12pwHxBf1nnVMRMclXrKdJQJ6ZqM8ndT8kl5gzDavvgEWdZ6988HOgkgS17yzVU7tBUz+id0l0D2Ugw7YYl3e1IET8++3RDn0jQamVixIaEStTR4Sy0rWd5hIhEzf2hJsAlW1DKr3G1aDp+kuZN2Ugdfnuk3NCt5H5awswoYHg460ClSeA9iEhmiA5HipgGEXlRG3S6DZgOS8z7GSp/G7siApoRAO4pqkUEsYJJ6LKeLquupAgCl6ONMB6YM7M/InpYjjgXArJnOh2CcMy9RQ1gOZk7NMuPEq1s8bwVWoDMkN+3dolF4x1rTaiGng7MAF7RQvCMdjBfqCQmqCW1mV68T2iimCEq1IrCr9oRkAE2mwlYWyqpB5dZPumWBnhNMrcGL40CVlT/EFt7fVSCi9RtPiep0D17agtO+Cp+VaViVAFvZINL5RCDYqyYDEYWuPTQo7CcMCjimWPBkYi0qO0RpvVhFavmIQEdBweffyfS6ZAboEbNcBVEjY5axt7frXx3rvf0itIXx6XVZN58npEPn62a1ZUamrWc+shxUWD1pY2V0z+fDPpv/+OATIJx3Diu7igKAsYChZPZcT9SCuODhuigqn8A8p0gDAjCKVOKOEHRcY6JCkCemc99x7bW6n6zpUbmOMjx2RP8bZTWKnQq/s= matrix:
+    secure: P9LR6+rvwLH6zWx1nS12pwHxBf1nnVMRMclXrKdJQJ6ZqM8ndT8kl5gzDavvgEWdZ6988HOgkgS17yzVU7tBUz+id0l0D2Ugw7YYl3e1IET8++3RDn0jQamVixIaEStTR4Sy0rWd5hIhEzf2hJsAlW1DKr3G1aDp+kuZN2Ugdfnuk3NCt5H5awswoYHg460ClSeA9iEhmiA5HipgGEXlRG3S6DZgOS8z7GSp/G7siApoRAO4pqkUEsYJJ6LKeLquupAgCl6ONMB6YM7M/InpYjjgXArJnOh2CcMy9RQ1gOZk7NMuPEq1s8bwVWoDMkN+3dolF4x1rTaiGng7MAF7RQvCMdjBfqCQmqCW1mV68T2iimCEq1IrCr9oRkAE2mwlYWyqpB5dZPumWBnhNMrcGL40CVlT/EFt7fVSCi9RtPiep0D17agtO+Cp+VaViVAFvZINL5RCDYqyYDEYWuPTQo7CcMCjimWPBkYi0qO0RpvVhFavmIQEdBweffyfS6ZAboEbNcBVEjY5axt7frXx3rvf0itIXx6XVZN58npEPn62a1ZUamrWc+shxUWD1pY2V0z+fDPpv/+OATIJx3Diu7igKAsYChZPZcT9SCuODhuigqn8A8p0gDAjCKVOKOEHRcY6JCkCemc99x7bW6n6zpUbmOMjx2RP8bZTWKnQq/s=
   matrix:
   - DOWNSTREAM=
   - DOWNSTREAM=true
-
 notifications:
   slack:
     on_success: change
-    secure: Xq9gHjFydM6v38ncMw8kVEV07mRctwSrr4opdd8ESHYtlCJq2xoYeS0z6teZKcfC/OF26VU5VhOwVsMBfCVJYX2HuHz8u01rJU7/j21UvKFjrzAx620oCzbUFB+iN8oPm7w/S4d24OPHkZbQGWonQm0W3GTZRtbcmJ/iblzq7W5uG4TdYp2ILjxiS8PTDzACeq1qM1MpgKoRmjAXEDzoi4QQw4MAVzrQTQMvnpx9jQxTsMNOR9uVvb9yUkR7hGGPYYYT5DQOlIxzaTYKggXjPr+Z3OA/0RK/rphH4Kst5+CmNwY0DRGe2MahsVmHvZg4GEdQfLMLEhNHAo1anfM2JicDFWV/0vOAsGx+CPf7G8MgBk3nHfZ7+SzXPyU7VhWDisZ/NCmb5ZZ+c9gqd0KU4OJlhlxeB03eCLcGBKTUzfxpCeH/QSMUij0HcbVLtjDww9alNppXBQkFW3GTYoGf1tmXayEiXSsvtD2W/6zsOB7t3NzDARI8O/Ozkg7QB9cC/SpijHMHfh0AzVTO9OzMw5+GNkF1dOjB1VCeYiIU6xzPxN0WO9UXLq1dBY4KjZ5XoDuQpMzY537sj5GyIjlVBark+U4RizMnWRshiNjwG92PHP50wcLmbmFs1ohPhM3e2v1z+JtFmhh1kkcyW+XYwjjX+LkG0zM7Ch+VOCFAp+A=
-
+    rooms:
+      secure: j7e3ZWUOI38Usvk4Ct76vM5qxLihscIhqYzSeIGDBtlR/8TFKQyoSt41McfUQadMNH2Oo8sHSiyhF2Z3Wq4TCWgWOzP40pNcmjIrcIieKi/FbPT2Px+tMJM1mupctJOILEvf0XiBjOPYouM2j/EOaUHlQPsbh5GTYDrbxdmJnctyxXQc1f+j+fudZNi0tssEyuV7rrOoZorWOd7GEbbF3EaW49pCaGL8Bz0Ujq9/I9SZMacSvE15OaXQnHm2wn5oU0MW7+JAN7KpD0VmChY2fVPbxQlsC8j/aFwHxS/c1El+Jd/yDz7sBWopelz5sgCxCXzlWCQMhvMKLh8iXYPLd57seQndfvuMKKXWMLcpxTdI5+t8qhZr3X+NIUlZQQHLB/JQNCfj9MBXhCUAqC42wxwbpGmbfZHE6q4HKSLBZvuwd0ffZc4Z+VogzrKvQ1sqTe3Lx9ugQMsWsEk5+4TxwdJBisTyZZHWm6dOnDB1SL+nMVYXheY9NrWcWQBRuOSCVkVYCjppLSNnT60zaoCQswhczb50QHFgOuxrsGns87Q2a9nhhCabkFN94HBxKHFM6sCr0z8NMA+w6nX1uJBauV68BCUjjENobKdjEs6T17QGIT2JTONdruuImZn/11GdYZuY7Sxt1GzABSsDa+/PJLVlip0/i+1lvpRMX9T9LhU=
 sudo: false
-
 cache:
   yarn: true
   directories:
   - node_modules
-  - .downstream_cache
+  - ".downstream_cache"
