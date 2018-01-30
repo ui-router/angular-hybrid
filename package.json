@@ -35,7 +35,7 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/upgrade": "^4.0.0",
-    "@uirouter/publish-scripts": "2.2.4",
+    "@uirouter/publish-scripts": "2.2.9",
     "angular": "~1.6.1",
     "awesome-typescript-loader": "^3.0.0",
     "conventional-changelog": "^1.1.3",
