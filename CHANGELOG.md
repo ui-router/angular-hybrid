@@ -1,3 +1,67 @@
+## 3.1.9 (2018-01-31)
+[Compare `@uirouter/angular-hybrid` versions 3.1.8 and 3.1.9](https://github.com/ui-router/angular-hybrid/compare/3.1.8...3.1.9)
+
+### Bug Fixes
+
+* **greenkeeper:** pin angular dev deps to 4.x, update ui-router deps, update rollup config ([c157551](https://github.com/ui-router/angular-hybrid/commit/c157551))
+
+
+### Updated `@uirouter/core` from 5.0.11 to 5.0.16
+[Compare `@uirouter/core` versions 5.0.11 and 5.0.16](https://github.com/ui-router/core/compare/5.0.11...5.0.16)
+
+### Bug Fixes
+
+* **browserLocation:** Use location.pathname (not href) or '/' when no base tag found ([db461d6](https://github.com/ui-router/core/commit/db461d6))
+* **browserLocationConfig:** If no base href found, use location.href (not empty string) ([0251424](https://github.com/ui-router/core/commit/0251424))
+* **common:** Fix signature of  for objects (make target optional) ([61d0afc](https://github.com/ui-router/core/commit/61d0afc))
+* **core:** Fix memory leak of resolve data from ALL transitions ever ([7f2aed1](https://github.com/ui-router/core/commit/7f2aed1))
+* **pathNode:** add backwards compat for PathNode.clone(). Add retainedWithToParams to treeChanges interface. ([4833a32](https://github.com/ui-router/core/commit/4833a32))
+* **pushStateLocation:** Fix URLs: add slash between base and path when necessary ([bfa5755](https://github.com/ui-router/core/commit/bfa5755))
+* **pushStateLocation:** When url is "" or "/", use baseHref for pushState ([042a950](https://github.com/ui-router/core/commit/042a950))
+* **resolve:** Add onFinish hook to resolve any dynamicly added resolvables ([7d1ca54](https://github.com/ui-router/core/commit/7d1ca54))
+* **trace:** Fix null reference in uiview name sort function ([59cb067](https://github.com/ui-router/core/commit/59cb067))
+* **treeChanges:** apply toParams to 'retained' path ([#72](https://github.com/ui-router/core/issues/72)) ([cf63d11](https://github.com/ui-router/core/commit/cf63d11))
+* **urlRouter:** Update query params when resetting url via .update() ([7664cd0](https://github.com/ui-router/core/commit/7664cd0))
+
+
+### Features
+
+* **common:** Add map-in-place support to map() ([12bc7d8](https://github.com/ui-router/core/commit/12bc7d8))
+* **common:** Add onEvict() callback registry for queues with max length ([c19d007](https://github.com/ui-router/core/commit/c19d007))
+* **view:** Add onSync callback API to plugin API ([9544ae5](https://github.com/ui-router/core/commit/9544ae5))
+
+
+### Updated `@uirouter/angular` from 1.0.0-rc.1 to 1.0.0
+[Compare `@uirouter/angular` versions 1.0.0-rc.1 and 1.0.0](https://github.com/ui-router/ng2/compare/1.0.0-rc.1...1.0.0)
+
+### Bug Fixes
+
+* **hooks:** Use an APP_INITIALIZER to sync/listen to the URL ([f1d390f](https://github.com/ui-router/ng2/commit/f1d390f))
+* **package:** Bump dependency on uirouter/publish-scripts to fix npm install ([1a026d2](https://github.com/ui-router/ng2/commit/1a026d2))
+* **package:** update [@uirouter](https://github.com/uirouter)/core to version 5.0.13 ([90aa1d4](https://github.com/ui-router/ng2/commit/90aa1d4))
+
+
+### Features
+
+* **uiSref:** Add support for ctrl/middle-clicking on a uiSref generated URL ([#175](https://github.com/ui-router/ng2/issues/175)) ([973924a](https://github.com/ui-router/ng2/commit/973924a))
+
+
+### Updated `@uirouter/angularjs` from 1.0.11 to 1.0.14
+[Compare `@uirouter/angularjs` versions 1.0.11 and 1.0.14](https://github.com/angular-ui/ui-router/compare/1.0.11...1.0.14)
+
+### Bug Fixes
+
+* **location:** allow empty string param: Ng1LocationServices.url('') ([01bbaf0](https://github.com/angular-ui/ui-router/commit/01bbaf0))
+* **onEnter:** Do not inject child-state data into ng1 onEnter hooks ([cdec6a0](https://github.com/angular-ui/ui-router/commit/cdec6a0))
+* **package:** update [@uirouter](https://github.com/uirouter)/core to version 5.0.13 ([6c63f2d](https://github.com/angular-ui/ui-router/commit/6c63f2d))
+* **travis:** regenerate and encrypt secret ([c718ce5](https://github.com/angular-ui/ui-router/commit/c718ce5))
+* **uiSrefActive:** don't match fuzzy on lazy loaded future states ([01430ee](https://github.com/angular-ui/ui-router/commit/01430ee))
+
+
+### Features
+
+* **uiSrefActive:** Support arrays of globs for ng-class style ([b215343](https://github.com/angular-ui/ui-router/commit/b215343))
+
 ## 3.1.8 (2017-12-07)
 [Compare `@uirouter/angular-hybrid` versions 3.1.7 and 3.1.8](https://github.com/ui-router/angular-hybrid/compare/3.1.7...3.1.8)
 
