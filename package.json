@@ -49,7 +49,7 @@
     "rollup-plugin-visualizer": "0.3.1",
     "rxjs": "5.5.6",
     "shx": "0.2.2",
-    "systemjs": "0.20.19",
+    "systemjs": "0.21.0",
     "typescript": "2.6.2",
     "webpack": "3.10.0",
     "zone.js": "0.8.20"
