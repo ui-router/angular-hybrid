@@ -53,25 +53,24 @@ const CONFIG = {
     file: '_bundles/ui-router-angular-hybrid' + extension,
     format: 'umd',
     sourcemap: true,
+    exports: 'named',
+    banner: banner,
+    globals: {
+      '@uirouter/angular': '@uirouter/angular',
+      '@uirouter/angularjs': '@uirouter/angularjs',
+      '@uirouter/core': '@uirouter/core',
+      '@uirouter/rx': '@uirouter/rx',
+      '@angular/core': 'ng.core',
+      '@angular/common': 'ng.common',
+      '@angular/upgrade/static': 'ng.upgrade.static',
+      'angular': 'angular',
+    },
   },
 
-  exports: 'named',
   plugins: plugins,
-  banner: banner,
-
   onwarn: onwarn,
   external: isExternal,
 
-  globals: {
-    '@uirouter/angular': '@uirouter/angular',
-    '@uirouter/angularjs': '@uirouter/angularjs',
-    '@uirouter/core': '@uirouter/core',
-    '@uirouter/rx': '@uirouter/rx',
-    '@angular/core': 'ng.core',
-    '@angular/common': 'ng.common',
-    '@angular/upgrade/static': 'ng.upgrade.static',
-    'angular': 'angular',
-  }
 };
 
 export default CONFIG;
