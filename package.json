@@ -20,7 +20,7 @@
     "@types/jquery": "3.3.0",
     "@uirouter/angular": "1.0.0",
     "@uirouter/angularjs": "1.0.14",
-    "@uirouter/core": "5.0.16"
+    "@uirouter/core": "5.0.17"
   },
   "peerDependencies": {
     "@angular/core": "^4.0.0 || ^5.0.0",
