@@ -3,12 +3,11 @@ import { Component, NgModule } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { UpgradeModule } from '@angular/upgrade/static';
 import { BrowserModule } from '@angular/platform-browser';
-import { UIRouterModule } from '@uirouter/angular';
-import { UIRouterUpgradeModule } from '@uirouter/angular-hybrid';
+import { UIRouterUpgradeModule, UIRouterHybridModule, Ng2HybridStateDeclaration } from '@uirouter/angular-hybrid';
 import { UrlService} from '@uirouter/core';
 
 
-var app = angular.module('minimal', ['ui.router.upgrade']);
+const app = angular.module('minimal', ['ui.router.upgrade']);
 
 app.run(($stateRegistry, $urlService) => {
   $urlService.rules.initial({state: 'app'});
@@ -45,16 +44,7 @@ app.run(($stateRegistry, $urlService) => {
       name: 'app.ng2',
       component: Ng2Component,
   });
-
-  // nested route to ng2 component
-  $stateRegistry.register({
-      url: '/ng2',
-      name: 'app.ng2.ng2',
-      component: Ng2Component,
-  });
 });
-
-
 
 // An AngularJS component
 app.component('ng1Component', {
@@ -68,7 +58,7 @@ app.component('ng1Component', {
         console.log('ng1Component.$onInit()');
       }
     }
-})
+});
 
 // An Angular component
 @Component({
@@ -85,6 +75,12 @@ export class Ng2Component {
   }
 }
 
+const nestedState: Ng2HybridStateDeclaration = {
+  url: '/ng2',
+  name: 'app.ng2.ng2',
+  component: Ng2Component
+};
+
 // The root Angular module
 @NgModule({
   imports: [
@@ -94,7 +90,7 @@ export class Ng2Component {
     // Provides the @uirouter/angular-hybrid directives
     UIRouterUpgradeModule,
     // Provides the @uirouter/angular directives
-    UIRouterModule,
+    UIRouterHybridModule.forChild({ states: [nestedState]})
   ],
   declarations: [Ng2Component],
   entryComponents: [Ng2Component],

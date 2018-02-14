@@ -15,6 +15,7 @@ import {
 import { $InjectorLike, Ng1ViewConfig } from '@uirouter/angularjs';
 
 import { UIRouterRx } from '@uirouter/rx';
+import { IUIRouterHybridModule } from './intefaces';
 
 /**
  * Create a ng1 module for the ng1 half of the hybrid application to depend on.
@@ -155,6 +156,8 @@ export function getParentUIViewInject(r: StateRegistry): ParentUIViewInject {
   return { fqn: null, context: r.root() };
 }
 
+export const UIRouterHybridModule: IUIRouterHybridModule = UIRouterModule as IUIRouterHybridModule;
+
 /**
  * This NgModule should be added to the root module of the hybrid app.
  */
@@ -182,7 +185,7 @@ export function getParentUIViewInject(r: StateRegistry): ParentUIViewInject {
 // Downgrade the UIViewNgUpgrade ng2 Component to an ng1 directive.
 // The directive is used in a (generated) view template by the (host) ng1 ui-router,
 // whenever it finds a view configured with a `component: <Ng2ComponentClass>`
-upgradeModule.directive("uiViewNgUpgrade", <any> downgradeComponent({ 
+upgradeModule.directive("uiViewNgUpgrade", <any> downgradeComponent({
   component: UIViewNgUpgrade,
   inputs: ['name']
 }));
