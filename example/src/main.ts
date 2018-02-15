@@ -95,8 +95,10 @@ const nestedState: Ng2HybridStateDeclaration = {
   declarations: [Ng2Component],
   entryComponents: [Ng2Component],
 }) export class RootModule {
+  constructor(private upgrade: UpgradeModule) {}
   ngDoBootstrap() {
-    /* no body: this disables normal (non-hybrid) Angular bootstrapping */
+    // The DOM must be already be available
+    this.upgrade.bootstrap(document.body, [app.name]);
   }
 }
 
@@ -106,14 +108,8 @@ app.config([ '$urlServiceProvider', $urlService => $urlService.deferIntercept() 
 
 // Manually bootstrap the Angular app
 platformBrowserDynamic().bootstrapModule(RootModule).then(platformRef => {
-  const injector = platformRef.injector;
-  const upgrade = injector.get(UpgradeModule) as UpgradeModule;
-
-  // The DOM must be already be available
-  upgrade.bootstrap(document.body, [app.name]);
-
-  // Intialize the Angular Module (get() any UIRouter service from DI to initialize it)
-  const url: UrlService = injector.get(UrlService);
+  // get() UrlService from DI (this call will create all the UIRouter services)
+  const url: UrlService = platformRef.injector.get(UrlService);
 
   // Instruct UIRouter to listen to URL changes
   url.listen();

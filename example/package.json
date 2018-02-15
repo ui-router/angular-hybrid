@@ -1,6 +1,15 @@
 {
+  "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "build": "webpack",
+    "test": "run-s build e2e",
+    "test-ui": "run-s build e2e-ui",
+    "e2e": "run-p -r browser-sync cypress",
+    "e2e-ui": "run-p -r browser-sync cypress-ui",
+    "browser-sync": "browser-sync start --port 4000 --server . --no-open",
+    "cypress": "wait-on tcp:4000 && cypress run",
+    "cypress-ui": "wait-on tcp:4000 && cypress open"
   },
   "dependencies": {
     "@angular/common": "^5.0.0",
@@ -12,12 +21,18 @@
     "@angular/upgrade": "^5.0.0",
     "@types/angular": "^1.6.39",
     "@types/jquery": "^3.2.16",
-    "@uirouter/angular-hybrid": "3.1.8",
+    "@uirouter/angular-hybrid": "latest",
     "angular": "1.6.6",
     "rxjs": "^5.5.3",
     "ts-loader": "3.2.0",
     "typescript": "^2.6.2",
     "webpack": "3.10.0",
     "webpack-dev-server": "2.9.6"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "cypress": "^1.4.2",
+    "npm-run-all": "^4.1.2",
+    "wait-on": "^2.1.0"
   }
 }
