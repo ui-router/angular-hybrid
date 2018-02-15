@@ -17,13 +17,13 @@ import { Ng2AboutComponentClass } from "./about.ng2.component";
 /// ...
 
 $stateProvider.state({
-  name: 'home', 
+  name: 'home',
   url: '/home',
   component: 'ng1HomeComponent' // AngularJS component or directive name
 })
 
 .state({
-  name: 'about', 
+  name: 'about',
   url: '/about',
   component: Ng2AboutComponentClass // Angular component class reference
 });
@@ -43,17 +43,11 @@ When routing to an Angular component, that component uses the standard
 When routing to an AngularJS component or template, that component uses the standard
 [AngularJS directives (ui-view and ui-sref) from `@uirouter/angularjs`](https://ui-router.github.io/ng1/docs/latest/modules/directives.html).
 
-See the [hybrid sample app](https://github.com/ui-router/sample-app-ng1-to-ng2) for a full example.
-
-### UpgradeAdapter vs UpgradeModule
-
-Version 2.0.0 of `@uirouter/angular-hybrid` only supports `UpgradeAdapter`, which works fine but is no longer in development.
-Version 3.0.0 of `@uirouter/angular-hybrid` will support only `UpgradeModule` from `@angular/upgrade/static`, which is what the Angular team actively supports for hybrid mode.
-Because we  are dropping support for `UpgradeAdapter`, current users will have to switch to `UpgradeModule`.
+See the [hybrid sample app](https://github.com/ui-router/sample-app-angular-hybrid) for a full example.
 
 ### Getting started
 
-Remove `angular-ui-router` (or `@uirouter/angularjs`) from your package.json and replace it with `@uirouter/angular-hybrid`.
+Remove `angular-ui-router` (or `@uirouter/angularjs`) from your AngularJS app's package.json and replace it with `@uirouter/angular-hybrid`.
 Add the `@angular/*` dependencies.
 
 ```
@@ -86,11 +80,10 @@ let ng1module = angular.module("myApp", ['ui.router', 'ui.router.upgrade']);
 
 #### Create a root Angular NgModule
 
-- Import the `BrowserModule`, `UpgradeModule`, and the `UIRouterUpgradeModule`.
+- Import the `BrowserModule`, `UpgradeModule`, and a `UIRouterUpgradeModule.forChild()` module.
+- Add `providers` entry for any AngularJS services you want to expose to Angular.
+- The module should have a `ngDoBootstrap` method which calls the `UpgradeModule`'s `bootstrap` method.
 
-- Any AngularJS services you want to expose to Angular should have a `providers` entry.
-
-- The module should have a no-op `ngDoBootstrap` method.
 
 ```js
 export function getDialogService($injector) {
@@ -98,14 +91,22 @@ export function getDialogService($injector) {
 }
 
 @NgModule({
-  imports: [ BrowserModule, UpgradeModule, UIRouterUpgradeModule ],
+  imports: [
+    BrowserModule,
+    UpgradeModule,
+    UIRouterUpgradeModule.forChild({ states: ngHybridStates }),
+  ],
   providers: [
     { provide: NgModuleFactoryLoader, useClass: SystemJsNgModuleLoader },
     // Register some AngularJS services as Angular providers
     { provide: 'DialogService', deps: ['$injector'], useFactory: getDialogService },
   ]
 }) export class SampleAppModule {
-  ngDoBootstrap() { /* no body */ }
+  constructor(private upgrade: UpgradeModule) { }
+
+  ngDoBootstrap() {
+    this.upgrade.bootstrap(document.body, [sampleAppModuleAngularJS.name]);
+  }
 }
 ```
 
@@ -126,24 +127,16 @@ ngmodule.config([ '$urlServiceProvider', ($urlService: UrlService) => $urlServic
 #### Bootstrap the app
 
 - Bootstrap Angular
-
-- Then, bootstrap AngularJS
-
-- Tell UIRouter to synchronize the URL and listen for further URL changes
+- Angular runs ngDoBootstrap() which bootstraps AngularJS
+- Chain off `bootstrapModule()` and tell UIRouter to synchronize the URL and listen for further URL changes
 
 ```js
 // Wait until the DOM is ready
 angular.element(document).ready(function () {
   // Manually bootstrap the Angular app
   platformBrowserDynamic().bootstrapModule(SampleAppModule).then(platformRef => {
-    const injector: Injector = platformRef.injector;
-    const upgrade = injector.get(UpgradeModule) as UpgradeModule;
-
-    // Manually bootstrap the AngularJS app
-    upgrade.bootstrap(document.body, ['demo']);
-
-    // Intialize the Angular Module (get() any UIRouter service from DI to initialize it)
-    const url: UrlService = injector.get(UrlService);
+    // get() UrlService from DI (this call will create all the UIRouter services)
+    const url: UrlService = platformRef.injector.get(UrlService);
 
     // Instruct UIRouter to listen to URL changes
     url.listen();
@@ -159,14 +152,14 @@ angular.element(document).ready(function () {
 Your existing AngularJS routes work the same as before.
 
 ```
-var foo = { 
+var foo = {
   name: 'foo',
   url: '/foo',
   component: 'fooComponent'
 };
 $stateProvider.state(foo);
 
-var bar = { 
+var bar = {
   name: 'foo.bar',
   url: '/bar',
   templateUrl: '/bar.html',
@@ -181,10 +174,10 @@ Register states using either Angular or AngularJS code.
 Use `component:` in your state declaration.
 
 ```
-var leaf = { 
+var leaf = {
   name: 'foo.bar.leaf',
   url: '/leaf',
-  component: MyNg2CommponentClass 
+  component: MyNg2CommponentClass
 };
 $stateProvider.state(leaf);
 ```
@@ -194,7 +187,7 @@ $stateProvider.state(leaf);
 ```js
 @NgModule({
   imports: [
-    UIRouterModule.forChild({
+    UIRouterUpgradeModule.forChild({
       states: [featureState1, featureState2]
     })
   ],
@@ -208,8 +201,11 @@ export class MyFeatureModule {}
 Add the feature module to the root NgModule imports
 ```js
 @NgModule({
-  // import the Ng1ToNg2Module
-  imports: [ BrowserModule, Ng1ToNg2Module, MyFeatureModule ]
+  imports: [
+    BrowserModule,
+    UIRouterUpgradeModule,
+    MyFeatureModule
+  ]
 }) class SampleAppModule {}
 ```
 
@@ -222,8 +218,7 @@ Note: You can also add states directly to the root NgModule using `UIRouterModul
   // import the Ng1ToNg2Module and create a UIRouter "child module"
   imports: [
     BrowserModule,
-    Ng1ToNg2Module,
-    UIRouterModule.forChild({ states: NG2_STATES })
+    UIRouterUpgradeModule.forChild({ states: NG2_STATES })
   ],
   declarations: [NG2_COMPONENTS]
 }) class SampleAppModule {}
@@ -240,7 +235,8 @@ Because of this, apps should be migrated starting from leaf states/views and wor
 
 ---
 
-When a state has an `onEnter`, `onExit`, or `onRetain`, they are always injected (AngularJS style), even if the state uses Angular 2+ components or is added to an `UIRouterModule.forChild` `NgModule`.  
+When a state has an `onEnter`, `onExit`, or `onRetain`, they are always injected (AngularJS style),
+even if the state uses Angular 2+ components or is added to an `UIRouterUpgradeModule.forChild` `NgModule`.
 
 ```js
 export function ng2StateOnEnter(transition: Transition, svc: MyService) {
@@ -258,3 +254,10 @@ export const NG2_STATE = {
 The minimal example of `@uirouter/angular-hybrid` can be found here: https://github.com/ui-router/angular-hybrid/tree/master/example
 
 A full fledged sample application example can be found here: https://github.com/ui-router/sample-app-angular-hybrid
+
+# UpgradeAdapter vs UpgradeModule
+
+Version 2.0.0 of `@uirouter/angular-hybrid` only supports `UpgradeAdapter`, which works fine but is no longer in development.
+Version 3+0.0+ of `@uirouter/angular-hybrid` will support only `UpgradeModule` from `@angular/upgrade/static`, which is what the Angular team actively supports for hybrid mode.
+Because we  are dropping support for `UpgradeAdapter`, current users will have to switch to `UpgradeModule`.
+
