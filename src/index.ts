@@ -1,2 +1,2 @@
 export * from './angular-hybrid';
-export * from './intefaces';
+export * from './interfaces';

@@ -3,7 +3,7 @@ import { Component, NgModule } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { UpgradeModule } from '@angular/upgrade/static';
 import { BrowserModule } from '@angular/platform-browser';
-import { UIRouterUpgradeModule, UIRouterHybridModule, Ng2HybridStateDeclaration } from '@uirouter/angular-hybrid';
+import { UIRouterUpgradeModule, NgHybridStateDeclaration } from '@uirouter/angular-hybrid';
 import { UrlService} from '@uirouter/core';
 
 
@@ -75,7 +75,7 @@ export class Ng2Component {
   }
 }
 
-const nestedState: Ng2HybridStateDeclaration = {
+const nestedState: NgHybridStateDeclaration = {
   url: '/ng2',
   name: 'app.ng2.ng2',
   component: Ng2Component
@@ -87,10 +87,8 @@ const nestedState: Ng2HybridStateDeclaration = {
     BrowserModule,
     // Provide Angular upgrade capabilities
     UpgradeModule,
-    // Provides the @uirouter/angular-hybrid directives
-    UIRouterUpgradeModule,
     // Provides the @uirouter/angular directives
-    UIRouterHybridModule.forChild({ states: [nestedState]})
+    UIRouterUpgradeModule.forChild({ states: [nestedState] }),
   ],
   declarations: [Ng2Component],
   entryComponents: [Ng2Component],
