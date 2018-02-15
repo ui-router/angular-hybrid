@@ -1,3 +1,49 @@
+# 4.0.0 (2018-02-15)
+[Compare `@uirouter/angular-hybrid` versions 3.1.10 and 4.0.0](https://github.com/ui-router/angular-hybrid/compare/3.1.10...4.0.0)
+
+### Bug Fixes
+
+* **package:** Move types/* dependencies to devDependencies ([9c87ae6](https://github.com/ui-router/angular-hybrid/commit/9c87ae6))
+
+
+### Features
+
+* **NgModule:** Add UIRouterUpgradeModule.forChild() ([a867ffb](https://github.com/ui-router/angular-hybrid/commit/a867ffb))
+* **typings:** add types for hybrid state declaration ([f5a6c73](https://github.com/ui-router/angular-hybrid/commit/f5a6c73))
+
+
+### BREAKING CHANGES
+
+* **NgModule:** - Remove standalone import of `UIRouterUpgradeModule`.
+- Use `UIRouterUpgradeModule.forChild()` instead of `UIRouterModule.forChild()`.
+- Cast states as `NgHybridStateDeclaration`.
+
+The `angular-hybrid` library processes state's `onEnter`/`onExit`/`onRetain` as AngularJS style injected functions.  However, the typescript typings when using `UIRouterModule.forChild()` were not compatible with AngularJS style injected callbacks.  This release adds typings supporting AngularJS style callbacks on state declarations.
+
+```ts
+export const mystate: NgHybridStateDeclaration = {  // cast
+  name: 'mystate',
+  url: '/mystate',
+  component: MyAngularComponent,
+  onEnter: myStateOnEnter,
+};
+
+myStateOnEnter.$inject = ['$state'];
+export function myStateOnEnter($state) {
+  console.log('$state was injected', $state);
+}
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    UpgradeModule,
+    // remove this: UIRouterUpgradeModule,
+    // remove this: UIRouterModule.forChild( ... ),
+    UIRouterUpgradeModule.forChild({ states: [mystate] }), // replace with this
+  ]
+})
+```
+
 ## 3.1.10 (2018-02-12)
 [Compare `@uirouter/angular-hybrid` versions 3.1.9 and 3.1.10](https://github.com/ui-router/angular-hybrid/compare/3.1.9...3.1.10)
 
