@@ -258,6 +258,6 @@ A full fledged sample application example can be found here: https://github.com/
 # UpgradeAdapter vs UpgradeModule
 
 Version 2.0.0 of `@uirouter/angular-hybrid` only supports `UpgradeAdapter`, which works fine but is no longer in development.
-Version 3+0.0+ of `@uirouter/angular-hybrid` will support only `UpgradeModule` from `@angular/upgrade/static`, which is what the Angular team actively supports for hybrid mode.
-Because we  are dropping support for `UpgradeAdapter`, current users will have to switch to `UpgradeModule`.
+Version 30.0+ of `@uirouter/angular-hybrid` only supports `UpgradeModule` from `@angular/upgrade/static`, which is what the Angular team actively supports for hybrid mode.
+Because we dropped support for `UpgradeAdapter`, current users of `@uirouter/angular-hybrid` 2.x will have to switch to `UpgradeModule` when upgrading to 3.x.
 
