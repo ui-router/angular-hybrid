@@ -251,9 +251,14 @@ export const NG2_STATE = {
 
 # Examples
 
-The minimal example of `@uirouter/angular-hybrid` can be found here: https://github.com/ui-router/angular-hybrid/tree/master/example
+The minimal example of `@uirouter/angular-hybrid` can be found here:
+https://github.com/ui-router/angular-hybrid/tree/master/example
 
-A full fledged sample application example can be found here: https://github.com/ui-router/sample-app-angular-hybrid
+A full fledged sample application example can be found here:
+https://github.com/ui-router/sample-app-angular-hybrid
+
+The same sample application can be live-edited using Angular CLI and StackBlitz here:
+https://stackblitz.com/github/ui-router/sample-app-angular-hybrid/tree/angular-cli
 
 # UpgradeAdapter vs UpgradeModule
 
