@@ -13,7 +13,7 @@ env:
   - DOWNSTREAM=true
 notifications:
   slack:
-    on_success: change
+    on_success: never
     rooms:
       secure: j7e3ZWUOI38Usvk4Ct76vM5qxLihscIhqYzSeIGDBtlR/8TFKQyoSt41McfUQadMNH2Oo8sHSiyhF2Z3Wq4TCWgWOzP40pNcmjIrcIieKi/FbPT2Px+tMJM1mupctJOILEvf0XiBjOPYouM2j/EOaUHlQPsbh5GTYDrbxdmJnctyxXQc1f+j+fudZNi0tssEyuV7rrOoZorWOd7GEbbF3EaW49pCaGL8Bz0Ujq9/I9SZMacSvE15OaXQnHm2wn5oU0MW7+JAN7KpD0VmChY2fVPbxQlsC8j/aFwHxS/c1El+Jd/yDz7sBWopelz5sgCxCXzlWCQMhvMKLh8iXYPLd57seQndfvuMKKXWMLcpxTdI5+t8qhZr3X+NIUlZQQHLB/JQNCfj9MBXhCUAqC42wxwbpGmbfZHE6q4HKSLBZvuwd0ffZc4Z+VogzrKvQ1sqTe3Lx9ugQMsWsEk5+4TxwdJBisTyZZHWm6dOnDB1SL+nMVYXheY9NrWcWQBRuOSCVkVYCjppLSNnT60zaoCQswhczb50QHFgOuxrsGns87Q2a9nhhCabkFN94HBxKHFM6sCr0z8NMA+w6nX1uJBauV68BCUjjENobKdjEs6T17QGIT2JTONdruuImZn/11GdYZuY7Sxt1GzABSsDa+/PJLVlip0/i+1lvpRMX9T9LhU=
 sudo: false
