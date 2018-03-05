@@ -38,7 +38,7 @@
     "@uirouter/publish-scripts": "2.3.1",
     "angular": "1.6.9",
     "rollup": "0.56.3",
-    "rollup-plugin-commonjs": "8.3.0",
+    "rollup-plugin-commonjs": "9.0.0",
     "rollup-plugin-node-resolve": "3.0.3",
     "rollup-plugin-sourcemaps": "0.4.2",
     "rollup-plugin-uglify": "3.0.0",
