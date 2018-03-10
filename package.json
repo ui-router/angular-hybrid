@@ -34,7 +34,7 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/upgrade": "^4.0.0",
     "@types/angular": "1.6.43",
-    "@types/jquery": "3.3.0",
+    "@types/jquery": "3.3.1",
     "@uirouter/publish-scripts": "2.3.1",
     "angular": "1.6.9",
     "rollup": "0.56.5",
