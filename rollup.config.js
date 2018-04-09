@@ -6,8 +6,7 @@ import commonjs from 'rollup-plugin-commonjs';
 let MINIFY = process.env.MINIFY;
 
 let pkg = require('./package.json');
-let banner =
-`/**
+let banner = `/**
  * ${pkg.description}
  * @version v${pkg.version}
  * @link ${pkg.homepage}
@@ -16,14 +15,9 @@ let banner =
 
 let uglifyOpts = { output: {} };
 // retain multiline comment with @license
-uglifyOpts.output.comments = (node, comment) =>
-    comment.type === 'comment2' && /@license/i.test(comment.value);
+uglifyOpts.output.comments = (node, comment) => comment.type === 'comment2' && /@license/i.test(comment.value);
 
-let plugins = [
-  nodeResolve({ jsnext: true }),
-  sourcemaps(),
-  commonjs(),
-];
+let plugins = [nodeResolve({ jsnext: true }), sourcemaps(), commonjs()];
 
 if (MINIFY) plugins.push(uglify(uglifyOpts));
 
@@ -38,11 +32,7 @@ function onwarn(warning) {
 
 function isExternal(id) {
   // @uirouter/* , @angular/* , and angular (angularjs) should be external
-  let externals = [
-    /^@uirouter\/.*/,
-    /^@angular\/.*/,
-    /^angular$/,
-  ];
+  let externals = [/^@uirouter\/.*/, /^@angular\/.*/, /^angular$/];
   return externals.map(regex => regex.exec(id)).reduce((acc, val) => acc || !!val, false);
 }
 
@@ -63,14 +53,13 @@ const CONFIG = {
       '@angular/core': 'ng.core',
       '@angular/common': 'ng.common',
       '@angular/upgrade/static': 'ng.upgrade.static',
-      'angular': 'angular',
+      angular: 'angular',
     },
   },
 
   plugins: plugins,
   onwarn: onwarn,
   external: isExternal,
-
 };
 
 export default CONFIG;
