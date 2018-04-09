@@ -12,7 +12,8 @@
     "release": "release --deps @uirouter/core @uirouter/angular @uirouter/angularjs",
     "test": "npm run build",
     "test:downstream": "npm run build && test_downstream_projects",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "precommit": "pretty-quick --staged"
   },
   "license": "MIT",
   "dependencies": {
@@ -37,6 +38,9 @@
     "@types/jquery": "3.3.1",
     "@uirouter/publish-scripts": "2.3.1",
     "angular": "1.6.9",
+    "husky": "^0.14.3",
+    "prettier": "^1.11.1",
+    "pretty-quick": "^1.4.1",
     "rollup": "0.56.5",
     "rollup-plugin-commonjs": "9.0.0",
     "rollup-plugin-node-resolve": "3.2.0",
