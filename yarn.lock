@@ -46,9 +46,9 @@
   dependencies:
     tsickle "^0.21.0"
 
-"@angular/upgrade@^4.0.0":
-  version "4.4.6"
-  resolved "https://registry.yarnpkg.com/@angular/upgrade/-/upgrade-4.4.6.tgz#c788a26b092273270a25ddb6fa4d3d5e9f3d4989"
+"@angular/upgrade@^5.2.9":
+  version "5.2.9"
+  resolved "https://registry.yarnpkg.com/@angular/upgrade/-/upgrade-5.2.9.tgz#96e91e4c24719332f91a3c9f91f895039143af60"
   dependencies:
     tslib "^1.7.1"
 
