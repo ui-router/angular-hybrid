@@ -3,13 +3,8 @@
   "scripts": {
     "start": "webpack-dev-server --open",
     "build": "webpack",
-    "test": "run-s build e2e",
-    "test-ui": "run-s build e2e-ui",
-    "e2e": "run-p -r browser-sync cypress",
-    "e2e-ui": "run-p -r browser-sync cypress-ui",
-    "browser-sync": "browser-sync start --port 4000 --server . --no-open",
-    "cypress": "wait-on tcp:4000 && cypress run",
-    "cypress-ui": "wait-on tcp:4000 && cypress open"
+    "test": "npm run build && cypress-runner run --path .",
+    "test:ui": "npm run build && cypress-runner open --path ."
   },
   "dependencies": {
     "@angular/common": "^5.0.0",
@@ -30,9 +25,6 @@
     "webpack-dev-server": "2.9.6"
   },
   "devDependencies": {
-    "browser-sync": "^2.23.6",
-    "cypress": "^1.4.2",
-    "npm-run-all": "^4.1.2",
-    "wait-on": "^2.1.0"
+    "@uirouter/cypress-runner": "^1.0.4"
   }
 }
