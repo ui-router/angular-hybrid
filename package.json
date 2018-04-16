@@ -32,7 +32,7 @@
     "@angular/compiler-cli": "^4.0.0",
     "@angular/core": "^4.0.0",
     "@angular/platform-browser": "^4.0.0",
-    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^5.2.9",
     "@angular/upgrade": "^4.0.0",
     "@types/angular": "^1.6.43",
     "@types/jquery": "^3.3.1",
