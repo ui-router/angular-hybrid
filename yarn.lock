@@ -52,7 +52,7 @@
   dependencies:
     tslib "^1.7.1"
 
-"@types/angular@1.6.43":
+"@types/angular@^1.6.43":
   version "1.6.43"
   resolved "https://registry.yarnpkg.com/@types/angular/-/angular-1.6.43.tgz#6235ef416053a86302970717510a936d889cbb9a"
 
@@ -82,7 +82,7 @@
   version "9.12.2"
   resolved "https://registry.yarnpkg.com/@types/highlight.js/-/highlight.js-9.12.2.tgz#6ee7cd395effe5ec80b515d3ff1699068cd0cd1d"
 
-"@types/jquery@3.3.1":
+"@types/jquery@^3.3.1":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.1.tgz#55758d44d422756d6329cbf54e6d41931d7ba28f"
 
@@ -130,15 +130,16 @@
   version "5.0.17"
   resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-5.0.17.tgz#c85d422b1e9a45df885be8b84f9b7f53233a7973"
 
-"@uirouter/publish-scripts@2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@uirouter/publish-scripts/-/publish-scripts-2.3.1.tgz#0b380d81ae410f950010bdf964dd402b03cb30f4"
+"@uirouter/publish-scripts@^2.3.1":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@uirouter/publish-scripts/-/publish-scripts-2.3.3.tgz#0a5e6496011cfeac73c3727ce395e72f60e7a73c"
   dependencies:
     conventional-changelog "^1.1.4"
     conventional-changelog-ui-router-core "^1.4.2"
     find-parent-dir "^0.3.0"
     git-semver-tags "^1.2.1"
     lodash "^4.17.5"
+    node-cleanup "^2.1.2"
     npm-run-all "^4.1.1"
     open "^0.0.5"
     readline-sync "^1.4.7"
@@ -188,7 +189,7 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-angular@1.6.9:
+angular@^1.6.9:
   version "1.6.9"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.9.tgz#bc812932e18909038412d594a5990f4bb66c0619"
 
@@ -1262,6 +1263,10 @@ mri@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/mri/-/mri-1.1.0.tgz#5c0a3f29c8ccffbbb1ec941dcec09d71fa32f36a"
 
+node-cleanup@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/node-cleanup/-/node-cleanup-2.1.2.tgz#7ac19abd297e09a7f72a71545d951b517e4dde2c"
+
 normalize-package-data@^2.3.0, normalize-package-data@^2.3.2, normalize-package-data@^2.3.4, normalize-package-data@^2.3.5:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/normalize-package-data/-/normalize-package-data-2.4.0.tgz#12f95a307d58352075a04907b84ac8be98ac012f"
@@ -1625,15 +1630,6 @@ right-align@^0.1.1:
   dependencies:
     align-text "^0.1.1"
 
-rollup-plugin-commonjs@9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-9.0.0.tgz#9118e9041b67cdd2a6d8c59dda6349556dce3d0c"
-  dependencies:
-    estree-walker "^0.5.1"
-    magic-string "^0.22.4"
-    resolve "^1.5.0"
-    rollup-pluginutils "^2.0.1"
-
 rollup-plugin-commonjs@^8.0.2:
   version "8.2.6"
   resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-8.2.6.tgz#27e5b9069ff94005bb01e01bb46a1e4873784677"
@@ -1644,13 +1640,14 @@ rollup-plugin-commonjs@^8.0.2:
     resolve "^1.4.0"
     rollup-pluginutils "^2.0.1"
 
-rollup-plugin-node-resolve@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.2.0.tgz#31534952f3ab21f9473c1d092be7ed43937ea4d4"
+rollup-plugin-commonjs@^9.0.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-9.1.0.tgz#468341aab32499123ee9a04b22f51d9bf26fdd94"
   dependencies:
-    builtin-modules "^2.0.0"
-    is-module "^1.0.0"
-    resolve "^1.1.6"
+    estree-walker "^0.5.1"
+    magic-string "^0.22.4"
+    resolve "^1.5.0"
+    rollup-pluginutils "^2.0.1"
 
 rollup-plugin-node-resolve@^3.0.0:
   version "3.0.0"
@@ -1661,6 +1658,14 @@ rollup-plugin-node-resolve@^3.0.0:
     is-module "^1.0.0"
     resolve "^1.1.6"
 
+rollup-plugin-node-resolve@^3.2.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.3.0.tgz#c26d110a36812cbefa7ce117cadcd3439aa1c713"
+  dependencies:
+    builtin-modules "^2.0.0"
+    is-module "^1.0.0"
+    resolve "^1.1.6"
+
 rollup-plugin-progress@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/rollup-plugin-progress/-/rollup-plugin-progress-0.2.1.tgz#e3c932a0316374daaf37f471c86d4adfb9caee57"
@@ -1668,24 +1673,24 @@ rollup-plugin-progress@^0.2.1:
     chalk "^1.1.3"
     rollup-pluginutils "^1.5.1"
 
-rollup-plugin-sourcemaps@0.4.2, rollup-plugin-sourcemaps@^0.4.2:
+rollup-plugin-sourcemaps@^0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/rollup-plugin-sourcemaps/-/rollup-plugin-sourcemaps-0.4.2.tgz#62125aa94087aadf7b83ef4dfaf629b473135e87"
   dependencies:
     rollup-pluginutils "^2.0.1"
     source-map-resolve "^0.5.0"
 
-rollup-plugin-uglify@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-uglify/-/rollup-plugin-uglify-3.0.0.tgz#a34eca24617709c6bf1778e9653baafa06099b86"
-  dependencies:
-    uglify-es "^3.3.7"
-
 rollup-plugin-uglify@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/rollup-plugin-uglify/-/rollup-plugin-uglify-1.0.2.tgz#d4aa6f5df13522eae1ba17780c7c4c7096038359"
   dependencies:
     uglify-js "^2.6.1"
+
+rollup-plugin-uglify@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-uglify/-/rollup-plugin-uglify-3.0.0.tgz#a34eca24617709c6bf1778e9653baafa06099b86"
+  dependencies:
+    uglify-es "^3.3.7"
 
 rollup-plugin-visualizer@^0.2.1:
   version "0.2.1"
@@ -1705,19 +1710,19 @@ rollup-pluginutils@^2.0.1:
     estree-walker "^0.3.0"
     micromatch "^2.3.11"
 
-rollup@0.56.5:
-  version "0.56.5"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.56.5.tgz#40fe3cf0cd1659d469baad11f4d5b6336c14ce84"
-
 rollup@^0.41.6:
   version "0.41.6"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.41.6.tgz#e0d05497877a398c104d816d2733a718a7a94e2a"
   dependencies:
     source-map-support "^0.4.0"
 
-rxjs@5.5.6:
-  version "5.5.6"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.6.tgz#e31fb96d6fd2ff1fd84bcea8ae9c02d007179c02"
+rollup@^0.56.5:
+  version "0.56.5"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.56.5.tgz#40fe3cf0cd1659d469baad11f4d5b6336c14ce84"
+
+rxjs@^5.5.6:
+  version "5.5.10"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.10.tgz#fde02d7a614f6c8683d0d1957827f492e09db045"
   dependencies:
     symbol-observable "1.0.1"
 
@@ -1760,7 +1765,7 @@ shelljs@^0.7.0, shelljs@^0.7.3, shelljs@^0.7.8:
     interpret "^1.0.0"
     rechoir "^0.6.2"
 
-shx@0.2.2, shx@^0.2.2:
+shx@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/shx/-/shx-0.2.2.tgz#0a304d020b0edf1306ad81570e80f0346df58a39"
   dependencies:
@@ -2020,9 +2025,9 @@ typescript@2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.4.1.tgz#c3ccb16ddaa0b2314de031e7e6fee89e5ba346bc"
 
-typescript@2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
+typescript@^2.6.2:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.8.1.tgz#6160e4f8f195d5ba81d4876f9c0cc1fbc0820624"
 
 uglify-es@^3.3.7:
   version "3.3.9"
@@ -2149,6 +2154,6 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-zone.js@0.8.20:
-  version "0.8.20"
-  resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.20.tgz#a218c48db09464b19ff6fc8f0d4bb5b1046e185d"
+zone.js@^0.8.20:
+  version "0.8.26"
+  resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.8.26.tgz#7bdd72f7668c5a7ad6b118148b4ea39c59d08d2d"
