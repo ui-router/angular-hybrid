@@ -37,7 +37,7 @@
     "@types/angular": "^1.6.43",
     "@types/jquery": "^3.3.1",
     "@uirouter/publish-scripts": "^2.3.1",
-    "angular": "^1.6.9",
+    "angular": "^1.6.10",
     "husky": "^0.14.3",
     "prettier": "^1.12.0",
     "pretty-quick": "^1.4.1",
