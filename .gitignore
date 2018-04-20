@@ -2,6 +2,7 @@ build
 lib
 **/_bundles
 _bundles
+yarn-error.log
 
 # artifacts
 *.d.ts
