@@ -130,9 +130,9 @@
   version "5.0.17"
   resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-5.0.17.tgz#c85d422b1e9a45df885be8b84f9b7f53233a7973"
 
-"@uirouter/publish-scripts@^2.3.4":
-  version "2.3.11"
-  resolved "https://registry.yarnpkg.com/@uirouter/publish-scripts/-/publish-scripts-2.3.11.tgz#ebc2e9083d359f5bf65d27ae1c229c8e18f1e9f1"
+"@uirouter/publish-scripts@^2.3.12":
+  version "2.3.12"
+  resolved "https://registry.yarnpkg.com/@uirouter/publish-scripts/-/publish-scripts-2.3.12.tgz#8b874b22dce719320fb8585220c900b7e597124e"
   dependencies:
     conventional-changelog "^1.1.4"
     conventional-changelog-ui-router-core "^1.4.2"
@@ -1891,9 +1891,9 @@ rollup-plugin-commonjs@^8.0.2:
     resolve "^1.4.0"
     rollup-pluginutils "^2.0.1"
 
-rollup-plugin-commonjs@^9.0.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-9.1.0.tgz#468341aab32499123ee9a04b22f51d9bf26fdd94"
+rollup-plugin-commonjs@^9.1.3:
+  version "9.1.3"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-9.1.3.tgz#37bfbf341292ea14f512438a56df8f9ca3ba4d67"
   dependencies:
     estree-walker "^0.5.1"
     magic-string "^0.22.4"
