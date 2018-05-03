@@ -1,3 +1,43 @@
+## 4.0.1 (2018-05-03)
+[Compare `@uirouter/angular-hybrid` versions 4.0.0 and 4.0.1](https://github.com/ui-router/angular-hybrid/compare/4.0.0...4.0.1)
+
+### Bug Fixes
+
+* **README:** Update bootstrap directions to avoid 'digest already in progress' errors ([9df20f0](https://github.com/ui-router/angular-hybrid/commit/9df20f0))
+
+
+### Updated `@uirouter/core` from 5.0.17 to 5.0.18
+[Compare `@uirouter/core` versions 5.0.17 and 5.0.18](https://github.com/ui-router/core/compare/5.0.17...5.0.18)
+
+### Bug Fixes
+
+* **angular:** A hack to force the Angular compiler to import from module index ([d56a2be](https://github.com/ui-router/core/commit/d56a2be))
+* **StateRegistry:** Notify listeners of added states when there are orphans in the state queue ([5a9bac9](https://github.com/ui-router/core/commit/5a9bac9))
+* **transition:** Fix typing of Transition.params() ([ebea30e](https://github.com/ui-router/core/commit/ebea30e))
+* **transition:** Normalize `error()` to always return `Rejection` ([9bcc5db](https://github.com/ui-router/core/commit/9bcc5db))
+
+
+### Updated `@uirouter/angular` from 1.0.1 to 1.1.0
+[Compare `@uirouter/angular` versions 1.0.1 and 1.1.0](https://github.com/ui-router/angular/compare/1.0.1...1.1.0)
+
+### Bug Fixes
+
+* **uiSref:** Ignore clicks if destination state is falsey ([b599e72](https://github.com/ui-router/angular/commit/b599e72))
+* **uiView:** Always inject and/or bind NOWAIT resolve as a Promise object. ([42d739d](https://github.com/ui-router/angular/commit/42d739d))
+
+
+### Features
+
+* **uiView:** Add uiOnParamsChanged support for routed components ([45aa2aa](https://github.com/ui-router/angular/commit/45aa2aa))
+
+
+### Updated `@uirouter/angularjs` from 1.0.15 to 1.0.16
+[Compare `@uirouter/angularjs` versions 1.0.15 and 1.0.16](https://github.com/angular-ui/ui-router/compare/1.0.15...1.0.16)
+
+### Bug Fixes
+
+* **docs:** downgrade to [@types](https://github.com/types)/angular[@1](https://github.com/1).6.25 to fix typings error when generating docs ([5850136](https://github.com/angular-ui/ui-router/commit/5850136))
+
 # 4.0.0 (2018-02-15)
 [Compare `@uirouter/angular-hybrid` versions 3.1.10 and 4.0.0](https://github.com/ui-router/angular-hybrid/compare/3.1.10...4.0.0)
 
