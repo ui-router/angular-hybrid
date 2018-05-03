@@ -130,6 +130,10 @@
   version "5.0.17"
   resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-5.0.17.tgz#c85d422b1e9a45df885be8b84f9b7f53233a7973"
 
+"@uirouter/core@5.0.18":
+  version "5.0.18"
+  resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-5.0.18.tgz#6dd85654ebc7e25eba2c1b32f069829db351abab"
+
 "@uirouter/publish-scripts@^2.3.12":
   version "2.3.13"
   resolved "https://registry.yarnpkg.com/@uirouter/publish-scripts/-/publish-scripts-2.3.13.tgz#ccc0eade4703db7d9b2e1e117a741ddb0dd9e093"
