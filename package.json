@@ -19,7 +19,7 @@
   "dependencies": {
     "@uirouter/angular": "1.0.1",
     "@uirouter/angularjs": "1.0.15",
-    "@uirouter/core": "5.0.17"
+    "@uirouter/core": "5.0.18"
   },
   "peerDependencies": {
     "@angular/core": "^4.0.0 || ^5.0.0",
