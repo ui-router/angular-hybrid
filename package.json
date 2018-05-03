@@ -17,7 +17,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@uirouter/angular": "1.0.1",
+    "@uirouter/angular": "1.1.0",
     "@uirouter/angularjs": "1.0.15",
     "@uirouter/core": "5.0.17"
   },
