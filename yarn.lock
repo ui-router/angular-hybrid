@@ -103,8 +103,8 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
 
 "@types/node@*":
-  version "10.0.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.0.3.tgz#1f89840c7aac2406cc43a2ecad98fc02a8e130e4"
+  version "10.0.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.0.6.tgz#c0bce8e539bf34c1b850c13ff46bead2fecc2e58"
 
 "@types/shelljs@0.7.8":
   version "0.7.8"
@@ -131,8 +131,8 @@
   resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-5.0.18.tgz#6dd85654ebc7e25eba2c1b32f069829db351abab"
 
 "@uirouter/publish-scripts@^2.3.12":
-  version "2.3.13"
-  resolved "https://registry.yarnpkg.com/@uirouter/publish-scripts/-/publish-scripts-2.3.13.tgz#ccc0eade4703db7d9b2e1e117a741ddb0dd9e093"
+  version "2.3.15"
+  resolved "https://registry.yarnpkg.com/@uirouter/publish-scripts/-/publish-scripts-2.3.15.tgz#41c4d0955c59e4e9de34c68ccbeb16891eb38677"
   dependencies:
     conventional-changelog "^1.1.4"
     conventional-changelog-ui-router-core "^1.4.2"
@@ -577,11 +577,21 @@ core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
 
-cross-spawn@^5.0.1, cross-spawn@^5.1.0:
+cross-spawn@^5.0.1:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
   dependencies:
     lru-cache "^4.0.1"
+    shebang-command "^1.2.0"
+    which "^1.2.9"
+
+cross-spawn@^6.0.4:
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
+  dependencies:
+    nice-try "^1.0.4"
+    path-key "^2.0.1"
+    semver "^5.5.0"
     shebang-command "^1.2.0"
     which "^1.2.9"
 
@@ -1306,8 +1316,8 @@ loud-rejection@^1.0.0:
     signal-exit "^3.0.0"
 
 lru-cache@^4.0.1:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.2.tgz#45234b2e6e2f2b33da125624c4664929a0224c3f"
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-4.1.3.tgz#a1175cf3496dfc8436c156c334b4955992bce69c"
   dependencies:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
@@ -1440,6 +1450,10 @@ mri@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/mri/-/mri-1.1.0.tgz#5c0a3f29c8ccffbbb1ec941dcec09d71fa32f36a"
 
+nice-try@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.4.tgz#d93962f6c52f2c1558c0fbda6d512819f1efe1c4"
+
 node-cleanup@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/node-cleanup/-/node-cleanup-2.1.2.tgz#7ac19abd297e09a7f72a71545d951b517e4dde2c"
@@ -1464,12 +1478,12 @@ normalize-path@^2.0.1:
     remove-trailing-separator "^1.0.1"
 
 npm-run-all@^4.1.1:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/npm-run-all/-/npm-run-all-4.1.2.tgz#90d62d078792d20669139e718621186656cea056"
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/npm-run-all/-/npm-run-all-4.1.3.tgz#49f15b55a66bb4101664ce270cb18e7103f8f185"
   dependencies:
     ansi-styles "^3.2.0"
     chalk "^2.1.0"
-    cross-spawn "^5.1.0"
+    cross-spawn "^6.0.4"
     memorystream "^0.3.1"
     minimatch "^3.0.4"
     ps-tree "^1.1.0"
@@ -1611,7 +1625,7 @@ path-is-inside@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/path-is-inside/-/path-is-inside-1.0.2.tgz#365417dede44430d1c11af61027facf074bdfc53"
 
-path-key@^2.0.0:
+path-key@^2.0.0, path-key@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-2.0.1.tgz#411cadb574c5a140d3a4b1910d40d80cc9f40b40"
 
@@ -2024,8 +2038,8 @@ shelljs@^0.7.3:
     rechoir "^0.6.2"
 
 shelljs@^0.8.1:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.1.tgz#729e038c413a2254c4078b95ed46e0397154a9f1"
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.2.tgz#345b7df7763f4c2340d584abb532c5f752ca9e35"
   dependencies:
     glob "^7.0.0"
     interpret "^1.0.0"
@@ -2406,8 +2420,8 @@ y18n@^3.2.1:
   resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
 
 yalc@^1.0.0-pre.21:
-  version "1.0.0-pre.21"
-  resolved "https://registry.yarnpkg.com/yalc/-/yalc-1.0.0-pre.21.tgz#281c1d203c8fd59acfe1ed981ab3375245fa9092"
+  version "1.0.0-pre.22"
+  resolved "https://registry.yarnpkg.com/yalc/-/yalc-1.0.0-pre.22.tgz#03aa1a59826bbcfafefcf36d44ceb5be84a04922"
   dependencies:
     del "^2.2.2"
     fs-extra "^4.0.2"
