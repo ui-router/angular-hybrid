@@ -23,11 +23,11 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/core@^5.0.0":
-  version "5.2.10"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-5.2.10.tgz#a6eba06cae7267efbd2666e3fa5e42b84c2261de"
+"@angular/core@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-6.0.1.tgz#47f0db3ee6f088c65e87b7748fa1e0f329138df7"
   dependencies:
-    tslib "^1.7.1"
+    tslib "^1.9.0"
 
 "@angular/platform-browser-dynamic@^5.0.0":
   version "5.2.10"
