@@ -1,6 +1,6 @@
 {
   "name": "@uirouter/angular-hybrid",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "scripts": {
     "example": "cd example && npm i && npm start",
     "clean": "shx rm -rf lib _bundles",

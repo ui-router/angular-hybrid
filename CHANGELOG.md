@@ -1,3 +1,45 @@
+# 5.0.0 (2018-05-13)
+[Compare `@uirouter/angular-hybrid` versions 4.0.1 and 5.0.0](https://github.com/ui-router/angular-hybrid/compare/4.0.1...5.0.0)
+
+### Features
+
+* **angular:** Drop Angular v4 support, add Angular v6 support ([0fc6d72](https://github.com/ui-router/angular-hybrid/commit/0fc6d72))
+
+
+### BREAKING CHANGES
+
+* **angular:** RxJS v6 and Angular v5 or higher is now required to use this package.
+
+If using Angular v5, you should update to `"rxjs": "^6.0.0"` and also add `"rxjs-compat": "^6.0.0"`.
+
+
+### Updated `@uirouter/core` from 5.0.18 to 5.0.19
+[Compare `@uirouter/core` versions 5.0.18 and 5.0.19](https://github.com/ui-router/core/compare/5.0.18...5.0.19)
+
+### Bug Fixes
+
+* **enums:** Workaround angular compiler export issue https://github.com/angular/angular/issues/23759 ([38d25fa](https://github.com/ui-router/core/commit/38d25fa))
+
+
+### Updated `@uirouter/angular` from 1.1.0 to 2.0.0
+[Compare `@uirouter/angular` versions 1.1.0 and 2.0.0](https://github.com/ui-router/angular/compare/1.1.0...2.0.0)
+
+### Features
+
+* **angular:** Drop Angular v4 support, add Angular v6 support ([cdf0273](https://github.com/ui-router/angular/commit/cdf0273)), closes [#301](https://github.com/ui-router/angular/issues/301)
+* **core:** Update core to 5.0.19, rx to 0.5.0 ([be6de0d](https://github.com/ui-router/angular/commit/be6de0d))
+
+
+### BREAKING CHANGES
+
+* **angular:** RxJS v6 and Angular v5 or higher is now required to use this package.
+
+If using Angular v5, you should update to `"rxjs": "^6.0.0"` and also add `"rxjs-compat": "^6.0.0"`.
+
+
+### Updated `@uirouter/angularjs` from 1.0.16 to 1.0.17
+[Compare `@uirouter/angularjs` versions 1.0.16 and 1.0.17](https://github.com/angular-ui/ui-router/compare/1.0.16...1.0.17)
+
 ## 4.0.1 (2018-05-03)
 [Compare `@uirouter/angular-hybrid` versions 4.0.0 and 4.0.1](https://github.com/ui-router/angular-hybrid/compare/4.0.0...4.0.1)
 
