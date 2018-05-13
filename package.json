@@ -18,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "@uirouter/angular": "2.0.0",
-    "@uirouter/angularjs": "1.0.16",
+    "@uirouter/angularjs": "1.0.17",
     "@uirouter/core": "5.0.19"
   },
   "peerDependencies": {
@@ -36,7 +36,7 @@
     "@angular/upgrade": "^5.0.0",
     "@types/angular": "^1.6.43",
     "@types/jquery": "^3.3.1",
-    "@uirouter/publish-scripts": "^2.3.12",
+    "@uirouter/publish-scripts": "^2.3.18",
     "angular": "^1.6.10",
     "husky": "^0.14.3",
     "prettier": "^1.12.1",
