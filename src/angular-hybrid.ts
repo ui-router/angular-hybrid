@@ -127,7 +127,7 @@ export class UIViewNgUpgrade {
   constructor(
     ref: ElementRef,
     @Inject(UIView.PARENT_INJECT) parent: ParentUIViewInject,
-    registry: StateRegistry, // access the root state
+    registry: StateRegistry // access the root state
   ) {
     // From the ui-view-ng-upgrade component's element ref, walk up the DOM two elements...
     // There will first be an ng1 ui-view which hosts this element, and then that ui-view's parent element.
@@ -287,7 +287,7 @@ upgradeModule.run([
     // Register a ViewConfig factory for views of type `ng2`
     $view._pluginapi._viewConfigFactory(
       'ng2',
-      (path: PathNode[], config: Ng2ViewDeclaration) => new Ng2ViewConfig(path, config),
+      (path: PathNode[], config: Ng2ViewDeclaration) => new Ng2ViewConfig(path, config)
     );
 
     // Register a ViewConfig factory for views of type `ng1-to-ng2`.
@@ -296,11 +296,11 @@ upgradeModule.run([
       const ng1ViewConfig: ViewConfig = <any>new Ng1ViewConfig(
         <any>path,
         <any>Object.assign({}, config, { $type: 'ng1' }),
-        $templateFactory,
+        $templateFactory
       );
       const ng2ViewConfig: ViewConfig = <any>new Ng2ViewConfig(
         <any>path,
-        <any>Object.assign({}, config, { $type: 'ng2' }),
+        <any>Object.assign({}, config, { $type: 'ng2' })
       );
 
       return [ng2ViewConfig, ng1ViewConfig];
