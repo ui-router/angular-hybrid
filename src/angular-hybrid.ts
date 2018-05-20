@@ -201,9 +201,16 @@ export function getParentUIViewInject(r: StateRegistry): ParentUIViewInject {
   exports: [UIViewNgUpgrade, UIRouterModule],
 })
 export class UIRouterUpgradeModule {
-  static forChild(module: NgHybridStatesModule = {}): ModuleWithProviders {
+  static forRoot(module: NgHybridStatesModule = {}): ModuleWithProviders {
     return {
       ngModule: UIRouterUpgradeModule,
+      providers: makeChildProviders(module as StatesModule),
+    };
+  }
+
+  static forChild(module: NgHybridStatesModule = {}): ModuleWithProviders {
+    return {
+      ngModule: UIRouterModule,
       providers: makeChildProviders(module as StatesModule),
     };
   }

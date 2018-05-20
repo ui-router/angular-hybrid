@@ -87,7 +87,7 @@ const nestedState: NgHybridStateDeclaration = {
     // Provide Angular upgrade capabilities
     UpgradeModule,
     // Provides the @uirouter/angular directives
-    UIRouterUpgradeModule.forChild({ states: [nestedState] }),
+    UIRouterUpgradeModule.forRoot({ states: [nestedState] }),
   ],
   declarations: [Ng2Component],
   entryComponents: [Ng2Component],

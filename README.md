@@ -51,14 +51,14 @@ Add the `@angular/*` dependencies.
 ```
 dependencies: {
   ...
-  "@angular/common": "^4.0.0",
-  "@angular/compiler": "^4.0.0",
-  "@angular/core": "^4.0.0",
-  "@angular/platform-browser": "^4.0.0",
-  "@angular/platform-browser-dynamic": "^4.0.0",
-  "@angular/upgrade": "^4.0.0",
+  "@angular/common": "^6.0.0",
+  "@angular/compiler": "^6.0.0",
+  "@angular/core": "^6.0.0",
+  "@angular/platform-browser": "^6.0.0",
+  "@angular/platform-browser-dynamic": "^6.0.0",
+  "@angular/upgrade": "^6.0.0",
    ...
-  "@uirouter/angular-hybrid": "^3.0.1",
+  "@uirouter/angular-hybrid": "^6.0.0",
   ...
 }
 ```
@@ -78,7 +78,7 @@ let ng1module = angular.module('myApp', ['ui.router', 'ui.router.upgrade']);
 
 #### Create a root Angular NgModule
 
-* Import the `BrowserModule`, `UpgradeModule`, and a `UIRouterUpgradeModule.forChild()` module.
+* Import the `BrowserModule`, `UpgradeModule`, and a `UIRouterUpgradeModule.forRoot()` module.
 * Add `providers` entry for any AngularJS services you want to expose to Angular.
 * The module should have a `ngDoBootstrap` method which calls the `UpgradeModule`'s `bootstrap` method.
 
@@ -90,24 +90,31 @@ export function getDialogService($injector) {
 @NgModule({
   imports: [
     BrowserModule,
+    // Provide angular upgrade capabilities
     UpgradeModule,
-    UIRouterUpgradeModule.forChild({ states: ngHybridStates }),
+    // Provides the @uirouter/angular directives and registers
+    // the future state for the lazy loaded contacts module
+    UIRouterUpgradeModule.forRoot({ states: [contactsFutureState] }),
   ],
   providers: [
+    // Provide the SystemJsNgModuleLoader when using Angular lazy loading
     { provide: NgModuleFactoryLoader, useClass: SystemJsNgModuleLoader },
+
     // Register some AngularJS services as Angular providers
     { provide: 'DialogService', deps: ['$injector'], useFactory: getDialogService },
+    { provide: 'Contacts', deps: ['$injector'], useFactory: getContactsService },
   ]
-}) export class SampleAppModule {
+})
+export class SampleAppModuleAngular {
   constructor(private upgrade: UpgradeModule) { }
 
   ngDoBootstrap() {
-    this.upgrade.bootstrap(document.body, [sampleAppModuleAngularJS.name]);
+    this.upgrade.bootstrap(document.body, [sampleAppModuleAngularJS.name], { strictDi: true });
   }
 }
 ```
 
-[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/e4b1144d5e3e3451f0f0cc640175bb7055294fdd/app/bootstrap/bootstrap.ts#L63-L73)
+[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/878095bc7ed1948bb8ebf6e67d77724354393455/app/angularModule.ts#L26-L53)
 
 #### Defer intercept
 
@@ -117,7 +124,7 @@ Tell UI-Router that it should wait until all bootstrapping is complete before do
 ngmodule.config(['$urlServiceProvider', ($urlService: UrlService) => $urlService.deferIntercept()]);
 ```
 
-[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/e4b1144d5e3e3451f0f0cc640175bb7055294fdd/app/bootstrap/bootstrap.ts#L75-L76)
+[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/878095bc7ed1948bb8ebf6e67d77724354393455/app/main.ts#L38-L40)
 
 #### Bootstrap the app
 
@@ -127,28 +134,24 @@ ngmodule.config(['$urlServiceProvider', ($urlService: UrlService) => $urlService
   * Do this in the Angular Zone to avoid "digest already in progress" errors.
 
 ```js
-// Wait until the DOM is ready
-angular.element(document).ready(function() {
-  // Manually bootstrap the Angular app
-  platformBrowserDynamic()
-    .bootstrapModule(SampleAppModule)
-    .then(platformRef => {
-      // get() UrlService from DI (this call will create all the UIRouter services)
-      const url: UrlService = platformRef.injector.get(UrlService);
+platformBrowserDynamic()
+  .bootstrapModule(SampleAppModuleAngular)
+  .then(platformRef => {
+    // Intialize the Angular Module
+    // get() the UIRouter instance from DI to initialize the router
+    const urlService: UrlService = platformRef.injector.get(UIRouter).urlService;
 
-      // Instruct UIRouter to listen to URL changes
-      function startUIRouter() {
-        url.listen();
-        url.sync();
-      }
+    // Instruct UIRouter to listen to URL changes
+    function startUIRouter() {
+      urlService.listen();
+      urlService.sync();
+    }
 
-      const ngZone: NgZone = platformRef.injector.get(NgZone);
-      ngZone.run(startUIRouter);
-    });
-});
+    platformRef.injector.get < NgZone > NgZone.run(startUIRouter);
+  });
 ```
 
-[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/e4b1144d5e3e3451f0f0cc640175bb7055294fdd/app/bootstrap/bootstrap.ts#L78-L95)
+[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/878095bc7ed1948bb8ebf6e67d77724354393455/app/main.ts#L42-L55)
 
 #### Route to AngularJS components/templates
 
@@ -199,29 +202,18 @@ $stateProvider.state(leaf);
 export class MyFeatureModule {}
 ```
 
-[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/e4b1144d5e3e3451f0f0cc640175bb7055294fdd/app/prefs/index.ts#L11-L22)
+[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/878095bc7ed1948bb8ebf6e67d77724354393455/app/prefs/prefs.module.ts#L10-L21
 
 Add the feature module to the root NgModule imports
 
 ```js
 @NgModule({
-  imports: [BrowserModule, UIRouterUpgradeModule, MyFeatureModule],
+  imports: [BrowserModule, UIRouterUpgradeModule.forChild({ states }), MyFeatureModule],
 })
 class SampleAppModule {}
 ```
 
-[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/e4b1144d5e3e3451f0f0cc640175bb7055294fdd/app/bootstrap/bootstrap.ts#L64)
-
-Note: You can also add states directly to the root NgModule using `UIRouterModule.forChild`
-
-```js
-@NgModule({
-  // import the Ng1ToNg2Module and create a UIRouter "child module"
-  imports: [BrowserModule, UIRouterUpgradeModule.forChild({ states: NG2_STATES })],
-  declarations: [NG2_COMPONENTS],
-})
-class SampleAppModule {}
-```
+[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/878095bc7ed1948bb8ebf6e67d77724354393455/app/angularModule.ts#L35-L36)
 
 ### Limitations:
 
@@ -235,7 +227,7 @@ Because of this, apps should be migrated starting from leaf states/views and wor
 ---
 
 When a state has an `onEnter`, `onExit`, or `onRetain`, they are always injected (AngularJS style),
-even if the state uses Angular 2+ components or is added to an `UIRouterUpgradeModule.forChild` `NgModule`.
+even if the state uses Angular 2+ components or is added to an `UIRouterUpgradeModule` `NgModule`.
 
 ```js
 export function ng2StateOnEnter(transition: Transition, svc: MyService) {
@@ -254,7 +246,10 @@ export const NG2_STATE = {
 The minimal example of `@uirouter/angular-hybrid` can be found here:
 https://github.com/ui-router/angular-hybrid/tree/master/example
 
-A full fledged sample application example can be found here:
+A minimal example can also be found on stackblitz:
+https://stackblitz.com/edit/ui-router-angular-hybrid
+
+A large sample application example with lazy loaded modules can be found here:
 https://github.com/ui-router/sample-app-angular-hybrid
 
 The same sample application can be live-edited using Angular CLI and StackBlitz here:
@@ -263,5 +258,5 @@ https://stackblitz.com/github/ui-router/sample-app-angular-hybrid/tree/angular-c
 # UpgradeAdapter vs UpgradeModule
 
 Version 2.0.0 of `@uirouter/angular-hybrid` only supports `UpgradeAdapter`, which works fine but is no longer in development.
-Version 30.0+ of `@uirouter/angular-hybrid` only supports `UpgradeModule` from `@angular/upgrade/static`, which is what the Angular team actively supports for hybrid mode.
+Version 3.0.0+ of `@uirouter/angular-hybrid` only supports `UpgradeModule` from `@angular/upgrade/static`, which is what the Angular team actively supports for hybrid mode.
 Because we dropped support for `UpgradeAdapter`, current users of `@uirouter/angular-hybrid` 2.x will have to switch to `UpgradeModule` when upgrading to 3.x.
