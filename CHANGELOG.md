@@ -1,3 +1,23 @@
+# 6.0.0 (2018-05-20)
+[Compare `@uirouter/angular-hybrid` versions 5.0.0 and 6.0.0](https://github.com/ui-router/angular-hybrid/compare/5.0.0...6.0.0)
+
+### Bug Fixes
+
+* **prettier:** Use es5 compatible trailing comma setting ([6421bf9](https://github.com/ui-router/angular-hybrid/commit/6421bf9))
+* **typings:** Allow stateRegistry.register() and stateProvider.state() to take either Ng1 or Ng2StateDeclaration ([c0e55ad](https://github.com/ui-router/angular-hybrid/commit/c0e55ad)), closes [#147](https://github.com/ui-router/angular-hybrid/issues/147) [#148](https://github.com/ui-router/angular-hybrid/issues/148)
+* **upgrade:** Fix "Trying to get the AngularJS injector before it being set" in child and lazy modules ([f4bb925](https://github.com/ui-router/angular-hybrid/commit/f4bb925)), closes [#93](https://github.com/ui-router/angular-hybrid/issues/93)
+
+
+### BREAKING CHANGES
+
+* **upgrade:** In 5.0.0, we recommended `UIRouterUpgradeModule.forChild()` everywhere.
+However, this could cause an error "Trying to get the AngularJS injector before it being set".
+
+Now:
+
+- Use `UIRouterUpgradeModule.forRoot()` in the root Angular module.
+- Use `UIRouterUpgradeModule.forChild()` for Angular feature modules and lazy loaded modules.
+
 # 5.0.0 (2018-05-13)
 [Compare `@uirouter/angular-hybrid` versions 4.0.1 and 5.0.0](https://github.com/ui-router/angular-hybrid/compare/4.0.1...5.0.0)
 
