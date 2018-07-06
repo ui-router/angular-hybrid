@@ -47,9 +47,9 @@
   dependencies:
     tslib "^1.7.1"
 
-"@types/angular@^1.6.43":
-  version "1.6.43"
-  resolved "https://registry.yarnpkg.com/@types/angular/-/angular-1.6.43.tgz#6235ef416053a86302970717510a936d889cbb9a"
+"@types/angular@^1.6.48":
+  version "1.6.48"
+  resolved "https://registry.yarnpkg.com/@types/angular/-/angular-1.6.48.tgz#e8f77bf41d00d3293421cbaaed2bafb4d5f399f9"
 
 "@types/estree@0.0.38":
   version "0.0.38"
