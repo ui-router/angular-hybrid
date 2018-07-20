@@ -122,22 +122,22 @@
     "@types/glob" "*"
     "@types/node" "*"
 
-"@uirouter/angular@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@uirouter/angular/-/angular-2.0.0.tgz#fb5649e4c12fb1a6cca484495639d2d0c8b11399"
+"@uirouter/angular@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@uirouter/angular/-/angular-2.0.1.tgz#10ac37e346f9feb683cc18b4e35584296f736b37"
   dependencies:
-    "@uirouter/core" "5.0.19"
+    "@uirouter/core" "5.0.20"
     "@uirouter/rx" "0.5.0"
 
-"@uirouter/angularjs@1.0.17":
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/@uirouter/angularjs/-/angularjs-1.0.17.tgz#ec9818e9aa79f3a11d0657cb0e5f567d682fc450"
+"@uirouter/angularjs@1.0.19":
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/@uirouter/angularjs/-/angularjs-1.0.19.tgz#f9595f972c50b90c487f2c7ea6ddcc44d95f04bf"
   dependencies:
-    "@uirouter/core" "5.0.19"
+    "@uirouter/core" "5.0.20"
 
-"@uirouter/core@5.0.19":
-  version "5.0.19"
-  resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-5.0.19.tgz#fe2888190393a8c92584c354e65ab8322c1b0db4"
+"@uirouter/core@5.0.20":
+  version "5.0.20"
+  resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-5.0.20.tgz#9c27d8d14d50358040840fd00e9d38c36be1adc5"
 
 "@uirouter/publish-scripts@^2.3.20":
   version "2.3.20"
@@ -2162,9 +2162,9 @@ rollup-pluginutils@^2.0.1:
     estree-walker "^0.3.0"
     micromatch "^2.3.11"
 
-rollup@^0.63.0:
-  version "0.63.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.63.0.tgz#dfa8dc55df9a6660aff75a21547c63e5c7b9b9d5"
+rollup@^0.63.4:
+  version "0.63.4"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.63.4.tgz#cb58bf6c2a6c38542cae250684c962799ad7c00c"
   dependencies:
     "@types/estree" "0.0.39"
     "@types/node" "*"
