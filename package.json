@@ -35,7 +35,7 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/upgrade": "^5.2.11",
     "@types/angular": "^1.6.49",
-    "@types/jquery": "^3.3.4",
+    "@types/jquery": "^3.3.5",
     "@uirouter/publish-scripts": "^2.3.20",
     "angular": "^1.7.2",
     "husky": "^0.14.3",
