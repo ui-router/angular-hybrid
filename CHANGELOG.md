@@ -1,3 +1,23 @@
+## 6.0.2 (2018-08-12)
+[Compare `@uirouter/angular-hybrid` versions 6.0.1 and 6.0.2](https://github.com/ui-router/angular-hybrid/compare/6.0.1...6.0.2)
+
+
+### Updated `@uirouter/core` from 5.0.20 to 5.0.21
+[Compare `@uirouter/core` versions 5.0.20 and 5.0.21](https://github.com/ui-router/core/compare/5.0.20...5.0.21)
+
+### Bug Fixes
+
+* **dynamic:** Use 'find' from common.ts instead of Array.prototype.find ([66a3244](https://github.com/ui-router/core/commit/66a3244)), closes [#215](https://github.com/ui-router/core/issues/215)
+* **url:** When using html5Mode and no <base> tag is present, default to '/' ([23742e3](https://github.com/ui-router/core/commit/23742e3)), closes [#223](https://github.com/ui-router/core/issues/223)
+
+
+### Updated `@uirouter/angular` from 2.0.1 to 2.0.2
+[Compare `@uirouter/angular` versions 2.0.1 and 2.0.2](https://github.com/ui-router/angular/compare/2.0.1...2.0.2)
+
+
+### Updated `@uirouter/angularjs` from 1.0.19 to 1.0.20
+[Compare `@uirouter/angularjs` versions 1.0.19 and 1.0.20](https://github.com/angular-ui/ui-router/compare/1.0.19...1.0.20)
+
 ## 6.0.1 (2018-07-20)
 [Compare `@uirouter/angular-hybrid` versions 6.0.0 and 6.0.1](https://github.com/ui-router/angular-hybrid/compare/6.0.0...6.0.1)
 
