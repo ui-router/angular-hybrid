@@ -242,6 +242,8 @@ resolve: {
   The resolve function receives the `Transition` object as the first argument.
 
 ```js
+  // In Angular, the first argument to a resolve is always the Transition object
+  // The resolver (usually) must be exported
   export const rolesResolver = (transition) => {
     const authService = transition.injector().get(AuthService);
     const currentUser = transition.injector().get('currentUser');
@@ -251,7 +253,6 @@ resolve: {
   ...
 
   resolve: {
-    // In Angular, the first argument to a resolve is always the Transition object
     roles: rolesResolver
   }
 ```
