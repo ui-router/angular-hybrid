@@ -68,7 +68,7 @@ We need to use manual AngularJS bootstrapping mode.
 
 #### Add AngularJS module `ui.router.upgrade`
 
-* Add 'ui.router.upgrade' to your AngularJS app module's depedencies
+- Add 'ui.router.upgrade' to your AngularJS app module's depedencies
 
 ```js
 let ng1module = angular.module('myApp', ['ui.router', 'ui.router.upgrade']);
@@ -78,9 +78,9 @@ let ng1module = angular.module('myApp', ['ui.router', 'ui.router.upgrade']);
 
 #### Create a root Angular NgModule
 
-* Import the `BrowserModule`, `UpgradeModule`, and a `UIRouterUpgradeModule.forRoot()` module.
-* Add `providers` entry for any AngularJS services you want to expose to Angular.
-* The module should have a `ngDoBootstrap` method which calls the `UpgradeModule`'s `bootstrap` method.
+- Import the `BrowserModule`, `UpgradeModule`, and a `UIRouterUpgradeModule.forRoot()` module.
+- Add `providers` entry for any AngularJS services you want to expose to Angular.
+- The module should have a `ngDoBootstrap` method which calls the `UpgradeModule`'s `bootstrap` method.
 
 ```js
 export function getDialogService($injector) {
@@ -128,10 +128,10 @@ ngmodule.config(['$urlServiceProvider', ($urlService: UrlService) => $urlService
 
 #### Bootstrap the app
 
-* Bootstrap Angular
-* Angular runs ngDoBootstrap() which bootstraps AngularJS
-* Chain off `bootstrapModule()` and tell UIRouter to synchronize the URL and listen for further URL changes
-  * Do this in the Angular Zone to avoid "digest already in progress" errors.
+- Bootstrap Angular
+- Angular runs ngDoBootstrap() which bootstraps AngularJS
+- Chain off `bootstrapModule()` and tell UIRouter to synchronize the URL and listen for further URL changes
+  - Do this in the Angular Zone to avoid "digest already in progress" errors.
 
 ```js
 platformBrowserDynamic()
@@ -202,7 +202,7 @@ $stateProvider.state(leaf);
 export class MyFeatureModule {}
 ```
 
-[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/878095bc7ed1948bb8ebf6e67d77724354393455/app/prefs/prefs.module.ts#L10-L21
+[_example_](https://github.com/ui-router/sample-app-angular-hybrid/blob/878095bc7ed1948bb8ebf6e67d77724354393455/app/prefs/prefs.module.ts#L10-L21)
 
 Add the feature module to the root NgModule imports
 
@@ -217,6 +217,8 @@ class SampleAppModule {}
 
 ### Limitations:
 
+#### Nested Routing
+
 We currently support routing either Angular (2+) or AngularJS (1.x) components into an AngularJS (1.x) `ui-view`.
 However, we do not support routing AngularJS (1.x) components into an Angular (2+) `ui-view`.
 
@@ -224,7 +226,42 @@ If you create an Angular (2+) `ui-view`, then any nested `ui-view` must also be 
 
 Because of this, apps should be migrated starting from leaf states/views and work up towards the root state/view.
 
----
+#### Resolve
+
+Resolve blocks on state definitions are only injected using AngularJS style string injection tokens.
+
+- AngularJS injection uses string tokens, such as `$transition$` or `$state`.
+- Angular supports Class based injection tokens (into constructors), such as `constructor(state: StateService) {}`
+
+If you need to inject Angular services by class, or need to use some other token-based injection such as an [`InjectionToken`](https://angular.io/api/core/InjectionToken),
+you can access them using the [Transition.injector()](https://ui-router.github.io/ng2/docs/2.0.0/classes/transition.transition-1.html#injector) API.
+
+```ts
+import { AuthService, UserToken } from './auth.service';
+
+// Notice that the `Transition` object is first injected
+// into the resolve using the string token: '$transition$'
+export const rolesResolver = function($transition$) {
+  // Get the AuthService using a class token
+  const authService: AuthService = transition.injector().get(AuthService);
+
+  // Get the user object using an InjectionToken
+  const user = transition.injector().get(UserToken);
+
+  return authService.fetchRoles(user).then(resp => resp.roles);
+};
+
+export const NG2_STATE = {
+  name: 'ng2state',
+  url: '/ng2state',
+  component: Ng2Component,
+  resolve: {
+    roles: rolesResolver,
+  },
+};
+```
+
+#### onEnter/Exit/Retain
 
 When a state has an `onEnter`, `onExit`, or `onRetain`, they are always injected (AngularJS style),
 even if the state uses Angular 2+ components or is added to an `UIRouterUpgradeModule` `NgModule`.
