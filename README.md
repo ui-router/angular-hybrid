@@ -228,19 +228,44 @@ Because of this, apps should be migrated starting from leaf states/views and wor
 
 #### Resolve
 
-Resolve blocks on state definitions are only injected using AngularJS style string injection tokens.
+Resolve blocks on state definitions are always injected using AngularJS style string injection tokens.
 
-- AngularJS injection uses string tokens, such as `$transition$` or `$state`.
-- Angular supports Class based injection tokens (into constructors), such as `constructor(state: StateService) {}`
+- UI-Router for AngularJS injects objects using string tokens, such as `'$transition$'`, `'$state'`, or `'currentUser'`.
 
+```js
+resolve: {
+  roles: ($authService, currentUser) => $authService.fetchRoles(currentUser);
+}
+```
+
+- UI-Router for Angular uses the [Transition.injector()](https://ui-router.github.io/ng2/docs/2.0.0/classes/transition.transition-1.html#injector) API.
+  The resolve function receives the `Transition` object as the first argument.
+
+```js
+  export const rolesResolver = (transition) => {
+    const authService = transition.injector().get(AuthService);
+    const currentUser = transition.injector().get('currentUser');
+    return authService.fetchRoles(currentUser);
+  }
+
+  ...
+
+  resolve: {
+    // In Angular, the first argument to a resolve is always the Transition object
+    roles: rolesResolver
+  }
+```
+
+In UI-Router for Angular/AngularJS hybrid mode, _all resolves are injected using AngularJS style_.
 If you need to inject Angular services by class, or need to use some other token-based injection such as an [`InjectionToken`](https://angular.io/api/core/InjectionToken),
-you can access them using the [Transition.injector()](https://ui-router.github.io/ng2/docs/2.0.0/classes/transition.transition-1.html#injector) API.
+access them by injecting the `$transition$` object using string-based injection.
+Then, use the `Transition.injector()` API to access your services and values.
 
 ```ts
 import { AuthService, UserToken } from './auth.service';
 
 // Notice that the `Transition` object is first injected
-// into the resolve using the string token: '$transition$'
+// into the resolver using the '$transition$' string token
 export const rolesResolver = function($transition$) {
   // Get the AuthService using a class token
   const authService: AuthService = transition.injector().get(AuthService);
