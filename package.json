@@ -43,7 +43,7 @@
     "pretty-quick": "^1.6.0",
     "rollup": "^0.64.1",
     "rollup-plugin-commonjs": "^9.1.5",
-    "rollup-plugin-node-resolve": "^3.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-uglify": "^4.0.0",
     "rxjs": "^6.3.2",
