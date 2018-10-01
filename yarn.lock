@@ -61,9 +61,9 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@types/angular@^1.6.50":
-  version "1.6.50"
-  resolved "https://registry.yarnpkg.com/@types/angular/-/angular-1.6.50.tgz#8b6599088d80f68ef0cad7d3a2062248ebe72b3d"
+"@types/angular@^1.6.51":
+  version "1.6.51"
+  resolved "https://registry.yarnpkg.com/@types/angular/-/angular-1.6.51.tgz#a67515b0ba6a2ff68894a39405c1343cbf9c36d4"
 
 "@types/estree@0.0.39":
   version "0.0.39"
