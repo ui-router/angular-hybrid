@@ -95,9 +95,11 @@
   version "9.12.3"
   resolved "https://registry.yarnpkg.com/@types/highlight.js/-/highlight.js-9.12.3.tgz#b672cfaac25cbbc634a0fd92c515f66faa18dbca"
 
-"@types/jquery@^3.3.10":
-  version "3.3.10"
-  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.10.tgz#d0afaec7ee55f591992e74c607df5dc7cd9c76ab"
+"@types/jquery@^3.3.12":
+  version "3.3.12"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.12.tgz#e83229bcbf09dc668f9d4c1894864199521ff258"
+  dependencies:
+    "@types/sizzle" "*"
 
 "@types/lodash@^4.14.110":
   version "4.14.116"
@@ -121,6 +123,10 @@
   dependencies:
     "@types/glob" "*"
     "@types/node" "*"
+
+"@types/sizzle@*":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
 
 "@uirouter/angular@2.0.2":
   version "2.0.2"
