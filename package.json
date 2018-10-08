@@ -38,7 +38,7 @@
     "@types/jquery": "^3.3.12",
     "@uirouter/publish-scripts": "^2.3.21",
     "angular": "^1.7.5",
-    "husky": "^0.14.3",
+    "husky": "^1.1.1",
     "prettier": "^1.14.3",
     "pretty-quick": "^1.7.0",
     "rollup": "^0.64.1",
