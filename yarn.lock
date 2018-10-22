@@ -35,11 +35,11 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-browser@^5.2.11":
-  version "5.2.11"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-5.2.11.tgz#5be379f96d74b4ebe84a447633ed5279cb7e641e"
+"@angular/platform-browser@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-7.0.0.tgz#8c13a6380cf465b3628e5b576a1313e9b4976093"
   dependencies:
-    tslib "^1.7.1"
+    tslib "^1.9.0"
 
 "@angular/upgrade@^5.2.11":
   version "5.2.11"

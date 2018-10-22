@@ -31,7 +31,7 @@
     "@angular/compiler": "^5.2.11",
     "@angular/compiler-cli": "^5.2.11",
     "@angular/core": "^5.2.11",
-    "@angular/platform-browser": "^5.2.11",
+    "@angular/platform-browser": "^7.0.0",
     "@angular/platform-browser-dynamic": "^5.2.11",
     "@angular/upgrade": "^5.2.11",
     "@types/angular": "^1.6.51",
