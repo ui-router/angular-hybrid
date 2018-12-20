@@ -122,7 +122,8 @@ export function objectFactory() {
 })
 export class UIViewNgUpgrade {
   // The ui-view's name (or '$default')
-  @Input() name: string;
+  @Input()
+  name: string;
 
   constructor(
     ref: ElementRef,
@@ -238,7 +239,10 @@ upgradeModule.run([
     const mergedInjector = {
       get: function(token: any, ng2NotFoundValue?: any) {
         const ng2Injector = ng1Injector.get('$$angularInjector');
-        return (ng1Injector.has(token) && ng1Injector.get(token)) || ng2Injector.get(token, ng2NotFoundValue);
+        if (ng1Injector.has(token)) {
+          return ng1Injector.get(token);
+        }
+        return ng2Injector.get(token, ng2NotFoundValue);
       },
     };
 
@@ -300,14 +304,11 @@ upgradeModule.run([
     // Register a ViewConfig factory for views of type `ng1-to-ng2`.
     // Returns both an ng1 config and an ng2 config allowing either ng1 or ng2 ui-view components to be targeted.
     $view._pluginapi._viewConfigFactory('ng1-to-ng2', (path: PathNode[], config: Ng2ViewDeclaration) => {
-      const ng1ViewConfig: ViewConfig = <any>new Ng1ViewConfig(
-        <any>path,
-        <any>Object.assign({}, config, { $type: 'ng1' }),
-        $templateFactory
+      const ng1ViewConfig: ViewConfig = <any>(
+        new Ng1ViewConfig(<any>path, <any>Object.assign({}, config, { $type: 'ng1' }), $templateFactory)
       );
-      const ng2ViewConfig: ViewConfig = <any>new Ng2ViewConfig(
-        <any>path,
-        <any>Object.assign({}, config, { $type: 'ng2' })
+      const ng2ViewConfig: ViewConfig = <any>(
+        new Ng2ViewConfig(<any>path, <any>Object.assign({}, config, { $type: 'ng2' }))
       );
 
       return [ng2ViewConfig, ng1ViewConfig];
