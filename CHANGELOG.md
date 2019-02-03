@@ -1,3 +1,32 @@
+## 6.0.3 (2019-02-03)
+[Compare `@uirouter/angular-hybrid` versions 6.0.2 and 6.0.3](https://github.com/ui-router/angular-hybrid/compare/6.0.2...6.0.3)
+
+
+### Updated `@uirouter/core` from 5.0.21 to 5.0.23
+[Compare `@uirouter/core` versions 5.0.21 and 5.0.23](https://github.com/ui-router/core/compare/5.0.21...5.0.23)
+
+### Bug Fixes
+
+* **lazyLoad:** StateBuilder should not mutate the state declaration ([1478a3c](https://github.com/ui-router/core/commit/1478a3c)), closes [/github.com/ui-router/core/commit/3cd5a2a#r31260154](https://github.com//github.com/ui-router/core/commit/3cd5a2a/issues/r31260154)
+* **state:** Update URL in response to ignored transition due to redirect ([c64c252](https://github.com/ui-router/core/commit/c64c252))
+* **test_downstream_projects:** don't double build core while testing downstreams ([148b16b](https://github.com/ui-router/core/commit/148b16b))
+* **typescript:** Fix typing of onChange callback in UrlService ([961ed0f](https://github.com/ui-router/core/commit/961ed0f)), closes [#229](https://github.com/ui-router/core/issues/229)
+* **typescript:** Mark `params` as optional in StateService.href ([614bfb4](https://github.com/ui-router/core/commit/614bfb4)), closes [#287](https://github.com/ui-router/core/issues/287)
+* **vanilla:** Fix baseHref parsing with chrome-extension:// urls ([f11be4d](https://github.com/ui-router/core/commit/f11be4d)), closes [#304](https://github.com/ui-router/core/issues/304)
+
+
+### Features
+
+* **TransitionHook:** Pass in transition to HookMatchCriteria ([#255](https://github.com/ui-router/core/issues/255)) ([926705e](https://github.com/ui-router/core/commit/926705e))
+
+
+### Updated `@uirouter/angular` from 2.0.2 to 2.0.4
+[Compare `@uirouter/angular` versions 2.0.2 and 2.0.4](https://github.com/ui-router/angular/compare/2.0.2...2.0.4)
+
+
+### Updated `@uirouter/angularjs` from 1.0.20 to 1.0.22
+[Compare `@uirouter/angularjs` versions 1.0.20 and 1.0.22](https://github.com/angular-ui/ui-router/compare/1.0.20...1.0.22)
+
 ## 6.0.2 (2018-08-12)
 [Compare `@uirouter/angular-hybrid` versions 6.0.1 and 6.0.2](https://github.com/ui-router/angular-hybrid/compare/6.0.1...6.0.2)
 
