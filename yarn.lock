@@ -130,10 +130,10 @@
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
 
-"@uirouter/angular@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@uirouter/angular/-/angular-2.0.4.tgz#c057990cfeb17929517280b389dcc48e367e35ad"
-  integrity sha512-ZaKgX+S2ZipewtQZz+W8zGUdTF6tQY2rfi1n45ze5UP4M/wBpXthw3zat21qWM0yD53gycKNTB8Jv1cKmiTeEA==
+"@uirouter/angular@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@uirouter/angular/-/angular-3.0.0.tgz#2305fbf6abfa55a561578365a4e80e6d89b33abe"
+  integrity sha512-HgAl0tk+RxuspC6vSNINMlzjTJgo+TFSpJ37OQgY7WEU7OrEDCdftVITJHyU/J87UES1ajalJljeq0/fI8Sv7g==
   dependencies:
     "@uirouter/core" "5.0.23"
     "@uirouter/rx" "0.5.0"
