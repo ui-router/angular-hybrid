@@ -115,7 +115,9 @@ export function objectFactory() {
  */
 @Component({
   selector: 'ui-view-ng-upgrade',
-  template: `<ui-view [name]="name"></ui-view>`,
+  template: `
+    <ui-view [name]="name"></ui-view>
+  `,
   // provide a blank object as PARENT_INJECT.
   // The component will add property getters when it is constructed.
   viewProviders: [{ provide: UIView.PARENT_INJECT, useFactory: objectFactory }],
@@ -300,14 +302,11 @@ upgradeModule.run([
     // Register a ViewConfig factory for views of type `ng1-to-ng2`.
     // Returns both an ng1 config and an ng2 config allowing either ng1 or ng2 ui-view components to be targeted.
     $view._pluginapi._viewConfigFactory('ng1-to-ng2', (path: PathNode[], config: Ng2ViewDeclaration) => {
-      const ng1ViewConfig: ViewConfig = <any>new Ng1ViewConfig(
-        <any>path,
-        <any>Object.assign({}, config, { $type: 'ng1' }),
-        $templateFactory
+      const ng1ViewConfig: ViewConfig = <any>(
+        new Ng1ViewConfig(<any>path, <any>Object.assign({}, config, { $type: 'ng1' }), $templateFactory)
       );
-      const ng2ViewConfig: ViewConfig = <any>new Ng2ViewConfig(
-        <any>path,
-        <any>Object.assign({}, config, { $type: 'ng2' })
+      const ng2ViewConfig: ViewConfig = <any>(
+        new Ng2ViewConfig(<any>path, <any>Object.assign({}, config, { $type: 'ng2' }))
       );
 
       return [ng2ViewConfig, ng1ViewConfig];
