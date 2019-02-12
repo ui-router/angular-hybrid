@@ -124,7 +124,8 @@ export function objectFactory() {
 })
 export class UIViewNgUpgrade {
   // The ui-view's name (or '$default')
-  @Input() name: string;
+  @Input()
+  name: string;
 
   constructor(
     ref: ElementRef,
@@ -240,7 +241,10 @@ upgradeModule.run([
     const mergedInjector = {
       get: function(token: any, ng2NotFoundValue?: any) {
         const ng2Injector = ng1Injector.get('$$angularInjector');
-        return (ng1Injector.has(token) && ng1Injector.get(token)) || ng2Injector.get(token, ng2NotFoundValue);
+        if (ng1Injector.has(token)) {
+          return ng1Injector.get(token);
+        }
+        return ng2Injector.get(token, ng2NotFoundValue);
       },
     };
 
