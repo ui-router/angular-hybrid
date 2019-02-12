@@ -1,3 +1,25 @@
+# 7.0.0 (2019-02-12)
+[Compare `@uirouter/angular-hybrid` versions 6.0.3 and 7.0.0](https://github.com/ui-router/angular-hybrid/compare/6.0.3...7.0.0)
+
+### Bug Fixes
+
+* **angularjs:** Get AngularJS reference using 'getAngularJSGlobal()' ([d53d134](https://github.com/ui-router/angular-hybrid/commit/d53d134)), closes [#240](https://github.com/ui-router/angular-hybrid/issues/240)
+* **upgrade:** Fix "no provider" error while injecting a falsy ng1 provider ([1a06a9a](https://github.com/ui-router/angular-hybrid/commit/1a06a9a))
+
+
+### BREAKING CHANGES
+
+* **angularjs:** If 'angular' variable is not on the window, you must provide it using 'setAngularJSGlobal(angular);'.
+https://github.com/ui-router/angular-hybrid/wiki/AngularJS-not-found-on-window
+
+
+### Updated `@uirouter/angular` from 2.0.4 to 3.0.0
+[Compare `@uirouter/angular` versions 2.0.4 and 3.0.0](https://github.com/ui-router/angular/compare/2.0.4...3.0.0)
+
+### Features
+
+* **angular:** Updates for Angular 7 ([7f3132a](https://github.com/ui-router/angular/commit/7f3132a))
+
 ## 6.0.3 (2019-02-03)
 [Compare `@uirouter/angular-hybrid` versions 6.0.2 and 6.0.3](https://github.com/ui-router/angular-hybrid/compare/6.0.2...6.0.3)
 
