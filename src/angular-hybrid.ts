@@ -1,7 +1,5 @@
-import * as angular from 'angular';
-
 import { Component, ElementRef, Inject, Injector, Input, ModuleWithProviders, NgModule } from '@angular/core';
-import { downgradeComponent, UpgradeModule } from '@angular/upgrade/static';
+import { downgradeComponent, UpgradeModule, getAngularJSGlobal, getAngularLib } from '@angular/upgrade/static';
 
 import {
   StateObject,
@@ -34,6 +32,15 @@ import { $InjectorLike, Ng1ViewConfig } from '@uirouter/angularjs';
 
 import { UIRouterRx } from '@uirouter/rx';
 import { NgHybridStatesModule } from './interfaces';
+
+const getAngularJS = getAngularJSGlobal || getAngularLib;
+const angular = getAngularJS();
+
+if (!angular) {
+  throw new Error(
+    'AngularJS not found on window.  https://github.com/ui-router/angular-hybrid/wiki/AngularJS-not-found-on-window'
+  );
+}
 
 /**
  * Create a ng1 module for the ng1 half of the hybrid application to depend on.
