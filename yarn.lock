@@ -63,9 +63,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@types/angular@^1.6.51":
-  version "1.6.51"
-  resolved "https://registry.yarnpkg.com/@types/angular/-/angular-1.6.51.tgz#a67515b0ba6a2ff68894a39405c1343cbf9c36d4"
+"@types/angular@^1.6.54":
+  version "1.6.54"
+  resolved "https://registry.yarnpkg.com/@types/angular/-/angular-1.6.54.tgz#f9d5a03e4da7b021a6dabe5d63e899ed4567a5bd"
+  integrity sha512-xA1FuozWXeRQ7FClUbvk8ePL+dydBeDoCWRPFTHU5+8uvVtIIfLGiHA8CMkwsbddFCYnTDVbLxG85a/HBx7LtA==
 
 "@types/estree@0.0.39":
   version "0.0.39"
