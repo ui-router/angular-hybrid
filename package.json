@@ -48,7 +48,7 @@
     "rxjs": "^6.4.0",
     "rxjs-compat": "^6.4.0",
     "shx": "^0.3.2",
-    "typescript": "^2.9.2",
+    "typescript": "^3.4.4",
     "zone.js": "^0.8.29"
   },
   "main": "_bundles/ui-router-angular-hybrid.js",
