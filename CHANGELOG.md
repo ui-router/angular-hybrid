@@ -1,3 +1,10 @@
+# 8.0.0 (2019-06-25)
+[Compare `@uirouter/angular-hybrid` versions 7.0.0 and 8.0.0](https://github.com/ui-router/angular-hybrid/compare/7.0.0...8.0.0)
+
+### Features
+
+* support Angular v8 ([e8a8419](https://github.com/ui-router/angular-hybrid/commit/e8a8419))
+
 # 7.0.0 (2019-02-12)
 [Compare `@uirouter/angular-hybrid` versions 6.0.3 and 7.0.0](https://github.com/ui-router/angular-hybrid/compare/6.0.3...7.0.0)
 
