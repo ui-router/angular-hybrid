@@ -15,15 +15,13 @@
     "prepublishOnly": "npm run build"
   },
   "license": "MIT",
-  "dependencies": {
-    "@uirouter/angular": "3.0.0",
-    "@uirouter/angularjs": "1.0.22",
-    "@uirouter/core": "5.0.23"
-  },
   "peerDependencies": {
     "@angular/core": "^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0",
     "@angular/upgrade": "^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0",
-    "angular": "^1.5.0"
+    "angular": "^1.5.0",
+    "@uirouter/angular": "^4.0.0",
+    "@uirouter/angularjs": "^1.0.22",
+    "@uirouter/core": "^5.0.23"
   },
   "devDependencies": {
     "@angular/common": "^5.2.11",
@@ -33,6 +31,9 @@
     "@angular/platform-browser": "^5.2.11",
     "@angular/platform-browser-dynamic": "^5.2.11",
     "@angular/upgrade": "^5.2.11",
+    "@uirouter/angular": "4.0.0",
+    "@uirouter/angularjs": "1.0.22",
+    "@uirouter/core": "5.0.23",
     "@types/angular": "^1.6.51",
     "@types/jquery": "^3.3.17",
     "@uirouter/publish-scripts": "^2.3.25",
