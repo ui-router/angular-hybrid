@@ -372,7 +372,7 @@ camelcase@^5.0.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.0.0.tgz#03295527d58bd3cd4aa75363f35b2e8d97be2f42"
   integrity sha512-faqwZqnWxbxn+F1d399ygeamQNy3lPp/H9H6rNrqYh4FSVCtcY+3cub1MxA8o9mDd55mM8Aghuu/kuyYA6VTsA==
 
-chalk@^2.0.0, chalk@^2.3.0, chalk@^2.4.1:
+chalk@^2.0.0, chalk@^2.3.0, chalk@^2.4.1, chalk@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
   integrity sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==
@@ -1071,17 +1071,19 @@ hosted-git-info@^2.1.4:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.6.0.tgz#23235b29ab230c576aab0d4f13fc046b0b038222"
 
-husky@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-2.5.0.tgz#fe9839e118e5d88e3f1d7121d52564745615815e"
-  integrity sha512-/aQIBaVMuzGi5X5BPliDPbHE+G+HDpWV7Zu28DiiXFMvHQcOeTsEnODWIGKyGBp7GM7rOgkxQdF+6AEo6xNtkw==
+husky@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-3.0.5.tgz#d7db27c346645a8dc52df02aa534a377ad7925e0"
+  integrity sha512-cKd09Jy9cDyNIvAdN2QQAP/oA21sle4FWXjIMDttailpLAYZuBE7WaPmhrkj+afS8Sj9isghAtFvWSQ0JiwOHg==
   dependencies:
+    chalk "^2.4.2"
     cosmiconfig "^5.2.1"
     execa "^1.0.0"
     get-stdin "^7.0.0"
     is-ci "^2.0.0"
+    opencollective-postinstall "^2.0.2"
     pkg-dir "^4.2.0"
-    please-upgrade-node "^3.1.1"
+    please-upgrade-node "^3.2.0"
     read-pkg "^5.1.1"
     run-node "^1.0.0"
     slash "^3.0.0"
@@ -1787,6 +1789,11 @@ open@^6.4.0:
   dependencies:
     is-wsl "^1.1.0"
 
+opencollective-postinstall@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/opencollective-postinstall/-/opencollective-postinstall-2.0.2.tgz#5657f1bede69b6e33a45939b061eb53d3c6c3a89"
+  integrity sha512-pVOEP16TrAO2/fjej1IdOyupJY8KDUM1CvsaScRbw6oddvpQoOfGk4ywha0HKKVAD6RkW4x6Q+tNBwhf3Bgpuw==
+
 optimist@^0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.6.1.tgz#da3ea74686fa21a19a111c326e90eb15a0196686"
@@ -1977,10 +1984,10 @@ pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
-please-upgrade-node@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/please-upgrade-node/-/please-upgrade-node-3.1.1.tgz#ed320051dfcc5024fae696712c8288993595e8ac"
-  integrity sha512-KY1uHnQ2NlQHqIJQpnh/i54rKkuxCEBx+voJIS/Mvb+L2iYd2NMotwduhKTMjfC1uKoX3VXOxLjIYG66dfJTVQ==
+please-upgrade-node@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/please-upgrade-node/-/please-upgrade-node-3.2.0.tgz#aeddd3f994c933e4ad98b99d9a556efa0e2fe942"
+  integrity sha512-gQR3WpIgNIKwBMVLkpMUeR3e1/E1y42bqDQZfql+kDeXd8COYfM8PQA4X6y7a8u9Ua9FHmsrrmirW2vHs45hWg==
   dependencies:
     semver-compare "^1.0.0"
 
