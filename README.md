@@ -147,7 +147,7 @@ platformBrowserDynamic()
       urlService.sync();
     }
 
-    platformRef.injector.get < NgZone > NgZone.run(startUIRouter);
+    platformRef.injector.get<NgZone>(NgZone).run(startUIRouter);
   });
 ```
 
