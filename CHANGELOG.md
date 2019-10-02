@@ -1,3 +1,75 @@
+# 9.0.0 (2019-10-02)
+[Compare `@uirouter/angular-hybrid` versions 8.0.0 and 9.0.0](https://github.com/ui-router/angular-hybrid/compare/8.0.0...9.0.0)
+
+### Bug Fixes
+
+* **travis:** remove explicit call to xvfb ([3b124cc](https://github.com/ui-router/angular-hybrid/commit/3b124cc))
+* **travis:** use service: xvfb instead of launching it manually.  install libgconf debian package ([e85f678](https://github.com/ui-router/angular-hybrid/commit/e85f678))
+
+
+### Features
+
+* update ui-router/angular dependency that supports angular 8 ([b97af69](https://github.com/ui-router/angular-hybrid/commit/b97af69))
+
+
+---
+
+### Updated `@uirouter/core` from 5.0.23 to 6.0.1
+[Compare `@uirouter/core` versions 5.0.23 and 6.0.1](https://github.com/ui-router/core/compare/5.0.23...6.0.1)
+
+### Bug Fixes
+
+* **resolve:** remove unnecessary generics from CustomAsyncPolicy ([#452](https://github.com/ui-router/core/issues/452)) ([61f4ee9](https://github.com/ui-router/core/commit/61f4ee9))
+* **travis:** use service: xvfb instead of launching it manually.  install libgconf debian package ([ac1ef4b](https://github.com/ui-router/core/commit/ac1ef4b))
+
+
+### Features
+
+* **resolve:** Remove RXWAIT async policy in favour of allowing user defined async policy function ([#366](https://github.com/ui-router/core/issues/366)) ([0ad87f6](https://github.com/ui-router/core/commit/0ad87f6))
+
+
+### BREAKING CHANGES
+
+* **resolve:** RXWAIT async policy has been removed, but it never worked in the first place
+
+
+---
+
+### Updated `@uirouter/angular` from 3.0.0 to 5.0.0
+[Compare `@uirouter/angular` versions 3.0.0 and 5.0.0](https://github.com/ui-router/angular/compare/3.0.0...5.0.0)
+
+### Bug Fixes
+
+* **travis:** use service: xvfb instead of launching it manually.  install libgconf debian package ([309fc9b](https://github.com/ui-router/angular/commit/309fc9b))
+
+
+### Chores
+
+* **package:** update [@uirouter/core](https://github.com/uirouter/core) and [@uirouter/rx](https://github.com/uirouter/rx) to enable support for observables in resolves ([#646](https://github.com/ui-router/angular/issues/646)) ([4661bab](https://github.com/ui-router/angular/commit/4661bab))
+
+
+### Features
+
+* **uirouter:** Add support for Angular 8 ([c141d95](https://github.com/ui-router/angular/commit/c141d95))
+
+
+### BREAKING CHANGES
+
+* **package:** Removed RXWAIT async policy (which was broken) in favor of supporting custom resolve policies.  Added a custom RXWAIT policy to uirouter/rx which is included in uirouter/angular
+
+---
+
+
+### Updated `@uirouter/angularjs` from 1.0.22 to 1.0.23
+[Compare `@uirouter/angularjs` versions 1.0.22 and 1.0.23](https://github.com/angular-ui/ui-router/compare/1.0.22...1.0.23)
+
+### Bug Fixes
+
+* **stateFilters:** Export each function individually ([978b882](https://github.com/angular-ui/ui-router/commit/978b882))
+* **travis:** Fix travis build ([dc0f58a](https://github.com/angular-ui/ui-router/commit/dc0f58a))
+* **types:** Remove [@types](https://github.com/types)/jquery from devDependencies, upgrade [@types](https://github.com/types)/angular ([b12bc84](https://github.com/angular-ui/ui-router/commit/b12bc84))
+* **viewDirective:** add check for componentProvider, avoid extra trigger for $onInit (fixing [#3735](https://github.com/angular-ui/ui-router/issues/3735)) ([#3779](https://github.com/angular-ui/ui-router/issues/3779)) ([c3e87ad](https://github.com/angular-ui/ui-router/commit/c3e87ad))
+
 # 8.0.0 (2019-06-25)
 [Compare `@uirouter/angular-hybrid` versions 7.0.0 and 8.0.0](https://github.com/ui-router/angular-hybrid/compare/7.0.0...8.0.0)
 
