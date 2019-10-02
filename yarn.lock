@@ -102,7 +102,7 @@
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
 
-"@uirouter/angular@^5.0.0":
+"@uirouter/angular@5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@uirouter/angular/-/angular-5.0.0.tgz#621e552c7688078363c297b407b589e570bd6154"
   integrity sha512-H59jDcHtz9J4qGMNvx73O55pYm2Edx6fhRpBmRlDSi7ugHOB4aWUk7m6d74OzJgYYXteE1r5Zr77TVDv0mv1uA==
@@ -110,19 +110,14 @@
     "@uirouter/core" "^6.0.1"
     "@uirouter/rx" "^0.6.0"
 
-"@uirouter/angularjs@1.0.22":
-  version "1.0.22"
-  resolved "https://registry.yarnpkg.com/@uirouter/angularjs/-/angularjs-1.0.22.tgz#581ab38794a2d7c2790851087072c4066b2b6c46"
-  integrity sha512-d0SvdbXAav+Z6gCJd7gmn2eXEUtO3RvYcSLwtPaE8+7QiWHpSKNfGdD4D3noXhO2yUTz/AwaxsiRFMCwgVI0UQ==
+"@uirouter/angularjs@^1.0.23":
+  version "1.0.23"
+  resolved "https://registry.yarnpkg.com/@uirouter/angularjs/-/angularjs-1.0.23.tgz#aeec0f96b0c42187c5044ef244ba6ccb75a5d835"
+  integrity sha512-r4hLSw7R3mwXGC5Sq7yxNlBK1sSzQUm/1MzigwwYRHoMO5uKcBPUhxFYx5U7kufP2Xl1165KeZvRsLCh0/Z1ng==
   dependencies:
-    "@uirouter/core" "5.0.23"
+    "@uirouter/core" "6.0.1"
 
-"@uirouter/core@5.0.23":
-  version "5.0.23"
-  resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-5.0.23.tgz#363b4bea635a1b48900dc7e65793a65a3b58a79e"
-  integrity sha512-rwFOH++z/KY8y+h0IOpQ5uC8Nim6E0EBCQrIjhVCr+XKYXgpK+VdtuOLFdogvbJ3AAi5Z7ei00qdEr7Did5CAg==
-
-"@uirouter/core@^6.0.1":
+"@uirouter/core@6.0.1", "@uirouter/core@^6.0.1":
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-6.0.1.tgz#93b02a5d178a7ab7313f34b7b3f019a000d23396"
   integrity sha512-mHCutiHtDDRKYmrJ92XPKDoSb2bgqaDyUpHdF4hUE+riwgkCvGdBjL8u+VDTcV3slBAk6B0LBIOIajjWkkObbQ==
