@@ -110,7 +110,7 @@
     "@uirouter/core" "^6.0.1"
     "@uirouter/rx" "^0.6.0"
 
-"@uirouter/angularjs@^1.0.23":
+"@uirouter/angularjs@1.0.23":
   version "1.0.23"
   resolved "https://registry.yarnpkg.com/@uirouter/angularjs/-/angularjs-1.0.23.tgz#aeec0f96b0c42187c5044ef244ba6ccb75a5d835"
   integrity sha512-r4hLSw7R3mwXGC5Sq7yxNlBK1sSzQUm/1MzigwwYRHoMO5uKcBPUhxFYx5U7kufP2Xl1165KeZvRsLCh0/Z1ng==
