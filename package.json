@@ -38,7 +38,7 @@
     "@uirouter/publish-scripts": "^2.3.37",
     "angular": "^1.7.8",
     "husky": "^3.0.9",
-    "prettier": "^1.18.2",
+    "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "rollup": "^1.26.5",
     "rollup-plugin-commonjs": "^10.1.0",
