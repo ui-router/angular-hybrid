@@ -17,12 +17,17 @@
     "@types/angular": "^1.6.39",
     "@types/jquery": "^3.2.16",
     "@uirouter/angular-hybrid": "latest",
+    "@uirouter/core": "^6.0.1",
+    "@uirouter/angular": "^6.0.0",
+    "@uirouter/angularjs": "^1.0.23",
+    "@uirouter/rx": "^0.6.0",
     "angular": "1.6.6",
     "rxjs": "^6.5.3",
     "ts-loader": "3.2.0",
     "typescript": "~3.4.0",
     "webpack": "3.10.0",
-    "webpack-dev-server": "2.9.6"
+    "webpack-dev-server": "2.9.6",
+    "zone.js": "^0.9.1"
   },
   "devDependencies": {
     "@uirouter/cypress-runner": "^1.0.7"
