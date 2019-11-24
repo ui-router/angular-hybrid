@@ -16,9 +16,8 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "@angular/core": ">=8.0.0",
-    "@angular/upgrade": ">=8.0.0",
-    "@uirouter/core": "^6.0.1",
+    "@angular/core": "^8.0.0 || ^9.0.0 || ^9.0.0-next",
+    "@angular/upgrade": "^8.0.0 || ^9.0.0 || ^9.0.0-next",
     "@uirouter/angular": "^6.0.0",
     "@uirouter/angularjs": "^1.0.23",
     "angular": "^1.5.0"
