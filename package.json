@@ -35,7 +35,7 @@
     "@angular/upgrade": "^5.2.11",
     "@types/angular": "^1.6.51",
     "@types/jquery": "^3.3.17",
-    "@uirouter/publish-scripts": "^2.3.37",
+    "@uirouter/publish-scripts": "^2.3.38",
     "angular": "^1.7.9",
     "husky": "^3.1.0",
     "prettier": "^1.19.1",
