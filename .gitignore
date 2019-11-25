@@ -3,6 +3,7 @@ lib
 **/_bundles
 _bundles
 yarn-error.log
+dist
 
 # artifacts
 *.d.ts
