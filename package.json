@@ -5,7 +5,7 @@
   "scripts": {
     "example": "cd example && npm i && npm start",
     "clean": "shx rm -rf lib _bundles dist",
-    "build": "ng-packagr -p package.json",
+    "build": "npm run clean && ng-packagr -p package.json",
     "release": "release --deps @uirouter/core @uirouter/angular @uirouter/angularjs",
     "test": "npm run build",
     "test:downstream": "npm run build && test_downstream_projects",
