@@ -6,7 +6,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { UIRouterUpgradeModule, NgHybridStateDeclaration } from '@uirouter/angular-hybrid';
 import { UrlService } from '@uirouter/core';
 
-const app = angular.module('minimal', ['ui.router.upgrade']);
+import 'ngimport';
+import './ReactComponent.tsx';
+const app = angular.module('minimal', ['ui.router.upgrade', 'reactcomponent', 'bcherny/ngimport']);
 
 app.run(($stateRegistry, $urlService) => {
   $urlService.rules.initial({ state: 'app' });
@@ -15,11 +17,16 @@ app.run(($stateRegistry, $urlService) => {
     url: '',
     name: 'app',
     template: `
-        <a ui-sref=".ng1" ui-sref-active-eq="active">app.ng1</a>
+        <a ui-sref=".ng1" ui-sref-active-eq="active">app.ng111111111</a>
         <a ui-sref=".ng1.ng2" ui-sref-active-eq="active">app.ng1.ng2</a>
         <a ui-sref=".ng2" ui-sref-active-eq="active">app.ng2</a>
         <a ui-sref=".ng2.ng2" ui-sref-active-eq="active">app.ng2.ng2</a>
-        <ui-view></ui-view>
+        <!-- 
+        this is a react component wrapped as an angularjs component
+        the react component renders an <AngularJSUIView/> which wraps an angularjs <ui-view>
+        the angularjs <ui-view> allows either angularjs or angular components to be routed to
+        -->
+        <react-component></react-component>
       `,
   });
 
@@ -63,10 +70,10 @@ app.component('ng1Component', {
 @Component({
   selector: 'ng2-component',
   template: `
-      <h1>ng2 component</h1>
-      <a uiSref="app">Back to app</a>
-      <ui-view></ui-view>
-    `,
+    <h1>ng2 component</h1>
+    <a uiSref="app">Back to app</a>
+    <ui-view></ui-view>
+  `,
 })
 export class Ng2Component {
   ngOnInit() {
@@ -106,17 +113,17 @@ app.config(['$urlServiceProvider', $urlService => $urlService.deferIntercept()])
 
 // Manually bootstrap the Angular app
 platformBrowserDynamic()
-  .bootstrapModule(RootModule)
-  .then(platformRef => {
-    // get() UrlService from DI (this call will create all the UIRouter services)
-    const url: UrlService = platformRef.injector.get(UrlService);
+    .bootstrapModule(RootModule)
+    .then(platformRef => {
+      // get() UrlService from DI (this call will create all the UIRouter services)
+      const url: UrlService = platformRef.injector.get(UrlService);
 
-    // Instruct UIRouter to listen to URL changes
-    function startUIRouter() {
-      url.listen();
-      url.sync();
-    }
+      // Instruct UIRouter to listen to URL changes
+      function startUIRouter() {
+        url.listen();
+        url.sync();
+      }
 
-    const ngZone: NgZone = platformRef.injector.get(NgZone);
-    ngZone.run(startUIRouter);
-  });
+      const ngZone: NgZone = platformRef.injector.get(NgZone);
+      ngZone.run(startUIRouter);
+    });

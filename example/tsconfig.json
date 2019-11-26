@@ -11,6 +11,7 @@
     "declaration": false,
     "sourceMap": true,
     "skipLibCheck": true,
-    "lib": ["es6", "dom"]
+    "lib": ["es6", "dom"],
+    "jsx": "react"
   }
 }
