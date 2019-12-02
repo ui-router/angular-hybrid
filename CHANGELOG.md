@@ -1,3 +1,10 @@
+## 10.0.1 (2019-12-02)
+[Compare `@uirouter/angular-hybrid` versions 10.0.0 and 10.0.1](https://github.com/ui-router/angular-hybrid/compare/10.0.0...10.0.1)
+
+### Bug Fixes
+
+* **package:** mark package as having side-effects ([#385](https://github.com/ui-router/angular-hybrid/issues/385)) ([29515bc](https://github.com/ui-router/angular-hybrid/commit/29515bc))
+
 # 10.0.0 (2019-11-25)
 [Compare `@uirouter/angular-hybrid` versions 9.0.0 and 10.0.0](https://github.com/ui-router/angular-hybrid/compare/9.0.0...10.0.0)
 
