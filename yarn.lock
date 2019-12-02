@@ -151,10 +151,10 @@
   resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-6.0.1.tgz#93b02a5d178a7ab7313f34b7b3f019a000d23396"
   integrity sha512-mHCutiHtDDRKYmrJ92XPKDoSb2bgqaDyUpHdF4hUE+riwgkCvGdBjL8u+VDTcV3slBAk6B0LBIOIajjWkkObbQ==
 
-"@uirouter/publish-scripts@^2.3.40":
-  version "2.3.40"
-  resolved "https://registry.yarnpkg.com/@uirouter/publish-scripts/-/publish-scripts-2.3.40.tgz#5a98b361afd5b0995bb3983279239b38bfef7236"
-  integrity sha512-CRPJ66jE2G+X7FgH2YYQo+cFIOzzkxrOb2wp9lD2gEiii02Ya8dTsb3gvjp4I7BYO7V1Ob8/NsB5twVRyOnAQQ==
+"@uirouter/publish-scripts@^2.3.41":
+  version "2.3.41"
+  resolved "https://registry.yarnpkg.com/@uirouter/publish-scripts/-/publish-scripts-2.3.41.tgz#40337463fdce6ef010db66c2828c1ce2ef23465b"
+  integrity sha512-ByTpV3dwF1tDezZvjTqIpMk4+mrlwUkPPTFQrUsDR0vBAafWT485y9YUTq5DC7R8P3+LwSHsu9mYQPAv/pbMrQ==
   dependencies:
     check-peer-dependencies "1.0.7"
     conventional-changelog "^3.1.15"
@@ -3773,15 +3773,7 @@ shell-quote@^1.6.1:
     array-reduce "~0.0.0"
     jsonify "~0.0.0"
 
-shelljs@^0.8.1:
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.2.tgz#345b7df7763f4c2340d584abb532c5f752ca9e35"
-  dependencies:
-    glob "^7.0.0"
-    interpret "^1.0.0"
-    rechoir "^0.6.2"
-
-shelljs@^0.8.3:
+shelljs@^0.8.1, shelljs@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.3.tgz#a7f3319520ebf09ee81275b2368adb286659b097"
   integrity sha512-fc0BKlAWiLpwZljmOvAOTE/gXawtCoNrP5oaY7KIaQbbyHeQVg01pSEuEGvGh3HEdBU4baCD7wQBwADmM/7f7A==
