@@ -51,6 +51,7 @@
       "entryFile": "src/index.ts"
     }
   },
+  "sideEffects": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/ui-router/angular-hybrid.git"
