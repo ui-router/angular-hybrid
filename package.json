@@ -40,7 +40,7 @@
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "rxjs": "^6.5.3",
-    "rxjs-compat": "^6.5.3",
+    "rxjs-compat": "^6.5.4",
     "shx": "^0.3.2",
     "typescript": "~3.5.3",
     "zone.js": "^0.10.2"
