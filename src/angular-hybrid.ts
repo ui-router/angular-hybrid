@@ -247,10 +247,10 @@ upgradeModule.run([
     // it retrieves from ng1 injector first, then ng2 injector if the token isn't found.
     const mergedInjector = {
       get: function(token: any, ng2NotFoundValue?: any) {
-        const ng2Injector = ng1Injector.get('$$angularInjector');
         if (ng1Injector.has(token)) {
           return ng1Injector.get(token);
         }
+        const ng2Injector = ng1Injector.get('$$angularInjector');
         return ng2Injector.get(token, ng2NotFoundValue);
       },
     };
