@@ -35,7 +35,7 @@
     "@uirouter/publish-scripts": "^2.3.45",
     "@uirouter/rx": "^0.6.5",
     "angular": "^1.7.9",
-    "husky": "^3.1.0",
+    "husky": "^4.2.3",
     "ng-packagr": "^5.3.0",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
