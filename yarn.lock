@@ -152,10 +152,10 @@
   resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
   integrity sha512-7EJYyKTL7tFR8+gDbB6Wwz/arpGa0Mywk1TJbNzKzHtzbwVmY4HR9WqS5VV7dsBUKQmPNr192jHr/VpBluj/hg==
 
-"@uirouter/angular@^6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@uirouter/angular/-/angular-6.0.1.tgz#fbd6512d4da82b95d182bc592a101a6606407a82"
-  integrity sha512-7UU3rv1rY0oobL3gUpeJ8QpazbgcDxG1JomBvzE7kYyxkVNBZ3rDhPRbzXTniaUXC2J56CEBE9PMtXNPDSxPyQ==
+"@uirouter/angular@^6.0.2":
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@uirouter/angular/-/angular-6.0.2.tgz#7bdd896c4ab79a3c6ead76fee170a047697dbfe5"
+  integrity sha512-M3TYNPTTrNlMtPcMhQ69FsPuPCQ0qtzaxw5e5Uswdu0BtyYAcy6f2NLBHbDrryOvrQHwuAQwJTggjcyXh5iUkA==
   dependencies:
     tslib "^1.9.0"
 
