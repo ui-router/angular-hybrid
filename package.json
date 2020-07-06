@@ -39,7 +39,7 @@
     "ng-packagr": "^5.3.0",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
-    "rxjs": "^6.5.5",
+    "rxjs": "^6.6.0",
     "rxjs-compat": "^6.5.5",
     "shx": "^0.3.2",
     "typescript": "~3.5.3",
