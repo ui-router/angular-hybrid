@@ -1,3 +1,39 @@
+## 11.0.1 (2020-07-21)
+[Compare `@uirouter/angular-hybrid` versions 11.0.0 and 11.0.1](https://github.com/ui-router/angular-hybrid/compare/11.0.0...11.0.1)
+
+
+---
+
+
+### Updated `@uirouter/core` from 6.0.5 to 6.0.6
+
+
+Changelog for `@uirouter/core`:
+
+
+[Compare `@uirouter/core` versions 6.0.5 and 6.0.6](https://github.com/ui-router/core/compare/6.0.5...6.0.6)
+
+### Bug Fixes
+
+* **params:** Bi-directionally en/decode path and search params. ([#618](https://github.com/ui-router/core/issues/618)) ([89e99cd](https://github.com/ui-router/core/commit/89e99cd))
+
+
+---
+
+
+### Updated `@uirouter/angularjs` from 1.0.26 to 1.0.27
+
+
+Changelog for `@uirouter/angularjs`:
+
+
+[Compare `@uirouter/angularjs` versions 1.0.26 and 1.0.27](https://github.com/angular-ui/ui-router/compare/1.0.26...1.0.27)
+
+### Bug Fixes
+
+* make augmented StateRegistry.register overload better match the signature in core ([db4e63f](https://github.com/angular-ui/ui-router/commit/db4e63f))
+
+
 # 11.0.0 (2020-07-16)
 [Compare `@uirouter/angular-hybrid` versions 10.0.1 and 11.0.0](https://github.com/ui-router/angular-hybrid/compare/10.0.1...11.0.0)
 
