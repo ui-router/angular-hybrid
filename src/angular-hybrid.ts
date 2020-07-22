@@ -122,9 +122,7 @@ export function objectFactory() {
  */
 @Component({
   selector: 'ui-view-ng-upgrade',
-  template: `
-    <ui-view [name]="name"></ui-view>
-  `,
+  template: ` <ui-view [name]="name"></ui-view> `,
   // provide a blank object as PARENT_INJECT.
   // The component will add property getters when it is constructed.
   viewProviders: [{ provide: UIView.PARENT_INJECT, useFactory: objectFactory }],
@@ -145,15 +143,12 @@ export class UIViewNgUpgrade {
 
     // The ng2 ui-view component is inside this ui-view-ng-upgrade directive, which is inside the ng1 "host" ui-view.
     // Both ui-views share the same "view context" information (the view's fqn and created-by-state context information)
-    const ng1elem = angular
-      .element(ref.nativeElement)
-      .parent()
-      .parent();
+    const ng1elem = angular.element(ref.nativeElement).parent().parent();
 
     // Expose getters on PARENT_INJECT for context (creation state) and fqn (view address)
     // These will be used by further nested UIView
     Object.defineProperty(parent, 'context', {
-      get: function() {
+      get: function () {
         const data = ng1elem['inheritedData']('$uiView');
         return data && data.$cfg ? data.$cfg.viewDecl.$context : registry.root();
       },
@@ -161,7 +156,7 @@ export class UIViewNgUpgrade {
     });
 
     Object.defineProperty(parent, 'fqn', {
-      get: function() {
+      get: function () {
         const data = ng1elem['inheritedData']('$uiView');
         return data && data.$uiView ? data.$uiView.fqn : null;
       },
@@ -177,7 +172,7 @@ export class UIViewNgUpgrade {
 // Register the ng1 DI '$uiRouter' object as an ng2 Provider.
 export function uiRouterUpgradeFactory(router: UIRouter, injector: Injector) {
   const modules: StatesModule[] = injector.get<StatesModule[]>(UIROUTER_MODULE_TOKEN, []);
-  modules.forEach(module => applyModuleConfig(router, injector, module));
+  modules.forEach((module) => applyModuleConfig(router, injector, module));
   return router;
 }
 
@@ -211,14 +206,14 @@ export function getParentUIViewInject(r: StateRegistry): ParentUIViewInject {
   exports: [UIViewNgUpgrade, UIRouterModule],
 })
 export class UIRouterUpgradeModule {
-  static forRoot(module: NgHybridStatesModule = {}): ModuleWithProviders {
+  static forRoot(module: NgHybridStatesModule = {}): ModuleWithProviders<UIRouterUpgradeModule> {
     return {
       ngModule: UIRouterUpgradeModule,
       providers: makeChildProviders(module as StatesModule),
     };
   }
 
-  static forChild(module: NgHybridStatesModule = {}): ModuleWithProviders {
+  static forChild(module: NgHybridStatesModule = {}): ModuleWithProviders<UIRouterUpgradeModule> {
     return {
       ngModule: UIRouterModule,
       providers: makeChildProviders(module as StatesModule),
@@ -229,10 +224,13 @@ export class UIRouterUpgradeModule {
 // Downgrade the UIViewNgUpgrade ng2 Component to an ng1 directive.
 // The directive is used in a (generated) view template by the (host) ng1 ui-router,
 // whenever it finds a view configured with a `component: <Ng2ComponentClass>`
-upgradeModule.directive('uiViewNgUpgrade', <any>downgradeComponent({
-  component: UIViewNgUpgrade,
-  inputs: ['name'],
-}));
+upgradeModule.directive(
+  'uiViewNgUpgrade',
+  <any>downgradeComponent({
+    component: UIViewNgUpgrade,
+    inputs: ['name'],
+  })
+);
 
 upgradeModule.run([
   '$injector',
@@ -246,7 +244,7 @@ upgradeModule.run([
     // This mimics how ui-router-ng2 exposes the root ng2 Injector, but
     // it retrieves from ng1 injector first, then ng2 injector if the token isn't found.
     const mergedInjector = {
-      get: function(token: any, ng2NotFoundValue?: any) {
+      get: function (token: any, ng2NotFoundValue?: any) {
         if (ng1Injector.has(token)) {
           return ng1Injector.get(token);
         }
@@ -280,7 +278,7 @@ upgradeModule.config([
 upgradeModule.config([
   '$stateRegistryProvider',
   ($stateRegistry: StateRegistry) => {
-    $stateRegistry.decorator('views', function(state: StateObject, parentFn: Function) {
+    $stateRegistry.decorator('views', function (state: StateObject, parentFn: Function) {
       const views = parentFn(state);
 
       forEach(views, (viewDecl: any, viewName: string) => {
