@@ -1,3 +1,10 @@
+## 11.0.2 (2020-07-22)
+[Compare `@uirouter/angular-hybrid` versions 11.0.1 and 11.0.2](https://github.com/ui-router/angular-hybrid/compare/11.0.1...11.0.2)
+
+### Bug Fixes
+
+* **module:** Use generic type on ModuleWithProviders typing ([6d2d4ed](https://github.com/ui-router/angular-hybrid/commit/6d2d4ed)), closes [#445](https://github.com/ui-router/angular-hybrid/issues/445)
+
 ## 11.0.1 (2020-07-21)
 [Compare `@uirouter/angular-hybrid` versions 11.0.0 and 11.0.1](https://github.com/ui-router/angular-hybrid/compare/11.0.0...11.0.1)
 
