@@ -39,7 +39,7 @@
     "husky": "^4.3.0",
     "ng-packagr": "^9.0.0",
     "prettier": "^2.1.0",
-    "pretty-quick": "^2.0.1",
+    "pretty-quick": "^3.0.0",
     "rxjs": "^6.5.5",
     "rxjs-compat": "^6.5.5",
     "shx": "^0.3.2",
