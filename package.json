@@ -33,7 +33,7 @@
     "@uirouter/angular": "^7.0.0",
     "@uirouter/angularjs": "^1.0.27",
     "@uirouter/core": "^6.0.6",
-    "@uirouter/publish-scripts": "^2.5.3",
+    "@uirouter/publish-scripts": "^2.5.4",
     "@uirouter/rx": "^0.6.5",
     "angular": "^1.7.9",
     "husky": "^4.3.0",
