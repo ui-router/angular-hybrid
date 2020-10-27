@@ -42,7 +42,7 @@
     "pretty-quick": "^2.0.1",
     "rxjs": "^6.5.5",
     "rxjs-compat": "^6.5.5",
-    "shx": "^0.3.2",
+    "shx": "^0.3.3",
     "typescript": "~3.8.3",
     "zone.js": "^0.10.3"
   },
