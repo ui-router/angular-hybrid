@@ -15,7 +15,7 @@
   "peerDependencies": {
     "@angular/core": "^10.0.0 || ^11.0.0",
     "@angular/upgrade": "^10.0.0 || ^11.0.0",
-    "@uirouter/angular": "^8.0.0",
+    "@uirouter/angular": "^8.0.1",
     "@uirouter/angularjs": "^1.0.26",
     "angular": "^1.5.0"
   },
@@ -30,7 +30,7 @@
     "@angular/upgrade": "^10.0.0",
     "@types/angular": "^1.8.1",
     "@types/jquery": "^3.5.5",
-    "@uirouter/angular": "^8.0.0",
+    "@uirouter/angular": "^8.0.1",
     "@uirouter/angularjs": "^1.0.29",
     "@uirouter/core": "6.0.7",
     "@uirouter/publish-scripts": "^2.5.5",
