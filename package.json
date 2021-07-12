@@ -29,7 +29,7 @@
     "@angular/platform-browser-dynamic": "^10.0.0",
     "@angular/upgrade": "^10.0.0",
     "@types/angular": "^1.8.2",
-    "@types/jquery": "^3.5.5",
+    "@types/jquery": "^3.5.6",
     "@uirouter/angular": "^8.0.1",
     "@uirouter/angularjs": "^1.0.29",
     "@uirouter/core": "6.0.7",
