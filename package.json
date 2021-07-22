@@ -13,8 +13,8 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "@angular/core": "^10.0.0 || ^11.0.0",
-    "@angular/upgrade": "^10.0.0 || ^11.0.0",
+    "@angular/core": "^10.0.0 || ^11.0.0 || ^12.0.0",
+    "@angular/upgrade": "^10.0.0 || ^11.0.0 || ^12.0.0",
     "@uirouter/angular": "^8.0.1",
     "@uirouter/angularjs": "^1.0.26",
     "angular": "^1.5.0"
