@@ -1,6 +1,6 @@
-import { Ng2StateDeclaration, StatesModule } from '@uirouter/angular';
-import { Ng1StateDeclaration, Ng1StateTransitionHook } from '@uirouter/angularjs';
-import { StateProvider } from '@uirouter/angularjs/lib/stateProvider';
+import { Ng2StateDeclaration, StatesModule } from '@clarivate/ui-router-angular';
+import { Ng1StateDeclaration, Ng1StateTransitionHook } from '@clarivate/ui-router-angularjs';
+import { StateProvider } from '@clarivate/ui-router-angularjs/lib/stateProvider';
 import { IInjectable } from '@uirouter/core';
 
 export interface _NgHybridStateDeclaration extends Ng2StateDeclaration {
@@ -30,7 +30,7 @@ declare module '@uirouter/core/lib/state/stateRegistry' {
   }
 }
 
-declare module '@uirouter/angularjs/lib/stateProvider' {
+declare module '@clarivate/ui-router-angularjs/lib/stateProvider' {
   interface StateProvider {
     state(name: string, definition: Ng1StateDeclaration): StateProvider;
     state(name: string, definition: Ng2StateDeclaration): StateProvider;
