@@ -32,7 +32,7 @@
     "@types/jquery": "^3.3.37",
     "@clarivate/ui-router-angular": "^1.0.0",
     "@clarivate/ui-router-angularjs": "^1.0.0",
-    "@uirouter/core": "^6.0.6",
+    "@uirouter/core": "6.0.5",
     "@uirouter/publish-scripts": "^2.5.3",
     "@uirouter/rx": "^0.6.5",
     "angular": "^1.7.9",
