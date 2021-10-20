@@ -26,7 +26,7 @@ if (!readlineSync.keyInYN('Ready to publish?')) {
 
 util.ensureCleanMaster('master');
 _exec(`npm run build`);
-_exec(`npm publish`);
+_exec(`npm publish --access public`);
 _exec(`git tag ${version}`);
 _exec(`git push origin ${version}`);
 

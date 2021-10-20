@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
-  "name": "@uirouter/angular-hybrid",
-  "version": "11.0.2",
+  "name": "@clarivate/ui-router-angular-hybrid",
+  "version": "1.0.0",
   "scripts": {
     "example": "cd example && npm i && npm start",
     "clean": "shx rm -rf lib _bundles dist",
@@ -13,10 +13,10 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "@angular/core": "^9.0.0 || ^10.0.0",
-    "@angular/upgrade": "^9.0.0 || ^10.0.0",
-    "@uirouter/angular": "^7.0.0",
-    "@uirouter/angularjs": "^1.0.26",
+    "@angular/core": "^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0",
+    "@angular/upgrade": "^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0",
+    "@clarivate/ui-router-angular": "^1.0.0",
+    "@clarivate/ui-router-angularjs": "^1.0.0",
     "angular": "^1.5.0"
   },
   "devDependencies": {
@@ -30,8 +30,8 @@
     "@angular/upgrade": "^9.0.0",
     "@types/angular": "^1.7.0",
     "@types/jquery": "^3.3.37",
-    "@uirouter/angular": "^7.0.0",
-    "@uirouter/angularjs": "^1.0.27",
+    "@clarivate/ui-router-angular": "^1.0.0",
+    "@clarivate/ui-router-angularjs": "^1.0.0",
     "@uirouter/core": "^6.0.6",
     "@uirouter/publish-scripts": "^2.5.3",
     "@uirouter/rx": "^0.6.5",
