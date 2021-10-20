@@ -26,9 +26,9 @@ import {
   UIROUTER_ROOT_MODULE,
   UIRouterModule,
   makeChildProviders,
-} from '@uirouter/angular';
+} from '@clarivate/ui-router-angular';
 
-import { $InjectorLike, Ng1ViewConfig } from '@uirouter/angularjs';
+import { $InjectorLike, Ng1ViewConfig } from '@clarivate/ui-router-angularjs';
 
 import { UIRouterRx } from '@uirouter/rx';
 import { NgHybridStatesModule } from './interfaces';
