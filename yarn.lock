@@ -76,6 +76,11 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+"@clarivate/angularjs@1.7.8":
+  version "1.7.8"
+  resolved "https://registry.yarnpkg.com/@clarivate/angularjs/-/angularjs-1.7.8.tgz#d88a2f7112db585a6c18a528b0b67afd84b76017"
+  integrity sha512-8n7I9VnVseupeLwtk0MbhUPyt5KKzlxx6E4HmttgGxhVGIBQ8avtyAMNp8vIQ5t9w5mvT7GI+otSFj1r9sNEbg==
+
 "@clarivate/ui-router-angular@^1.0.0":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@clarivate/ui-router-angular/-/ui-router-angular-1.0.6.tgz#ee28819b43914d783c0dea74e25f699ab2a49735"
@@ -260,11 +265,6 @@ ajv@^6.10.2:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
-
-angular@^1.7.9:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/angular/-/angular-1.8.0.tgz#b1ec179887869215cab6dfd0df2e42caa65b1b51"
-  integrity sha512-VdaMx+Qk0Skla7B5gw77a8hzlcOakwF8mjlW13DpIWIDlfqwAbSSLfd8N/qZnzEmQF4jC4iofInd3gE7vL8ZZg==
 
 ansi-align@^3.0.0:
   version "3.0.0"
