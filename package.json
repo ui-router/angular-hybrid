@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "@clarivate/ui-router-angular-hybrid",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "scripts": {
     "example": "cd example && npm i && npm start",
     "clean": "shx rm -rf lib _bundles dist",
@@ -16,8 +16,8 @@
     "@angular/core": "^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0",
     "@angular/upgrade": "^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0",
     "@clarivate/ui-router-angular": "^1.0.0",
-    "@clarivate/ui-router-angularjs": "^1.0.0",
-    "@clarivate/angularjs": "1.7.8"
+    "@clarivate/ui-router-angularjs": "^1.0.9",
+    "@clarivate/angularjs": "1.8.2"
   },
   "devDependencies": {
     "@angular/animations": "9.1.12",
@@ -31,11 +31,11 @@
     "@types/angular": "^1.7.0",
     "@types/jquery": "^3.3.37",
     "@clarivate/ui-router-angular": "^1.0.0",
-    "@clarivate/ui-router-angularjs": "^1.0.0",
+    "@clarivate/ui-router-angularjs": "^1.0.9",
     "@uirouter/core": "6.0.5",
     "@uirouter/publish-scripts": "^2.5.3",
     "@uirouter/rx": "^0.6.5",
-    "@clarivate/angularjs": "1.7.8",
+    "@clarivate/angularjs": "1.8.2",
     "husky": "^4.2.5",
     "ng-packagr": "^9.0.0",
     "prettier": "^2.0.5",

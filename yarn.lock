@@ -76,10 +76,10 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@clarivate/angularjs@1.7.8":
-  version "1.7.8"
-  resolved "https://registry.yarnpkg.com/@clarivate/angularjs/-/angularjs-1.7.8.tgz#d88a2f7112db585a6c18a528b0b67afd84b76017"
-  integrity sha512-8n7I9VnVseupeLwtk0MbhUPyt5KKzlxx6E4HmttgGxhVGIBQ8avtyAMNp8vIQ5t9w5mvT7GI+otSFj1r9sNEbg==
+"@clarivate/angularjs@1.8.2":
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/@clarivate/angularjs/-/angularjs-1.8.2.tgz#345886a14e2ab2432971c57803d754e23df5f11d"
+  integrity sha512-2goNK13+4F/x418UaxpuzUkgbKQc5IpyVzPD4lDnfgYBIlwKCbFFQhkvIn5PHY0PknQmGvod+XsI3iC9BAFoLA==
 
 "@clarivate/ui-router-angular@^1.0.0":
   version "1.0.6"
@@ -88,10 +88,10 @@
   dependencies:
     tslib "^1.10.0"
 
-"@clarivate/ui-router-angularjs@^1.0.0":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@clarivate/ui-router-angularjs/-/ui-router-angularjs-1.0.7.tgz#f8a289acfb2a26310d29471bac7ce71d57bb7e2d"
-  integrity sha512-TGOBoUwhlIWH7KGIHX6ZnbOV1V+5OoIyZhFo83sl1X0BpuLZnswNRsnbTilmpp6FMaL1yasAu0kzVpK02uUEgQ==
+"@clarivate/ui-router-angularjs@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@clarivate/ui-router-angularjs/-/ui-router-angularjs-1.0.9.tgz#6071950fd2df6c4b5b68f10fd56346a052d4ef19"
+  integrity sha512-kCwBfTNFAds/OdmRh8+v3QXfKVeI3RK344wnkrOB/XAohA0ngOJFvwrbcLogcnhZF1coEVwp4xY1Mdpi8Iykdg==
   dependencies:
     "@uirouter/core" "6.0.5"
 
