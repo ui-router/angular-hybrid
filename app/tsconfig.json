@@ -1,5 +1,5 @@
 {
-  "files": [ "src/main.ts" ],
+  "files": [ "src/app.ts" ],
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,

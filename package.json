@@ -1,70 +1,7 @@
 {
-  "$schema": "./node_modules/ng-packagr/package.schema.json",
-  "name": "@uirouter/angular-hybrid",
-  "version": "13.0.0",
   "scripts": {
-    "example": "cd example && npm i && npm start",
-    "clean": "shx rm -rf lib _bundles dist",
-    "build": "npm run clean && ng-packagr -p package.json",
-    "release": "release --deps @uirouter/core @uirouter/angular @uirouter/angularjs",
-    "test": "npm run build",
-    "test:downstream": "npm run build && test_downstream_projects",
-    "prepublishOnly": "npm run build"
-  },
-  "license": "MIT",
-  "checkPeerDependencies": {
-    "ignore": [
-      "postcss"
-    ]
-  },
-  "peerDependencies": {
-    "@angular/core": "^12.0.0 || ^13.0.0",
-    "@angular/upgrade": "^12.0.0 || ^13.0.0",
-    "@uirouter/angular": "^9.1.0",
-    "@uirouter/angularjs": "^1.0.30",
-    "angular": "^1.5.0"
-  },
-  "devDependencies": {
-    "@angular/animations": "13",
-    "@angular/common": "13",
-    "@angular/compiler": "13",
-    "@angular/compiler-cli": "13",
-    "@angular/core": "13",
-    "@angular/platform-browser": "13",
-    "@angular/platform-browser-dynamic": "13",
-    "@angular/upgrade": "13",
-    "@types/angular": "^1.8.2",
-    "@types/jquery": "^3.5.6",
-    "@uirouter/angular": "9.1.0",
-    "@uirouter/angularjs": "^1.0.30",
-    "@uirouter/core": "6.0.8",
-    "@uirouter/publish-scripts": "^2.6.0",
-    "@uirouter/rx": "^1.0.0",
-    "angular": "^1.8.1",
-    "husky": "^4.3.8",
-    "ng-packagr": "13",
-    "prettier": "^2.3.2",
-    "pretty-quick": "^2.0.1",
-    "rxjs": "^6.6.7",
-    "rxjs-compat": "^6.6.7",
-    "shx": "^0.3.3",
-    "typescript": "~4.4.2",
-    "zone.js": "0.11.4"
-  },
-  "distDir": "dist",
-  "ngPackage": {
-    "lib": {
-      "entryFile": "src/index.ts"
-    }
-  },
-  "sideEffects": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ui-router/angular-hybrid.git"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
+    "start": "npm run buildLib && npm run startApp",
+    "buildLib": "cd library && npm i && npm run build",
+    "startApp": "cd app && npm i && npm start"
   }
 }

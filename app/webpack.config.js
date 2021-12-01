@@ -1,16 +1,18 @@
 var webpack = require('webpack');
+var HtmlWebPackPlugin = require( 'html-webpack-plugin' );
 var path = require('path');
 
 module.exports = {
   entry: {
-    "app": "./src/main.ts",
+    "app": "./src/app.ts",
   },
 
   devtool: 'cheap-module-source-map',
 
+  devServer: { open: true },
+
   output: {
-    path: path.join(__dirname, "_bundles"),
-    publicPath: '_bundles/',
+    path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
   },
 
@@ -24,7 +26,5 @@ module.exports = {
     ]
   },
 
-  externals: {
-    angular: 'angular',
-  }
+  plugins: [new HtmlWebPackPlugin({ inject: true, template: 'public/index.html' })]
 };

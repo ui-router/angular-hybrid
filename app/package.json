@@ -1,0 +1,26 @@
+{
+  "name": "ng13app",
+  "private": true,
+  "scripts": {
+    "build": "webpack --mode=development",
+    "start": "webpack-dev-server --mode=development"
+  },
+  "dependencies": {
+    "@angular/common": "13.0.2",
+    "@angular/compiler": "13.0.2",
+    "@angular/core": "13.0.2",
+    "@angular/platform-browser": "13.0.2",
+    "@angular/platform-browser-dynamic": "13.0.2",
+    "ng12lib": "../library/dist",
+    "rxjs": "^7.4.0",
+    "zone.js": "0.11.4"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "ts-loader": "9.2.6",
+    "typescript": "~4.4.0",
+    "webpack": "5.64.4",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "4.6.0"
+  }
+}
