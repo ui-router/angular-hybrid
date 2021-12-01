@@ -1,3 +1,56 @@
+# 13.0.0 (2021-12-01)
+[Compare `@uirouter/angular-hybrid` versions 12.0.0 and 13.0.0](https://github.com/ui-router/angular-hybrid/compare/12.0.0...13.0.0)
+
+### Features
+
+* update to angular 13 and uirouter/angular 9.1.0 ([56539f6](https://github.com/ui-router/angular-hybrid/commit/56539f6))
+
+
+---
+
+
+### Updated `@uirouter/core` from 6.0.7 to 6.0.8
+
+
+Changelog for `@uirouter/core`:
+
+
+[Compare `@uirouter/core` versions 6.0.7 and 6.0.8](https://github.com/ui-router/core/compare/6.0.7...6.0.8)
+
+
+---
+
+
+### Updated `@uirouter/angular` from 8.0.0 to 9.1.0
+
+
+Changelog for `@uirouter/angular`:
+
+
+[Compare `@uirouter/angular` versions 8.0.0 and 9.1.0](https://github.com/ui-router/angular/compare/8.0.0...9.1.0)
+
+### Features
+
+* support angular 12 and 13
+
+### Bug Fixes
+
+* build package with Angular 13. ([500f2f7](https://github.com/ui-router/angular/commit/500f2f7))
+* bump [@uirouter](https://github.com/uirouter)/core and [@uirouter](https://github.com/uirouter)/rx deps ([257ee61](https://github.com/ui-router/angular/commit/257ee61))
+* **location:** do not add hash to URL twice ([#847](https://github.com/ui-router/angular/issues/847)) ([3794b25](https://github.com/ui-router/angular/commit/3794b25))
+
+
+---
+
+
+### Updated `@uirouter/angularjs` from 1.0.29 to 1.0.30
+
+
+Changelog for `@uirouter/angularjs`:
+
+
+[Compare `@uirouter/angularjs` versions 1.0.29 and 1.0.30](https://github.com/angular-ui/ui-router/compare/1.0.29...1.0.30)
+
 # 12.0.0 (2020-12-21)
 [Compare `@uirouter/angular-hybrid` versions 11.0.2 and 12.0.0](https://github.com/ui-router/angular-hybrid/compare/11.0.2...12.0.0)
 
