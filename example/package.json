@@ -12,16 +12,16 @@
     "ignore": ["ajv"]
   },
   "dependencies": {
-    "@angular/animations": "13",
-    "@angular/common": "13",
-    "@angular/compiler": "13",
-    "@angular/core": "13",
-    "@angular/platform-browser": "13",
-    "@angular/platform-browser-dynamic": "13",
-    "@angular/upgrade": "13",
+    "@angular/animations": "14",
+    "@angular/common": "14",
+    "@angular/compiler": "14",
+    "@angular/core": "14",
+    "@angular/platform-browser": "14",
+    "@angular/platform-browser-dynamic": "14",
+    "@angular/upgrade": "14",
     "@types/angular": "^1.6.39",
     "@types/jquery": "^3.2.16",
-    "@uirouter/angular": "^9.1.0",
+    "@uirouter/angular": "^10.0.0",
     "@uirouter/angular-hybrid": "latest",
     "@uirouter/angularjs": "1.0.30",
     "@uirouter/core": "6.0.8",
@@ -29,7 +29,7 @@
     "angular": "1.8.2",
     "rxjs": "^7.4.0",
     "tslib": "1.13.0",
-    "typescript": "~4.4.0",
+    "typescript": "~4.6.2",
     "zone.js": "0.11.4"
   },
   "devDependencies": {
