@@ -1,5 +1,4 @@
 {
-  "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "@uirouter/angular-hybrid",
   "version": "14.0.0",
   "scripts": {
