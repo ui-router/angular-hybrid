@@ -1,3 +1,25 @@
+# 14.0.0 (2022-09-17)
+[Compare `@uirouter/angular-hybrid` versions 13.0.0 and 14.0.0](https://github.com/ui-router/angular-hybrid/compare/13.0.0...14.0.0)
+
+### Features
+
+* support angular 14 and update to uirouter/angular 10
+
+---
+
+
+### Updated `@uirouter/angular` from 9.1.0 to 10.0.0
+
+
+Changelog for `@uirouter/angular`:
+
+
+[Compare `@uirouter/angular` versions 9.1.0 and 10.0.0](https://github.com/ui-router/angular/compare/9.1.0...10.0.0)
+
+### Features
+
+* Update uiSref input type from string to StateOrName ([#943](https://github.com/ui-router/angular/issues/943)) ([fe26fe0](https://github.com/ui-router/angular/commit/fe26fe0))
+
 # 13.0.0 (2021-12-01)
 [Compare `@uirouter/angular-hybrid` versions 12.0.0 and 13.0.0](https://github.com/ui-router/angular-hybrid/compare/12.0.0...13.0.0)
 
