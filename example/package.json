@@ -2,7 +2,7 @@
   "license": "MIT",
   "scripts": {
     "prestart": "npx check-peer-dependencies --install",
-    "start": "webpack-dev-server --open",
+    "start": "webpack serve --open",
     "prebuild": "npx check-peer-dependencies --install",
     "build": "webpack",
     "test": "npm run build && cypress-runner run --path .",
