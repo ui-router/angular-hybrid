@@ -1,6 +1,6 @@
 # UI-Router angular-hybrid
 
-[![Build Status](https://travis-ci.org/ui-router/angular-hybrid.svg?branch=master)](https://travis-ci.org/ui-router/angular-hybrid)
+[![CI](https://github.com/ui-router/angular-hybrid/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/ui-router/angular-hybrid/actions/workflows/ci.yml)
 
 ### UI-Router support for Hybrid Angular/AngularJS apps
 
@@ -136,7 +136,7 @@ ngmodule.config(['$urlServiceProvider', ($urlService: UrlService) => $urlService
 ```js
 platformBrowserDynamic()
   .bootstrapModule(SampleAppModuleAngular)
-  .then(platformRef => {
+  .then((platformRef) => {
     // Intialize the Angular Module
     // get() the UIRouter instance from DI to initialize the router
     const urlService: UrlService = platformRef.injector.get(UIRouter).urlService;
@@ -147,7 +147,7 @@ platformBrowserDynamic()
       urlService.sync();
     }
 
-    platformRef.injector.get<NgZone>(NgZone).run(startUIRouter);
+    platformRef.injector.get < NgZone > NgZone.run(startUIRouter);
   });
 ```
 
@@ -267,14 +267,14 @@ import { AuthService, UserToken } from './auth.service';
 
 // Notice that the `Transition` object is first injected
 // into the resolver using the '$transition$' string token
-export const rolesResolver = function($transition$) {
+export const rolesResolver = function ($transition$) {
   // Get the AuthService using a class token
   const authService: AuthService = transition.injector().get(AuthService);
 
   // Get the user object using an InjectionToken
   const user = transition.injector().get(UserToken);
 
-  return authService.fetchRoles(user).then(resp => resp.roles);
+  return authService.fetchRoles(user).then((resp) => resp.roles);
 };
 
 export const NG2_STATE = {
