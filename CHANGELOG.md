@@ -1,3 +1,10 @@
+# 15.0.0 (2023-03-21)
+[Compare `@uirouter/angular-hybrid` versions 13.0.0 and 15.0.0](https://github.com/ui-router/angular-hybrid/compare/13.0.0...15.0.0)
+
+### Features
+
+* support angular 15 ([ec4aa12](https://github.com/ui-router/angular-hybrid/commit/ec4aa12))
+
 # 14.0.0 (2022-09-17)
 [Compare `@uirouter/angular-hybrid` versions 13.0.0 and 14.0.0](https://github.com/ui-router/angular-hybrid/compare/13.0.0...14.0.0)
 
