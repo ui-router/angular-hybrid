@@ -1,14 +1,14 @@
 <html>
-<head>
+  <head>
     <script src="//unpkg.com/angular@1.6.4/angular.js"></script>
-    <script src="//unpkg.com/reflect-metadata"></script>
-    <script src="//unpkg.com/zone.js"></script>
-</head>
-<body>
+    <script src="//unpkg.com/reflect-metadata@0.1.13"></script>
+    <script src="//unpkg.com/zone.js@0.13.0"></script>
+  </head>
+  <body>
     <!-- the app will fill this ui-view -->
     <ui-view></ui-view>
 
     <!-- load webpack bundle in body tag after document.body is ready -->
     <script src="_bundles/app.js"></script>
-</body>
+  </body>
 </html>
