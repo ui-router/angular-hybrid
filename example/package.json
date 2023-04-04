@@ -34,6 +34,12 @@
     "typescript": "4.8.4",
     "zone.js": "0.11.4"
   },
+  "overrides": {
+    "@uirouter/core": "6.1.0"
+  },
+  "resolutions": {
+    "@uirouter/core": "^6.1.0"
+  },
   "devDependencies": {
     "@uirouter/cypress-runner": "^3.0.0",
     "ts-loader": "9.4.2",

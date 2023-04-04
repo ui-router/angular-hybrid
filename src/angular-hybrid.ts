@@ -10,8 +10,6 @@ import {
   UIRouter,
   ViewConfig,
   ViewService,
-  ServicesPlugin,
-  servicesPlugin,
 } from '@uirouter/core';
 
 import {
@@ -241,7 +239,6 @@ upgradeModule.run([
 
     /** Add support for observable state and param changes */
     $uiRouter.plugin(UIRouterRx);
-    $uiRouter.plugin<ServicesPlugin>(servicesPlugin);
 
     // Expose a merged ng1/ng2 injector as a Resolvable (on the root state).
     // This mimics how ui-router-ng2 exposes the root ng2 Injector, but
