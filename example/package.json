@@ -37,6 +37,9 @@
   "overrides": {
     "@uirouter/core": "6.1.0"
   },
+  "resolutions": {
+    "@uirouter/core": "^6.1.0"
+  },
   "devDependencies": {
     "@uirouter/cypress-runner": "^3.0.0",
     "ts-loader": "9.4.2",
