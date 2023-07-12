@@ -531,10 +531,10 @@
   resolved "https://registry.npmjs.org/@types/sizzle/-/sizzle-2.3.3.tgz"
   integrity sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==
 
-"@uirouter/angular@11.0.0":
-  version "11.0.0"
-  resolved "https://registry.npmjs.org/@uirouter/angular/-/angular-11.0.0.tgz"
-  integrity sha512-sLzCLnLvXGxZurHDGJD+XNBxaDVOXE9qoe6OP+a94ivM5sDjYbVPQNqfRuAYDu+Kk3R/7d7oPp2f9p3YpDYUfQ==
+"@uirouter/angular@^12.0.0":
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/@uirouter/angular/-/angular-12.0.0.tgz#659e9bf9305658ce9a30c1d9da6a2762269974c8"
+  integrity sha512-UTJ2lyiZowD0xLAWbfEMA7jZpgFZQYFml/53mqY8vNPc7D7/5dHBaUu+Kx+Xmm3fmy+K1c9HSKA2eZQS4AqmDA==
   dependencies:
     tslib "^2.3.0"
 
