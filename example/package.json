@@ -14,16 +14,16 @@
     ]
   },
   "dependencies": {
-    "@angular/animations": "^15.2.3",
-    "@angular/common": "^15.2.3",
-    "@angular/compiler": "^15.2.3",
-    "@angular/core": "^15.2.3",
-    "@angular/platform-browser": "^15.2.3",
-    "@angular/platform-browser-dynamic": "^15.2.3",
-    "@angular/upgrade": "^15.2.3",
+    "@angular/animations": "^16.0.0",
+    "@angular/common": "^16.0.0",
+    "@angular/compiler": "^16.0.0",
+    "@angular/core": "^16.0.0",
+    "@angular/platform-browser": "^16.0.0",
+    "@angular/platform-browser-dynamic": "^16.0.0",
+    "@angular/upgrade": "^16.0.0",
     "@types/angular": "^1.6.39",
     "@types/jquery": "^3.2.16",
-    "@uirouter/angular": "^11.0.0",
+    "@uirouter/angular": "^12.0.0",
     "@uirouter/angular-hybrid": "latest",
     "@uirouter/angularjs": "1.0.30",
     "@uirouter/core": "6.1.0",
@@ -31,8 +31,8 @@
     "angular": "1.8.3",
     "rxjs": "^7.4.0",
     "tslib": "1.13.0",
-    "typescript": "4.8.4",
-    "zone.js": "0.11.4"
+    "typescript": "4.9.5",
+    "zone.js": "0.13.0"
   },
   "overrides": {
     "@uirouter/core": "6.1.0"
@@ -43,8 +43,8 @@
   "devDependencies": {
     "@uirouter/cypress-runner": "^3.0.0",
     "ts-loader": "9.4.2",
-    "webpack": "5.64.4",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "4.6.0"
+    "webpack": "^5.77.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.2"
   }
 }

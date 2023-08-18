@@ -94,7 +94,6 @@ const nestedState: NgHybridStateDeclaration = {
     UIRouterUpgradeModule.forRoot({ states: [nestedState] }),
   ],
   declarations: [Ng2Component],
-  entryComponents: [Ng2Component],
 })
 export class RootModule {
   constructor(private upgrade: UpgradeModule) {}

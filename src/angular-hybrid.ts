@@ -202,7 +202,6 @@ export function getParentUIViewInject(r: StateRegistry): ParentUIViewInject {
 
     ..._UIROUTER_SERVICE_PROVIDERS,
   ],
-  entryComponents: [UIViewNgUpgrade],
   exports: [UIViewNgUpgrade, UIRouterModule],
 })
 export class UIRouterUpgradeModule {
