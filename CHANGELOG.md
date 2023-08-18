@@ -1,3 +1,26 @@
+# 16.0.0 (2023-08-18)
+[Compare `@uirouter/angular-hybrid` versions 15.0.2 and v16.0.0](https://github.com/ui-router/angular-hybrid/compare/15.0.2...v16.0.0)
+
+### Features
+
+* Angular 16 support ([#589](https://github.com/ui-router/angular-hybrid/issues/589)) ([2293f30](https://github.com/ui-router/angular-hybrid/commit/2293f30))
+
+
+---
+
+
+### Updated `@uirouter/angular` from 11.0.0 to 12.0.0
+
+
+Changelog for `@uirouter/angular`:
+
+
+[Compare `@uirouter/angular` versions 11.0.0 and 12.0.0](https://github.com/ui-router/angular/compare/11.0.0...12.0.0)
+
+### Bug Fixes
+
+* test_downstream ([#983](https://github.com/ui-router/angular/issues/983)) ([bf45a80](https://github.com/ui-router/angular/commit/bf45a80))
+
 # 15.0.0 (2023-03-21)
 [Compare `@uirouter/angular-hybrid` versions 13.0.0 and 15.0.0](https://github.com/ui-router/angular-hybrid/compare/13.0.0...15.0.0)
 
