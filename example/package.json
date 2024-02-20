@@ -14,25 +14,25 @@
     ]
   },
   "dependencies": {
-    "@angular/animations": "^16.0.0",
-    "@angular/common": "^16.0.0",
-    "@angular/compiler": "^16.0.0",
-    "@angular/core": "^16.0.0",
-    "@angular/platform-browser": "^16.0.0",
-    "@angular/platform-browser-dynamic": "^16.0.0",
-    "@angular/upgrade": "^16.0.0",
-    "@types/angular": "^1.6.39",
+    "@angular/animations": "^17.2.1",
+    "@angular/common": "^17.2.1",
+    "@angular/compiler": "^17.2.1",
+    "@angular/core": "^17.2.1",
+    "@angular/platform-browser": "^17.2.1",
+    "@angular/platform-browser-dynamic": "^17.2.1",
+    "@angular/upgrade": "^17.2.1",
+    "@types/angular": "^1.8.9",
     "@types/jquery": "^3.2.16",
-    "@uirouter/angular": "^12.0.0",
+    "@uirouter/angular": "^13.0.0",
     "@uirouter/angular-hybrid": "latest",
-    "@uirouter/angularjs": "1.0.30",
+    "@uirouter/angularjs": "1.1.0",
     "@uirouter/core": "6.1.0",
     "@uirouter/rx": "1.0.0",
     "angular": "1.8.3",
     "rxjs": "^7.4.0",
-    "tslib": "1.13.0",
-    "typescript": "4.9.5",
-    "zone.js": "0.13.0"
+    "tslib": "2.6.2",
+    "typescript": "5.2.2",
+    "zone.js": "0.14.4"
   },
   "overrides": {
     "@uirouter/core": "6.1.0"

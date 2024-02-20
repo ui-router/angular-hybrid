@@ -120,6 +120,5 @@ platformBrowserDynamic()
       url.sync();
     }
 
-    const ngZone: NgZone = platformRef.injector.get(NgZone);
-    ngZone.run(startUIRouter);
+    platformRef.injector.get<NgZone>(NgZone).run(startUIRouter);
   });
