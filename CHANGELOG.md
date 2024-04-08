@@ -1,3 +1,38 @@
+# 17.1.0 (2024-04-08)
+[Compare `@uirouter/angular-hybrid` versions 16.0.0 and 17.1.0](https://github.com/ui-router/angular-hybrid/compare/16.0.0...17.1.0)
+
+### Features
+
+* Angular 17 support [https://github.com/ui-router/angular-hybrid/issues/594] ([#595](https://github.com/ui-router/angular-hybrid/issues/595)) ([0e4e1da](https://github.com/ui-router/angular-hybrid/commit/0e4e1da))
+
+
+---
+
+
+### Updated `@uirouter/angular` from 12.0.0 to 13.0.0
+
+
+Changelog for `@uirouter/angular`:
+
+
+[Compare `@uirouter/angular` versions 12.0.0 and 13.0.0](https://github.com/ui-router/angular/compare/12.0.0...13.0.0)
+
+
+---
+
+
+### Updated `@uirouter/angularjs` from 1.0.30 to 1.1.0
+
+
+Changelog for `@uirouter/angularjs`:
+
+
+[Compare `@uirouter/angularjs` versions 1.0.30 and 1.1.0](https://github.com/angular-ui/ui-router/compare/1.0.30...1.1.0)
+
+### Features
+
+* **package:** move [@uirouter](https://github.com/uirouter)/core to peerDeps as per other uirouter packages ([#3850](https://github.com/angular-ui/ui-router/issues/3850)) ([6dd057c](https://github.com/angular-ui/ui-router/commit/6dd057c))
+
 # 16.0.0 (2023-08-18)
 [Compare `@uirouter/angular-hybrid` versions 15.0.2 and v16.0.0](https://github.com/ui-router/angular-hybrid/compare/15.0.2...v16.0.0)
 
