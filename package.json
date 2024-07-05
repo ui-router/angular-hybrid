@@ -19,7 +19,7 @@
   "peerDependencies": {
     "@angular/core": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0",
     "@angular/upgrade": "^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0",
-    "@uirouter/angular": "^13.0.0",
+    "@uirouter/angular": "^14.0.0",
     "@uirouter/angularjs": "^1.0.30",
     "@uirouter/core": "^6.1.0",
     "angular": "^1.5.0"
