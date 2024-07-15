@@ -1,3 +1,11 @@
+# 18.0.0 (2024-07-15)
+[Compare `@uirouter/angular-hybrid` versions 17.1.0 and 18.0.0](https://github.com/ui-router/angular-hybrid/compare/17.1.0...18.0.0)
+
+### Features
+
+* Angular 18 support ([#598](https://github.com/ui-router/angular-hybrid/issues/598)) ([04d9027](https://github.com/ui-router/angular-hybrid/commit/04d9027))
+
+
 # 17.1.0 (2024-04-08)
 [Compare `@uirouter/angular-hybrid` versions 16.0.0 and 17.1.0](https://github.com/ui-router/angular-hybrid/compare/16.0.0...17.1.0)
 
