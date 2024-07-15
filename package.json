@@ -38,7 +38,7 @@
     "@angular/upgrade": "^18.0.6",
     "@types/angular": "^1.8.9",
     "@types/jquery": "^3.5.6",
-    "@uirouter/angular": "^13.0.0",
+    "@uirouter/angular": "^14.0.0",
     "@uirouter/angularjs": "^1.1.0",
     "@uirouter/core": "^6.1.0",
     "@uirouter/publish-scripts": "^2.6.3",
