@@ -14,16 +14,16 @@
     ]
   },
   "dependencies": {
-    "@angular/animations": "^17.2.1",
-    "@angular/common": "^17.2.1",
-    "@angular/compiler": "^17.2.1",
-    "@angular/core": "^17.2.1",
-    "@angular/platform-browser": "^17.2.1",
-    "@angular/platform-browser-dynamic": "^17.2.1",
-    "@angular/upgrade": "^17.2.1",
+    "@angular/animations": "^18.1.0",
+    "@angular/common": "^18.1.0",
+    "@angular/compiler": "^18.1.0",
+    "@angular/core": "^18.1.0",
+    "@angular/platform-browser": "^18.1.0",
+    "@angular/platform-browser-dynamic": "^18.1.0",
+    "@angular/upgrade": "18.1.0",
     "@types/angular": "^1.8.9",
     "@types/jquery": "^3.2.16",
-    "@uirouter/angular": "^13.0.0",
+    "@uirouter/angular": "14.0.0",
     "@uirouter/angular-hybrid": "latest",
     "@uirouter/angularjs": "1.1.0",
     "@uirouter/core": "6.1.0",
@@ -31,7 +31,7 @@
     "angular": "1.8.3",
     "rxjs": "^7.4.0",
     "tslib": "2.6.2",
-    "typescript": "5.2.2",
+    "typescript": "5.4.5",
     "zone.js": "0.14.4"
   },
   "overrides": {
