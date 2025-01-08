@@ -71,6 +71,7 @@ app.component('ng1Component', {
     <a uiSref="app">Back to app</a>
     <ui-view></ui-view>
   `,
+  standalone: false,
 })
 export class Ng2Component {
   ngOnInit() {
