@@ -1,3 +1,42 @@
+# 19.0.0 (2025-01-14)
+[Compare `@uirouter/angular-hybrid` versions 18.0.0 and 19.0.0](https://github.com/ui-router/angular-hybrid/compare/18.0.0...19.0.0)
+
+### Features
+
+* Angular 19 support ([#600](https://github.com/ui-router/angular-hybrid/issues/600)) ([059d12d](https://github.com/ui-router/angular-hybrid/commit/059d12d))
+
+
+---
+
+
+### Updated `@uirouter/core` from 6.1.0 to 6.1.1
+
+
+Changelog for `@uirouter/core`:
+
+
+[Compare `@uirouter/core` versions 6.1.0 and 6.1.1](https://github.com/ui-router/core/compare/6.1.0...6.1.1)
+
+### Bug Fixes
+
+* **stateParams:** $inherit is not affected by enumerable prototype custom methods ([#841](https://github.com/ui-router/core/issues/841)) ([9c94c2a](https://github.com/ui-router/core/commit/9c94c2a))
+
+
+---
+
+
+### Updated `@uirouter/angular` from 14.0.0 to 16.0.0
+
+
+Changelog for `@uirouter/angular`:
+
+
+[Compare `@uirouter/angular` versions 14.0.0 and 16.0.0](https://github.com/ui-router/angular/compare/14.0.0...16.0.0)
+
+### Features
+
+* add support for standalone angular applications ([#994](https://github.com/ui-router/angular/issues/994)) ([6b496c2](https://github.com/ui-router/angular/commit/6b496c2))
+
 # 18.0.0 (2024-07-15)
 [Compare `@uirouter/angular-hybrid` versions 17.1.0 and 18.0.0](https://github.com/ui-router/angular-hybrid/compare/17.1.0...18.0.0)
 
