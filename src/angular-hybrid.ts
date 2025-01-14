@@ -114,7 +114,7 @@ export function objectFactory() {
  * </div>
  * ```
  *
- * This adapter exposes exposes the parent view context (ParentUIViewInject)
+ * This adapter exposes the parent view context (ParentUIViewInject)
  * as an ng2 DI Provider, which the nested ng2 UIView requires.
  *
  * It gets the ParentUIViewContext information (from the parent ng1 ui-view) by walking
@@ -126,6 +126,7 @@ export function objectFactory() {
   // provide a blank object as PARENT_INJECT.
   // The component will add property getters when it is constructed.
   viewProviders: [{ provide: UIView.PARENT_INJECT, useFactory: objectFactory }],
+  standalone: false,
 })
 export class UIViewNgUpgrade {
   // The ui-view's name (or '$default')
