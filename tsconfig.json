@@ -4,7 +4,7 @@
     "outDir": "lib",
     "target": "es5",
     "module": "es6",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "lib": ["es6", "dom"],
     "sourceMap": true,
     "pretty": true,
