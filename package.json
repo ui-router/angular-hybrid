@@ -42,7 +42,7 @@
     "@uirouter/angular": "^21.0.0",
     "@uirouter/angularjs": "^1.1.0",
     "@uirouter/core": "^6.1.1",
-    "@uirouter/publish-scripts": "^2.6.3",
+    "@uirouter/publish-scripts": "^2.7.0",
     "@uirouter/rx": "^1.0.0",
     "angular": "^1.8.3",
     "husky": "^9.1.7",
