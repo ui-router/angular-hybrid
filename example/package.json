@@ -36,7 +36,7 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@uirouter/cypress-runner": "^3.0.0",
+    "@uirouter/cypress-runner": "^3.1.0",
     "ts-loader": "9.4.2",
     "webpack": "^5.77.0",
     "webpack-cli": "^5.0.1",
