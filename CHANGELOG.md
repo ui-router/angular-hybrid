@@ -1,3 +1,30 @@
+# 21.0.0 (2026-05-13)
+[Compare `@uirouter/angular-hybrid` versions 20.0.0 and 21.0.0](https://github.com/ui-router/angular-hybrid/compare/20.0.0...21.0.0)
+
+### Features
+
+* Support Angular v21 ([5dc61bb](https://github.com/ui-router/angular-hybrid/commit/5dc61bb))
+
+---
+
+
+### Updated `@uirouter/angular` from 17.0.0 to 21.0.0
+
+
+Changelog for `@uirouter/angular`:
+
+
+[Compare `@uirouter/angular` versions 17.0.0 and 21.0.0](https://github.com/ui-router/angular/compare/17.0.0...21.0.0)
+
+### Bug Fixes
+
+* support zoneless ([#1012](https://github.com/ui-router/angular/issues/1012)) ([6fa2d1e](https://github.com/ui-router/angular/commit/6fa2d1e))
+
+
+### Features
+
+* Support Angular v21 ([4c66883](https://github.com/ui-router/angular/commit/4c66883))
+
 # 20.0.0 (2025-09-27)
 [Compare `@uirouter/angular-hybrid` versions 18.0.0 and 20.0.0](https://github.com/ui-router/angular-hybrid/compare/18.0.0...20.0.0)
 
