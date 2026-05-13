@@ -1,16 +1,21 @@
 {
-  "files": [ "src/main.ts" ],
+  "files": [
+    "src/main.ts"
+  ],
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "es6",
+    "moduleResolution": "bundler",
     "target": "es5",
     "rootDir": "src",
     "outDir": "transpiled",
     "declaration": false,
     "sourceMap": true,
     "skipLibCheck": true,
-    "lib": ["es6", "dom"]
+    "lib": [
+      "es6",
+      "dom"
+    ]
   }
 }
