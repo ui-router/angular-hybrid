@@ -17,10 +17,10 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/common@^21.0.0":
-  version "21.2.4"
-  resolved "https://registry.yarnpkg.com/@angular/common/-/common-21.2.4.tgz#47242125fe5a3a94bf32cfdb722dd21807bb861c"
-  integrity sha512-NrP6qOuUpo3fqq14UJ1b2bIRtWsfvxh1qLqOyFV4gfBrHhXd0XffU1LUlUw1qp4w1uBSgPJ0/N5bSPUWrAguVg==
+"@angular/common@^21.2.19":
+  version "21.2.19"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-21.2.19.tgz#0e4030a71e0f38a0bc63cf74347d142617073e68"
+  integrity sha512-Rvo/VXI0kUmfQT7+OeAjv526OJlf/WrLnJq1Tz84Jkyv9bs9SOMTCT6m4+boo8gxVNdrcxvGU3Q0o2jZzKceSg==
   dependencies:
     tslib "^2.3.0"
 
