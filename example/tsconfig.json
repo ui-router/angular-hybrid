@@ -7,7 +7,7 @@
     "experimentalDecorators": true,
     "module": "es6",
     "moduleResolution": "bundler",
-    "target": "es5",
+    "target": "es6",
     "rootDir": "src",
     "outDir": "transpiled",
     "declaration": false,
