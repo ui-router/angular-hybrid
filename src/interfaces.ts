@@ -1,7 +1,7 @@
 import { Ng2StateDeclaration, StatesModule } from '@uirouter/angular';
 import { Ng1StateDeclaration, Ng1StateTransitionHook } from '@uirouter/angularjs';
 import { StateProvider } from '@uirouter/angularjs/lib/stateProvider';
-import { IInjectable } from '@uirouter/core';
+import { IInjectable, StateObject } from '@uirouter/core';
 
 export interface _NgHybridStateDeclaration extends Ng2StateDeclaration {
   onExit?: any;
@@ -25,8 +25,8 @@ export interface NgHybridStatesModule extends _NgHybridStateModule {
 
 declare module '@uirouter/core/lib/state/stateRegistry' {
   interface StateRegistry {
-    register(state: Ng1StateDeclaration);
-    register(state: Ng2StateDeclaration);
+    register(state: Ng1StateDeclaration): StateObject;
+    register(state: Ng2StateDeclaration): StateObject;
   }
 }
 

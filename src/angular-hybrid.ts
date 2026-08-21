@@ -1,8 +1,7 @@
 import { Component, ElementRef, Inject, Injector, Input, ModuleWithProviders, NgModule } from '@angular/core';
-import { downgradeComponent, UpgradeModule, getAngularJSGlobal, getAngularLib } from '@angular/upgrade/static';
+import { downgradeComponent, UpgradeModule, getAngularJSGlobal } from '@angular/upgrade/static';
 
 import {
-  StateObject,
   forEach,
   PathNode,
   Resolvable,
@@ -33,8 +32,7 @@ import { $InjectorLike, Ng1ViewConfig } from '@uirouter/angularjs';
 import { UIRouterRx } from '@uirouter/rx';
 import { NgHybridStatesModule } from './interfaces';
 
-const getAngularJS = getAngularJSGlobal || getAngularLib;
-const angular = getAngularJS();
+const angular = getAngularJSGlobal();
 
 if (!angular) {
   throw new Error(
@@ -131,7 +129,7 @@ export function objectFactory() {
 export class UIViewNgUpgrade {
   // The ui-view's name (or '$default')
   @Input()
-  name: string;
+  name!: string;
 
   constructor(
     ref: ElementRef,
@@ -182,7 +180,8 @@ export function getUIRouter($injector: any) {
 }
 
 export function getParentUIViewInject(r: StateRegistry): ParentUIViewInject {
-  return { fqn: null, context: r.root() };
+  // The root ui-view has no fully qualified name, so its runtime value is null.
+  return { fqn: null, context: r.root() } as unknown as ParentUIViewInject;
 }
 
 /**
@@ -262,7 +261,7 @@ upgradeModule.run([
 upgradeModule.config([
   '$stateRegistryProvider',
   ($stateRegistry: StateRegistry) => {
-    $stateRegistry.decorator('lazyLoad', ng2LazyLoadBuilder);
+    $stateRegistry.decorator('lazyLoad', (state, parentFn) => ng2LazyLoadBuilder(state, parentFn!));
   },
 ]);
 
@@ -278,7 +277,8 @@ upgradeModule.config([
 upgradeModule.config([
   '$stateRegistryProvider',
   ($stateRegistry: StateRegistry) => {
-    $stateRegistry.decorator('views', function (state: StateObject, parentFn: Function) {
+    $stateRegistry.decorator('views', function (state, parentFn) {
+      if (!parentFn) throw new Error('The views decorator requires a parent builder');
       const views = parentFn(state);
 
       forEach(views, (viewDecl: any, viewName: string) => {

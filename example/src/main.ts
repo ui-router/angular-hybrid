@@ -4,14 +4,14 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { UpgradeModule } from '@angular/upgrade/static';
 import { BrowserModule } from '@angular/platform-browser';
 import { UIRouterUpgradeModule, NgHybridStateDeclaration } from '@uirouter/angular-hybrid';
-import { UrlService } from '@uirouter/core';
+import { StateRegistry, UrlService } from '@uirouter/core';
 
 const app = angular.module('minimal', ['ui.router.upgrade']);
 
 app.run([
   '$stateRegistry',
   '$urlService',
-  ($stateRegistry, $urlService) => {
+  ($stateRegistry: StateRegistry, $urlService: UrlService) => {
     $urlService.rules.initial({ state: 'app' });
 
     $stateRegistry.register({
@@ -56,7 +56,7 @@ app.component('ng1Component', {
       <a ui-sref="app">Back to app</a>
       <ui-view></ui-view>
     `,
-  controller: function () {
+  controller: function (this: { $onInit?: () => void }) {
     this.$onInit = function () {
       console.log('ng1Component.$onInit()');
     };
@@ -106,7 +106,7 @@ export class RootModule {
 
 // Using AngularJS config block, call `deferIntercept()`.
 // This tells UI-Router to delay the initial URL sync (until all bootstrapping is complete)
-app.config(['$urlServiceProvider', ($urlService) => $urlService.deferIntercept()]);
+app.config(['$urlServiceProvider', ($urlService: UrlService) => $urlService.deferIntercept()]);
 
 // Manually bootstrap the Angular app
 platformBrowserDynamic()
