@@ -1,3 +1,48 @@
+# 22.0.0 (2026-08-21)
+[Compare `@uirouter/angular-hybrid` versions 21.0.0 and 22.0.0](https://github.com/ui-router/angular-hybrid/compare/21.0.0...22.0.0)
+
+### Bug Fixes
+
+* revert version back to 21.0.0 ([4ff5a6c](https://github.com/ui-router/angular-hybrid/commit/4ff5a6c))
+
+
+### Features
+
+* support Angular 22 ([#633](https://github.com/ui-router/angular-hybrid/issues/633)) ([6a48e4d](https://github.com/ui-router/angular-hybrid/commit/6a48e4d))
+
+
+---
+
+
+### Updated `@uirouter/core` from 6.1.1 to 6.1.2
+
+
+Changelog for `@uirouter/core`:
+
+
+[Compare `@uirouter/core` versions 6.1.1 and 6.1.2](https://github.com/ui-router/core/compare/6.1.1...6.1.2)
+
+### Bug Fixes
+
+* **urlMatcher:** Fix potential ReDoS, thanks to www.HeroDevs.com ([0c00a12](https://github.com/ui-router/core/commit/0c00a12))
+* **urlMatcher:** Fix potential ReDoS, thanks to www.HeroDevs.com ([0db52a1](https://github.com/ui-router/core/commit/0db52a1))
+
+
+---
+
+
+### Updated `@uirouter/angular` from 21.0.0 to 22.0.0
+
+
+Changelog for `@uirouter/angular`:
+
+
+[Compare `@uirouter/angular` versions 21.0.0 and 22.0.0](https://github.com/ui-router/angular/compare/21.0.0...22.0.0)
+
+### Features
+
+* Support Angular v22 ([dce7abe](https://github.com/ui-router/angular/commit/dce7abe))
+
 # 21.0.0 (2026-05-13)
 [Compare `@uirouter/angular-hybrid` versions 20.0.0 and 21.0.0](https://github.com/ui-router/angular-hybrid/compare/20.0.0...21.0.0)
 
