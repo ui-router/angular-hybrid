@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, Injector, Input, ModuleWithProviders, NgModule } from '@angular/core';
+import { Component, ElementRef, Inject, Injector, Input, ModuleWithProviders, NgModule, ChangeDetectionStrategy } from '@angular/core';
 import { downgradeComponent, UpgradeModule, getAngularJSGlobal } from '@angular/upgrade/static';
 
 import {
@@ -124,6 +124,7 @@ export function objectFactory() {
   // provide a blank object as PARENT_INJECT.
   // The component will add property getters when it is constructed.
   viewProviders: [{ provide: UIView.PARENT_INJECT, useFactory: objectFactory }],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class UIViewNgUpgrade {
